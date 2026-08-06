@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión PMT Institucional</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .epm-header { background-color: white; border-bottom: 4px solid #009300; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 8px 20px; }
+        .epm-title { color: #009300; font-weight: bold; font-size: 19px; margin-left: 15px; vertical-align: middle; line-height: 1.15; }
+        .epm-card-header { background-color: #009300; color: white; font-weight: bold; padding: 8px 15px; font-size: 0.95rem; }
+        .epm-btn { background-color: #b7c200; color: #000; font-weight: bold; border: none; transition: 0.3s; }
+        .epm-btn:hover { background-color: #99a800; transform: translateY(-1px); }
+        .epm-btn-play { background-color: #009300; color: white; font-weight: bold; }
+
+        .map-wrapper { height: 100%; min-height: 72vh; border: 3px solid #009300; border-radius: 8px; margin-bottom: 0; overflow: hidden; position: relative; background: #e9ecef; }
+        .table-wrapper { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-top: 4px solid #b7c200; }
+        .table-dark { background-color: #008c6b !important; }
+        .temporal-box { background-color: #e9f5e9; border: 2px solid #009300; border-radius: 8px; padding: 10px 15px; margin-bottom: 15px; }
+        .fecha-activa-display { font-size: 1.2rem; color: #d56b00; font-weight: bold; background: white; padding: 3px 15px; border-radius: 5px; border: 1px solid #d56b00; }
+
+        .select2-container--bootstrap-5 .select2-selection {
+            font-size: 0.8rem; min-height: 31px; max-height: 110px; overflow-y: auto; overflow-x: hidden;
+        }
+        .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered {
+            padding: 2px 4px; display: flex; flex-wrap: wrap; gap: 2px; max-width: 100%;
+        }
+        .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice {
+            background-color: #009300; border-color: #007a00; color: white; font-size: 0.7rem;
+            padding: 0 6px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex-shrink: 1;
+        }
+        .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice__remove { color: rgba(255,255,255,0.8); }
+        .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice__remove:hover { color: white; }
+        .select2-container { width: 100% !important; max-width: 100% !important; }
+        .select2-dropdown { min-width: 100%; max-width: 300px; font-size: 0.8rem; z-index: 9999; }
+        .select2-results__option { padding: 4px 8px; white-space: normal; word-break: break-word; }
+
+        /* =================== DISEÑO MODAL PDF =================== */
+        .pdf-modal-backdrop {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 2000; overflow-y: auto;
+            display: none; justify-content: center; padding: 30px 0;
+        }
+        .pdf-controls { position: fixed; top: 20px; right: 30px; z-index: 2010; }
+        .a4-preview { width: 210mm; min-height: 297mm; background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.3); padding-bottom: 20mm; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; }
+        .pdf-header-banner { background-color: #009300; color: white; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid #b7c200; }
+        .pdf-header-title { margin: 0; font-size: 22px; font-weight: bold; letter-spacing: 0.5px; }
+        .pdf-header-date { font-size: 12px; opacity: 0.9; }
+        .pdf-body { padding: 25px 30px; }
+        .pdf-grid { margin-bottom: 20px; }
+        
+        /* Modificación para expandir los KPIs horizontalmente */
+        .pdf-kpi-container { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .pdf-kpi-box { background: #f8f9fa; border-left: 4px solid #009300; padding: 12px 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .pdf-kpi-title { font-size: 11px; color: #6c757d; text-transform: uppercase; margin-bottom: 4px; font-weight: bold; }
+        .pdf-kpi-value { font-size: 18px; font-weight: bold; color: #343a40; margin: 0; }
+        
+        .pdf-section-title { font-size: 14px; font-weight: bold; color: #009300; text-transform: uppercase; margin: 20px 0 10px 0; border-bottom: 2px solid #e9ecef; padding-bottom: 5px; }
+        .pdf-table { width: 100%; border-collapse: collapse; }
+        .pdf-table th, .pdf-table td { border: 1px solid #dee2e6; padding: 6px 7px; font-size: 9px; vertical-align: top; }
+        .pdf-table th { background-color: #f1f3f5; color: #495057; }
+        .pdf-table tr { page-break-inside: avoid; }
+        .pdf-progress-wrap { margin-bottom: 10px; page-break-inside: avoid; }
+        .pdf-progress-header { display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 3px; font-weight: bold; }
+        .pdf-progress-bar { background: #e9ecef; border-radius: 3px; height: 8px; width: 100%; }
+        .pdf-progress-fill { height: 100%; border-radius: 3px; }
+
+        /* Tarjetas críticas: estilo limpio con acento naranja de marca EPM (#d56b00) */
+        .critico-card {
+            border: 1px solid #eadfd6; border-left: 4px solid #d56b00; border-radius: 6px;
+            background: #ffffff; padding: 12px 15px;
+            margin-bottom: 10px; page-break-inside: avoid;
+        }
+        .critico-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; border-bottom: 1px solid #f0eae4; padding-bottom: 6px; }
+        .critico-card-badge { background: #d56b00; color: white; font-size: 9px; font-weight: bold; padding: 2px 9px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+        .critico-card-title { font-size: 11px; font-weight: bold; color: #995000; }
+        .critico-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 15px; }
+        .critico-field-label { font-size: 8px; color: #a35400; font-weight: bold; text-transform: uppercase; letter-spacing: 0.2px; margin-bottom: 2px; }
+        .critico-field-value { font-size: 9px; color: #333333; font-weight: 500; line-height: 1.4; }
+        .critico-fechas-bar { margin-top: 8px; background: #fbf3ec; border: 1px solid #eadfd6; border-radius: 4px; padding: 5px 10px; font-size: 9px; color: #995000; font-weight: bold; }
+        .critico-agrupada-nota { font-size: 8px; color: #a35400; font-style: italic; margin-top: 2px; }
+        .critico-nota-real { font-size: 8px; color: #6c757d; font-style: italic; font-weight: normal; margin-top: 3px; }
+
+        .semaforo-verde   { color: #009300; font-weight: bold; }
+        .semaforo-amarillo { color: #e6a800; font-weight: bold; }
+        .semaforo-rojo    { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="epm-header mb-3 d-flex justify-content-between align-items-center">
+    <div>
+        <img src="logo_epm.jpg" onerror="this.src='logo_epm.png'" alt="Logo EPM" style="height: 45px;">
+        <span class="epm-title">PLATAFORMA DE CONTROL Y ARTICULACIÓN DE PMTs</span>
+    </div>
+    
+    <div class="d-flex gap-2">
+        <button onclick="openPdfPreview()" class="btn epm-btn shadow-sm">
+            <span id="btn-pdf-text">📄 Generar Informe PDF Ejecutivo</span>
+        </button>
+    </div>
+</div>
+
+<div class="container-fluid px-3 mt-3">
+    <div id="error-alerta" class="alert alert-danger d-none fw-bold" role="alert">
+        ⚠️ ATENCIÓN: El navegador bloqueó los datos (CORS). Sube esta carpeta a GitHub y ábrela desde el enlace web.
+    </div>
+
+    <!-- ZONA MEDIA: dos columnas. Izquierda = controles (1/3). Derecha = mapa vertical (2/3). -->
+    <div class="row g-3 mb-3 align-items-stretch">
+
+        <!-- COLUMNA IZQUIERDA: recorrido temporal + filtros, apilados -->
+        <div class="col-12 col-lg-4 d-flex flex-column">
+
+            <div class="temporal-box mb-3">
+                <div class="row g-2 align-items-end">
+                    <div class="col-6">
+                        <label class="form-label fw-bold text-success mb-1">⏱️ Inicio Recorrido:</label>
+                        <input type="date" id="repInicio" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-bold text-success mb-1">Fin Recorrido:</label>
+                        <input type="date" id="repFin" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-bold mb-1">Avanzar cada:</label>
+                        <select id="velocidadPaso" class="form-select form-select-sm">
+                            <option value="1">1 Día</option>
+                            <option value="7">1 Semana</option>
+                            <option value="30">1 Mes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label fw-bold mb-1">Velocidad:</label>
+                        <select id="velocidadReproduccion" class="form-select form-select-sm">
+                            <option value="2400">0.5X (Lento)</option>
+                            <option value="1200" selected>1X (Normal)</option>
+                            <option value="600">2X (Rápido)</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button id="btnPlay" class="btn btn-sm epm-btn-play w-100">▶ Iniciar Recorrido</button>
+                    </div>
+                    <div class="col-12 text-center d-flex align-items-center justify-content-center gap-2 mt-1">
+                        <span class="fw-bold text-secondary" style="font-size: 0.85rem;">En Mapa:</span>
+                        <div id="fechaActualVisual" class="fecha-activa-display">---</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card flex-grow-1" style="border-color: #009300;">
+                <div class="card-header epm-card-header">⚙️ Panel de Filtros Específicos</div>
+                <div class="card-body py-2">
+                    <div class="row g-2 align-items-end">
+                        <div class="col-6" style="overflow:hidden; min-width:0;">
+                            <label class="fw-bold text-success form-label mb-1">Contratista:</label>
+                            <select id="filtroContratista" class="form-select form-select-sm" multiple></select>
+                        </div>
+                        <div class="col-6" style="overflow:hidden; min-width:0;">
+                            <label class="fw-bold text-success form-label mb-1">Contrato:</label>
+                            <select id="filtroContrato" class="form-select form-select-sm" multiple></select>
+                        </div>
+                        <div class="col-6" style="overflow:hidden; min-width:0;">
+                            <label class="fw-bold text-success form-label mb-1">Frente:</label>
+                            <select id="filtroFrente" class="form-select form-select-sm" multiple></select>
+                        </div>
+                        <div class="col-6" style="overflow:hidden; min-width:0;">
+                            <label class="fw-bold text-success form-label mb-1">Interferencia/Estado:</label>
+                            <select id="filtroInterferencia" class="form-select form-select-sm" multiple></select>
+                        </div>
+                        <div class="col-6">
+                            <label class="fw-bold text-secondary form-label mb-1">F. Inicio:</label>
+                            <input type="date" id="filtroInicio" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6">
+                            <label class="fw-bold text-secondary form-label mb-1">F. Fin:</label>
+                            <input type="date" id="filtroFin" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-12">
+                            <button id="btnLimpiar" class="btn epm-btn btn-sm w-100">🧹 Limpiar Filtros</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: mapa vertical -->
+        <div class="col-12 col-lg-8">
+            <div class="map-wrapper h-100">
+                <iframe id="mapaIframe" src="about:blank" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="table-wrapper">
+        <div class="table-responsive">
+            <table id="tablaDatos" class="table table-sm table-striped table-hover align-middle" style="width:100%; font-size: 0.9rem;">
+                <thead class="table-dark text-white">
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Contrato</th>
+                        <th>Contratista</th>
+                        <th>Municipio</th>
+                        <th>Frente</th>
+                        <th>Dirección</th>
+                        <th>Estado/Cierre</th>
+                        <th>Horario</th>
+                        <th>Inicio</th>
+                        <th>Fin</th>
+                        <th>Días</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="pdfModal" class="pdf-modal-backdrop">
+    <div class="pdf-controls d-flex gap-2 align-items-center">
+        <div class="form-check form-switch bg-white px-3 py-2 rounded shadow d-flex align-items-center gap-2" style="margin:0;">
+            <input class="form-check-input" type="checkbox" id="chkAgruparCriticas" checked style="cursor:pointer;">
+            <label class="form-check-label fw-bold" for="chkAgruparCriticas" style="font-size:0.8rem; cursor:pointer;">
+                Agrupar críticas (mismo Contratista + Contrato + Período)
+            </label>
+        </div>
+        <input type="file" id="inputMapaImg" accept="image/*" style="display:none;" onchange="cargarImagenMapa(event)">
+        <button id="btnAdjuntarMapa" onclick="document.getElementById('inputMapaImg').click()" class="btn btn-light fw-bold shadow">📎 Adjuntar imagen del mapa</button>
+        <button onclick="closePdfPreview()" class="btn btn-secondary fw-bold shadow">✖ Cancelar</button>
+        <button id="btnConfirmPdf" onclick="downloadPDF()" class="btn epm-btn fw-bold shadow">📥 Confirmar Descarga PDF</button>
+    </div>
+
+    <div id="pdf-content" class="a4-preview">
+        <div class="pdf-header-banner">
+            <div>
+                <h1 class="pdf-header-title">INFORME TÉCNICO DE GESTIÓN PMT</h1>
+                <div style="font-size:12px; font-weight:bold; letter-spacing:0.3px; opacity:0.95; margin-top:2px;">ÁREA CENTRO DE GESTIÓN SERVICIOS TÉCNICOS</div>
+                <div class="pdf-header-date" id="pdf-date-gen"></div>
+            </div>
+            <div style="background:white; padding:5px; border-radius:4px;">
+                <img src="logo_epm.jpg" onerror="this.src='logo_epm.png'" style="height: 35px;" alt="EPM">
+            </div>
+        </div>
+
+        <div class="pdf-body">
+            <div class="pdf-grid">
+                <div class="pdf-kpi-container">
+                    <div class="pdf-kpi-box">
+                        <div class="pdf-kpi-title">Registros Activos</div>
+                        <p class="pdf-kpi-value" id="pdf-total-reg">0</p>
+                    </div>
+                    <div class="pdf-kpi-box" style="border-left-color:#d56b00;">
+                        <div class="pdf-kpi-title">Interferencias Críticas</div>
+                        <p class="pdf-kpi-value" id="pdf-total-crit" style="color:#d56b00;">0</p>
+                    </div>
+                    <div class="pdf-kpi-box" style="border-left-color:#0d6efd;">
+                        <div class="pdf-kpi-title">Contratos Involucrados</div>
+                        <p class="pdf-kpi-value" id="pdf-total-cont">0</p>
+                    </div>
+                    <div class="pdf-kpi-box" style="border-left-color:#6c757d;">
+                        <div class="pdf-kpi-title">Rango de Fechas</div>
+                        <p class="pdf-kpi-value" id="pdf-date-range" style="font-size:14px;">N/A</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pdf-executive-summary" style="font-size:11px; text-align:justify; margin-bottom:20px; line-height:1.5; background:#f8f9fa; padding:10px; border-radius:4px; border:1px solid #e9ecef;"></div>
+
+            <div id="pdf-mapa-section" style="display:none; margin-bottom:20px; page-break-inside:avoid;">
+                <div class="pdf-section-title">🗺️ Vista del Mapa (según filtros aplicados)</div>
+                <div style="text-align:center;">
+                    <img id="pdf-mapa-img" src="" alt="Mapa" style="max-width:100%; max-height:120mm; border:1px solid #dee2e6; border-radius:4px;">
+                </div>
+            </div>
+
+            <div id="pdf-criticos-section" style="display:none;">
+                <div class="pdf-section-title" style="color:#d56b00; border-bottom-color:#e8c9a8;">⚠️ Detalle de Interferencias Críticas</div>
+                <div id="pdf-criticos-container" style="margin-bottom:20px;"></div>
+            </div>
+
+            <div class="pdf-section-title">📊 Estado de Avance en Tiempo</div>
+            <div id="pdf-progress-container" style="margin-bottom:20px; column-count:2; column-gap:20px;"></div>
+
+            <div class="pdf-section-title">
+                📋 Detalle Completo de Registros
+                <span style="font-size:9px; color:#6c757d; font-weight:normal;">(solo trazados normales; las interferencias se detallan en su sección)</span>
+            </div>
+            <table class="table pdf-table">
+                <thead>
+                    <tr>
+                        <th style="width:10%">Categoría</th>
+                        <th style="width:11%">Contrato</th>
+                        <th style="width:12%">Contratista</th>
+                        <th style="width:12%">Frente</th>
+                        <th style="width:10%">Estado/Cierre</th>
+                        <th style="width:10%">Horario</th>
+                        <th style="width:13%">Fechas</th>
+                        <th style="width:11%">Vigencia 🚦</th>
+                    </tr>
+                </thead>
+                <tbody id="pdf-table-body"></tbody>
+            </table>
+
+            <div style="text-align:center; font-size:9px; color:#868e96; margin-top:30px; border-top:1px solid #dee2e6; padding-top:10px;">
+                Documento generado automáticamente por el Visor Inteligente de Gestión PMT – Grupo EPM. Documento de uso técnico.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+/* =========================================================================
+   VARIABLES GLOBALES
+   ========================================================================= */
+var mapaCargado         = false;
+var reproduccionActiva  = false;
+var reproduccionPausada = false;
+var fechaReproduccion   = null;
+var reproductorInterval = null;
+var imagenMapaPDF       = null;   // imagen del mapa adjuntada manualmente para el informe
+
+/* Recibe la imagen que el usuario adjunta (recorte del mapa) y la guarda para el PDF */
+function cargarImagenMapa(evento) {
+    var archivo = evento.target.files && evento.target.files[0];
+    if (!archivo) return;
+    var lector = new FileReader();
+    lector.onload = function(e) {
+        imagenMapaPDF = e.target.result;             // imagen en formato base64
+        var btn = document.getElementById('btnAdjuntarMapa');
+        if (btn) { btn.innerHTML = '✅ Imagen adjunta (cambiar)'; btn.classList.remove('btn-light'); btn.classList.add('epm-btn'); }
+        aplicarImagenMapaEnInforme();                // la muestra en la vista previa
+    };
+    lector.readAsDataURL(archivo);
+}
+
+/* Muestra u oculta la sección de la imagen del mapa dentro del informe */
+function aplicarImagenMapaEnInforme() {
+    var sec = document.getElementById('pdf-mapa-section');
+    var img = document.getElementById('pdf-mapa-img');
+    if (!sec || !img) return;
+    if (imagenMapaPDF) { img.src = imagenMapaPDF; sec.style.display = 'block'; }
+    else { img.src = ''; sec.style.display = 'none'; }
+}
+
+/* =====================================================
+   parseCSVRow (BLOQUE INTACTO ANTI-CORS)
+   ===================================================== */
+function parseCSVRow(str) {
+    let arr = [], quote = false, start = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '"') quote = !quote;
+        if (str[i] === ',' && !quote) {
+            arr.push(str.substring(start, i).replace(/^"|"$/g, '').trim());
+            start = i + 1;
+        }
+    }
+    arr.push(str.substring(start).replace(/^"|"$/g, '').trim());
+    return arr;
+}
+
+function cleanDate(dateStr) {
+    if (!dateStr || dateStr === 'N/A') return null;
+    let p = dateStr.split('-');
+    return new Date(p[0], p[1] - 1, p[2]);
+}
+
+/* =========================================================================
+   SEMÁFORO DE VIGENCIA — días hábiles L-V
+   ========================================================================= */
+function calcularSemaforo(fechaFinStr) {
+    var hoy = new Date(); hoy.setHours(0,0,0,0);
+    var fin = cleanDate(fechaFinStr);
+    if (!fin) return { diasHabiles: null, color: '#6c757d', label: 'Sin fecha', emoji: '⚫' };
+    fin.setHours(0,0,0,0);
+    if (fin < hoy) return { diasHabiles: 0, color: '#dc3545', label: 'Vencido', emoji: '🔴' };
+    var cuenta = 0, cursor = new Date(hoy);
+    cursor.setDate(cursor.getDate() + 1);
+    while (cursor <= fin) {
+        var d = cursor.getDay();
+        if (d !== 0 && d !== 6) cuenta++;
+        cursor.setDate(cursor.getDate() + 1);
+    }
+    if (cuenta > 20)  return { diasHabiles: cuenta, color: '#009300', label: cuenta + ' días hábiles', emoji: '🟢' };
+    if (cuenta >= 15) return { diasHabiles: cuenta, color: '#e6a800', label: cuenta + ' días hábiles', emoji: '🟡' };
+    return { diasHabiles: cuenta, color: '#dc3545', label: cuenta + ' días hábiles', emoji: '🔴' };
+}
+
+/* =========================================================================
+   syncMap — mantiene el mapa vivo en el dashboard
+   ========================================================================= */
+function syncMap() {
+    if (!mapaCargado || !window.$.fn.dataTable || !$.fn.dataTable.isDataTable('#tablaDatos')) return;
+    var table = $('#tablaDatos').DataTable();
+    var frentesActivos = [];
+    table.rows({ filter: 'applied' }).data().each(function(row) { frentesActivos.push(row[4]); });
+
+    var iframeWin = document.getElementById('mapaIframe').contentWindow;
+    if (iframeWin.map) {
+        iframeWin.map.eachLayer(function(layer) {
+            if (layer.feature && layer.feature.properties) {
+                var props = layer.feature.properties, nombreMapa = '';
+                for (let k in props) {
+                    if (['frente','frentes','name'].includes(k.toLowerCase())) { nombreMapa = String(props[k]); break; }
+                }
+                let vis = nombreMapa
+                    ? frentesActivos.some(f => f.includes(nombreMapa) || nombreMapa.includes(f))
+                    : false;
+                if (layer.getElement) {
+                    let el = layer.getElement();
+                    if (el) el.style.display = vis ? '' : 'none';
+                }
+            }
+        });
+    }
+}
+
+/* =========================================================================
+   REPRODUCTOR — funciones globales
+   ========================================================================= */
+function iniciarReproductor(table) {
+    var s = $('#repInicio').val(), e = $('#repFin').val();
+    if (!s || !e) { alert('⚠️ Selecciona Fecha de Inicio y Fin del recorrido.'); return; }
+    reproduccionActiva = true; reproduccionPausada = false;
+    fechaReproduccion = cleanDate(s);
+    $('#btnPlay').text('⏸ Pausar').removeClass('epm-btn-play').addClass('btn-danger');
+    iniciarCiclo(table);
+}
+function reanudarReproductor(table) {
+    reproduccionActiva = true; reproduccionPausada = false;
+    $('#btnPlay').text('⏸ Pausar').removeClass('epm-btn-play btn-warning').addClass('btn-danger');
+    iniciarCiclo(table);
+}
+function pausarReproductor() {
+    reproduccionActiva = false; reproduccionPausada = true;
+    clearInterval(reproductorInterval);
+    $('#btnPlay').text('▶ Reanudar').removeClass('btn-danger').addClass('btn-warning');
+    if (fechaReproduccion) {
+        var vd = fechaReproduccion.getFullYear() + '-' + String(fechaReproduccion.getMonth()+1).padStart(2,'0') + '-' + String(fechaReproduccion.getDate()).padStart(2,'0');
+        $('#fechaActualVisual').text('⏸ ' + vd);
+    }
+}
+function detenerReproductor(resetTotal) {
+    reproduccionActiva = false; reproduccionPausada = false;
+    clearInterval(reproductorInterval);
+    if (resetTotal) fechaReproduccion = null;
+    $('#btnPlay').text('▶ Iniciar Recorrido').removeClass('btn-danger btn-warning').addClass('epm-btn-play');
+    if (!$('#fechaActualVisual').text().includes('Fin')) $('#fechaActualVisual').text('---');
+}
+function iniciarCiclo(table) {
+    var fin  = cleanDate($('#repFin').val());
+    var paso = parseInt($('#velocidadPaso').val());
+    var ms   = parseInt($('#velocidadReproduccion').val());
+    reproductorInterval = setInterval(function() {
+        if (fechaReproduccion > fin) { detenerReproductor(false); $('#fechaActualVisual').text('✅ Fin'); return; }
+        var vd = fechaReproduccion.getFullYear() + '-' + String(fechaReproduccion.getMonth()+1).padStart(2,'0') + '-' + String(fechaReproduccion.getDate()).padStart(2,'0');
+        $('#fechaActualVisual').text(vd);
+        table.draw();
+        fechaReproduccion.setDate(fechaReproduccion.getDate() + paso);
+    }, ms);
+}
+
+/* =========================================================================
+   DOCUMENT READY — punto de entrada único
+   ========================================================================= */
+$(document).ready(function() {
+    function esperarDataTables(cb, intentos) {
+        intentos = intentos || 0;
+        if (window.$.fn && window.$.fn.dataTable && window.$.fn.dataTable.ext) {
+            cb();
+        } else if (intentos < 100) {
+            setTimeout(function(){ esperarDataTables(cb, intentos + 1); }, 100);
+        } else {
+            console.error('[PMT] DataTables no cargó después de 10s.');
+        }
+    }
+
+    esperarDataTables(function() {
+        $('#mapaIframe').on('load', function() {
+            mapaCargado = true;
+            if ($.fn.dataTable.isDataTable('#tablaDatos')) syncMap();
+        });
+
+        /* =========================================================
+           SELECTOR INTELIGENTE DEL MAPA
+           Carga el mapa sin importar cómo lo hayas subido:
+             1) Si 'index.html' está al lado de la Plataforma -> lo usa.
+             2) Si arrastraste la carpeta completa de qgis2web
+                (nombre con fecha, que cambia cada vez), le pregunta
+                a GitHub cuál es la MÁS RECIENTE y usa su index.html.
+             3) Si aún existe el antiguo 'mapa_qgis.html' -> lo usa.
+           ========================================================= */
+        (function seleccionarMapa() {
+            var iframe = document.getElementById('mapaIframe');
+            function cargar(url) { iframe.src = url; }
+
+            // Verifica si un archivo existe (sin descargarlo completo)
+            function existe(url) {
+                return fetch(url + '?nocache=' + new Date().getTime(), { method: 'HEAD' })
+                    .then(function(r) { return r.ok ? url : null; })
+                    .catch(function() { return null; });
+            }
+
+            // Pregunta a GitHub por la carpeta qgis2web_* más reciente
+            function buscarCarpetaGitHub() {
+                try {
+                    var host = window.location.hostname;             // ej: ljmarinza.github.io
+                    if (host.indexOf('github.io') === -1) return Promise.resolve(null);
+                    var owner = host.split('.')[0];                  // ej: ljmarinza
+                    var repo  = window.location.pathname.split('/').filter(Boolean)[0]; // ej: Interferencias_PMT
+                    if (!owner || !repo) return Promise.resolve(null);
+                    var api = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/';
+                    return fetch(api)
+                        .then(function(r) { return r.ok ? r.json() : null; })
+                        .then(function(lista) {
+                            if (!Array.isArray(lista)) return null;
+                            var carpetas = lista.filter(function(x) {
+                                return x.type === 'dir' && /^qgis2web/i.test(x.name);
+                            });
+                            if (!carpetas.length) return null;
+                            // Ordena de más reciente a más antigua (el nombre lleva la fecha)
+                            carpetas.sort(function(a, b) { return a.name < b.name ? 1 : -1; });
+                            return carpetas[0].name + '/index.html';
+                        })
+                        .catch(function() { return null; });
+                } catch (e) { return Promise.resolve(null); }
+            }
+
+            // Orden de intentos: index.html suelto -> carpeta qgis2web -> mapa_qgis.html
+            existe('index.html').then(function(u1) {
+                if (u1) return cargar(u1);
+                return buscarCarpetaGitHub().then(function(u2) {
+                    if (u2) return cargar(u2);
+                    return existe('mapa_qgis.html').then(function(u3) {
+                        if (u3) cargar(u3);
+                        else console.error('[PMT] No se encontró el mapa (ni index.html, ni carpeta qgis2web, ni mapa_qgis.html).');
+                    });
+                });
+            });
+        })();
+
+        $.fn.dataTable.ext.search.push(function(settings, data) {
+            var pC  = ($('#filtroContratista').val()  || []).filter(function(v){ return v && v !== ''; });
+            var pCt = ($('#filtroContrato').val()      || []).filter(function(v){ return v && v !== ''; });
+            var pF  = ($('#filtroFrente').val()        || []).filter(function(v){ return v && v !== ''; });
+            var pI  = ($('#filtroInterferencia').val() || []).filter(function(v){ return v && v !== ''; });
+
+            if (pC.length  && !pC.some(function(v){  return data[2] && data[2].includes(v); })) return false;
+            if (pCt.length && !pCt.some(function(v){ return data[1] && data[1].includes(v); })) return false;
+            if (pF.length  && !pF.some(function(v){  return data[4] && data[4].includes(v); })) return false;
+            if (pI.length  && !pI.some(function(v){  return data[6] === v || data[0] === v; })) return false;
+
+            var rowStart = cleanDate(data[8]), rowEnd = cleanDate(data[9]);
+            if (reproduccionActiva && fechaReproduccion) {
+                if (rowStart && rowEnd && fechaReproduccion >= rowStart && fechaReproduccion <= rowEnd) return true;
+                return false;
+            }
+            /* FILTRO DE FECHAS POR CRUCE DE PERÍODO
+               Una fila pasa si su período (inicio→fin) se cruza con la ventana
+               que elige el usuario, aunque haya empezado antes o termine después.
+               Es decir: sigue activa en algún momento dentro del rango.
+               Regla de cruce: inicioFila <= finVentana  Y  finFila >= inicioVentana.
+               Filas sin fechas válidas quedan ocultas mientras haya filtro. */
+            var fInicio = cleanDate($('#filtroInicio').val()), fFin = cleanDate($('#filtroFin').val());
+            if (fInicio || fFin) {
+                if (!rowStart || !rowEnd) return false;
+                if (fFin && rowStart > fFin) return false;      // empieza después de la ventana
+                if (fInicio && rowEnd < fInicio) return false;  // termina antes de la ventana
+            }
+            return true;
+        });
+
+        var s2Cfg = {
+            theme: 'bootstrap-5', placeholder: 'Todos', allowClear: true,
+            closeOnSelect: false, dropdownParent: $('body'),
+            language: { noResults: function(){ return 'Sin resultados'; } }
+        };
+        $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia').select2(s2Cfg);
+
+        /* LECTURA CSV - INTACTA */
+        fetch('reporte_dinamico.csv?nocache=' + new Date().getTime())
+        .then(function(r) { if (!r.ok) throw new Error('CORS'); return r.text(); })
+        .then(function(data) {
+            var filas = data.split('\n').slice(1);
+            var html = '';
+            filas.forEach(function(fila) {
+                if (fila.trim() === '') return;
+                var cols = parseCSVRow(fila);
+                if (cols.length >= 8) {
+                    while (cols.length < 11) cols.push('N/A');
+                    html += '<tr>' + cols.map(function(c){ return '<td>' + (c || 'N/A') + '</td>'; }).join('') + '</tr>';
+                }
+            });
+            $('#cuerpoTabla').html(html);
+
+            var table = $('#tablaDatos').DataTable({
+                language: { url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json' },
+                pageLength: 5, lengthMenu: [5, 10, 25, 50, 'Todos'],
+                order: [[0, 'desc']], columnDefs: [{ targets: 3, visible: false }],
+                dom: "<'row'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-8 text-end'B>>" +
+                     "<'row'<'col-sm-12'tr>>" +
+                     "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                buttons: [{ extend: 'excelHtml5', text: '📥 Exportar a Excel/CSV', className: 'btn btn-sm btn-success fw-bold' }]
+            });
+
+            /* =====================================================================
+               FACETA CRUZADA JERÁRQUICA (Puntos 1, 2, 3 y 4)
+               ---------------------------------------------------------------------
+               Cada lista se llena recorriendo TODOS los registros del CSV (no solo
+               los ya filtrados) y aplicando únicamente los filtros de las OTRAS
+               listas, nunca el suyo propio. Resultado:
+                 - Una lista jamás se limita a sí misma: puedes marcar varios
+                   elementos aunque no tengan relación entre ellos (Puntos 1-3)
+                   y sin tener que salir y volver a entrar (Punto 4).
+                 - Se mantiene la jerarquía en ambos sentidos: si eliges
+                   Contratistas, Contrato y Frente se acotan a ellos; si eliges
+                   primero Contratos, Contratista y Frente se acotan a esos.
+                 - Las fechas NO intervienen aquí: son independientes.
+               ===================================================================== */
+
+            // Divide un valor de celda en sus partes ("A vs B" o "A / B")
+            function partes(valor, separador) {
+                if (!valor || valor === 'N/A') return [];
+                return valor.split(separador).map(function(s){ return s.trim(); }).filter(Boolean);
+            }
+
+            // ¿La fila coincide con una selección? (vacío = sin filtro = pasa)
+            function coincide(seleccion, valoresFila) {
+                if (!seleccion || !seleccion.length) return true;
+                return seleccion.some(function(sel){ return valoresFila.indexOf(sel) !== -1; });
+            }
+
+            // El parámetro 'origen' es el id de la lista que el usuario acaba de
+            // cambiar. Esa lista NO se reconstruye (se deja intacta para que pueda
+            // seguir marcando opciones sin que se le trabe). Solo se refrescan las otras.
+            function updateDropdowns(origen) {
+                var selC  = ($('#filtroContratista').val()  || []).filter(Boolean);
+                var selCt = ($('#filtroContrato').val()     || []).filter(Boolean);
+                var selF  = ($('#filtroFrente').val()       || []).filter(Boolean);
+                var selI  = ($('#filtroInterferencia').val() || []).filter(Boolean);
+
+                var sC = new Set(), sCt = new Set(), sF = new Set(), sI = new Set();
+
+                table.rows().data().each(function(row) {
+                    var vC  = partes(row[2], ' vs ');   // contratistas de la fila
+                    var vCt = partes(row[1], ' vs ');   // contratos de la fila
+                    var vF  = partes(row[4], ' / ');    // frentes de la fila
+                    var vI  = (row[6] && row[6] !== 'N/A') ? [row[6].trim()] : [];
+                    var vIcat = (row[0] && row[0] !== 'N/A') ? [row[0].trim()] : [];
+
+                    // Para Interferencia/Estado la coincidencia mira tanto la columna
+                    // Estado/Cierre (row[6]) como la Categoría (row[0]), igual que el filtro real.
+                    var matchI = !selI.length || selI.some(function(sel){
+                        return vI.indexOf(sel) !== -1 || vIcat.indexOf(sel) !== -1;
+                    });
+
+                    // CONTRATISTA: respeta Contrato + Frente + Interferencia (no a sí mismo)
+                    if (coincide(selCt, vCt) && coincide(selF, vF) && matchI) {
+                        vC.forEach(function(v){ sC.add(v); });
+                    }
+                    // CONTRATO: respeta Contratista + Frente + Interferencia
+                    if (coincide(selC, vC) && coincide(selF, vF) && matchI) {
+                        vCt.forEach(function(v){ sCt.add(v); });
+                    }
+                    // FRENTE: respeta Contratista + Contrato + Interferencia
+                    if (coincide(selC, vC) && coincide(selCt, vCt) && matchI) {
+                        vF.forEach(function(v){ sF.add(v); });
+                    }
+                    // INTERFERENCIA/ESTADO: respeta Contratista + Contrato + Frente
+                    if (coincide(selC, vC) && coincide(selCt, vCt) && coincide(selF, vF)) {
+                        vI.forEach(function(v){ sI.add(v); });
+                    }
+                });
+
+                // Nos aseguramos de conservar lo ya seleccionado aunque el conjunto
+                // recalculado no lo incluyera (evita que se "pierda" una selección).
+                selC.forEach(function(v){ sC.add(v); });
+                selCt.forEach(function(v){ sCt.add(v); });
+                selF.forEach(function(v){ sF.add(v); });
+                selI.forEach(function(v){ sI.add(v); });
+
+                function pop(id, set, prev) {
+                    // No tocar la lista que el usuario está usando en este momento
+                    if (origen && ('#' + origen) === id) return;
+                    var $s = $(id); $s.empty();
+                    Array.from(set).sort().forEach(function(val){
+                        var isSel = prev.indexOf(val) !== -1;
+                        $s.append(new Option(val, val, isSel, isSel));
+                    });
+                    $s.trigger('change.select2');
+                }
+                pop('#filtroContratista',   sC,  selC);
+                pop('#filtroContrato',      sCt, selCt);
+                pop('#filtroFrente',        sF,  selF);
+                pop('#filtroInterferencia', sI,  selI);
+            }
+
+            updateDropdowns();
+
+            $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia, #filtroInicio, #filtroFin')
+                .on('change', function() {
+                    table.draw();
+                    updateDropdowns(this.id);   // pasa la lista que cambió para no reconstruirla
+                });
+
+            $('#btnLimpiar').click(function() {
+                $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia').val(null).trigger('change');
+                $('#filtroInicio, #filtroFin, #repInicio, #repFin').val('');
+                detenerReproductor(true);
+                table.draw(); updateDropdowns();
+            });
+
+            table.on('draw.dt', syncMap);
+
+            $('#btnPlay').click(function() {
+                if (reproduccionActiva)       pausarReproductor();
+                else if (reproduccionPausada) reanudarReproductor(table);
+                else                          iniciarReproductor(table);
+            });
+
+            $('#velocidadReproduccion').on('change', function() {
+                if (reproduccionActiva) { clearInterval(reproductorInterval); iniciarCiclo(table); }
+            });
+
+            if (mapaCargado) syncMap();
+        })
+        .catch(function() { document.getElementById('error-alerta').classList.remove('d-none'); });
+    });
+});
+
+
+/* =========================================================================
+   GENERADOR DE PDF Y MODAL (SIN MAPA)
+   ========================================================================= */
+function openPdfPreview() {
+    if (!window.$ || !$.fn.dataTable || !$.fn.dataTable.isDataTable('#tablaDatos')) {
+        alert('La tabla aún está cargando. Espera unos segundos e intenta de nuevo.');
+        return;
+    }
+
+    var table = $('#tablaDatos').DataTable();
+    var filas = table.rows({ filter: 'applied' });
+    if (filas.count() === 0) {
+        alert('No hay datos en la tabla. Ajusta los filtros.');
+        return;
+    }
+
+    // Color naranja de marca EPM (reemplaza el naranja neón #ff7800)
+    var NARANJA_EPM = '#d56b00';
+
+    // ¿Está activada la agrupación de críticas? (Punto 1c)
+    var agrupar = document.getElementById('chkAgruparCriticas').checked;
+
+    // Ventana de fechas activa en los filtros (Punto 1b: recorte del período)
+    var fFiltroIni = cleanDate(document.getElementById('filtroInicio').value);
+    var fFiltroFin = cleanDate(document.getElementById('filtroFin').value);
+
+    // Formatea una fecha a texto YYYY-MM-DD
+    function fmtFecha(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+
+    /* Devuelve el período a mostrar y una nota aclaratoria con la fecha real
+       SOLO cuando difiere de la ventana:
+         - Sin filtro de fechas  -> período real completo, sin nota.
+         - Con filtro            -> período recortado a la ventana; si el trazado
+           empezó antes y/o termina después, se añade una nota pequeña con la
+           vigencia real. */
+    function calcularPeriodo(iniStr, finStr) {
+        if (!iniStr || iniStr === 'N/A') return { texto: 'Sin fechas definidas', nota: '' };
+        var ini = cleanDate(iniStr), fin = cleanDate(finStr);
+        var iniReal = ini, finReal = fin;
+        var recortoIni = false, recortoFin = false;
+
+        if (fFiltroIni && ini && ini < fFiltroIni) { ini = fFiltroIni; recortoIni = true; }
+        if (fFiltroFin && fin && fin > fFiltroFin) { fin = fFiltroFin; recortoFin = true; }
+
+        var texto = (ini ? fmtFecha(ini) : iniStr) + ' → ' + (fin ? fmtFecha(fin) : finStr);
+
+        var nota = '';
+        if (recortoIni || recortoFin) {
+            var real = (iniReal ? fmtFecha(iniReal) : iniStr) + ' → ' + (finReal ? fmtFecha(finReal) : finStr);
+            var marca = recortoIni && recortoFin ? '↔' : (recortoIni ? '←' : '→');
+            nota = '<div class="critico-nota-real">' + marca + ' Vigencia real del trazado: ' + real + '</div>';
+        }
+        return { texto: texto, nota: nota };
+    }
+
+    var totalReg = filas.count(), criticos = 0;
+    var contratosSet = new Set();
+    var minDate = null, maxDate = null;
+    var pdfRows = '', progressHTML = '';
+    var hoy = new Date();
+
+    // Recolectamos las críticas aparte, para poder agruparlas después (Punto 1c)
+    var listaCriticas = [];
+
+    filas.data().each(function(row) {
+        var esCritico = (row[6] || '').toUpperCase().includes('CRÍTIC') || (row[6] || '').toUpperCase().includes('CRITIC');
+        if (esCritico) criticos++;
+        if (row[1]) row[1].split(' vs ').forEach(function(c){ contratosSet.add(c.trim()); });
+
+        var dIni = row[8], dFin = row[9];
+        var semaforo = calcularSemaforo(dFin);
+
+        if (dIni && dIni !== 'N/A' && dFin && dFin !== 'N/A') {
+            var start = cleanDate(dIni), end = cleanDate(dFin);
+            if (!minDate || start < minDate) minDate = start;
+            if (!maxDate || end > maxDate)   maxDate = end;
+
+            var total = parseInt(row[10]) || 1, pct = 0;
+            if (hoy >= end) pct = 100;
+            else if (hoy > start) pct = Math.min(100, Math.round(Math.ceil(Math.abs(hoy - start) / 86400000) / total * 100));
+
+            var barColor = esCritico ? NARANJA_EPM : semaforo.color;
+            progressHTML += '<div class="pdf-progress-wrap">' +
+                '<div class="pdf-progress-header">' +
+                '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:78%;">' + row[4] + '</span>' +
+                '<span style="color:' + barColor + ';">' + semaforo.emoji + ' ' + pct + '%</span>' +
+                '</div>' +
+                '<div class="pdf-progress-bar"><div class="pdf-progress-fill" style="width:' + pct + '%;background:' + barColor + ';"></div></div>' +
+                '<div style="font-size:8px;color:' + barColor + ';margin-top:1px;">' + semaforo.label + '</div>' +
+                '</div>';
+        }
+
+        if (esCritico) {
+            listaCriticas.push({
+                contratistas: (row[2] || 'N/A').split(' vs ').map(function(s){ return s.trim(); }).join(' · '),
+                contratos:    (row[1] || 'N/A').split(' vs ').map(function(s){ return s.trim(); }).join(' · '),
+                frentes:      (row[4] || 'N/A').split(' / ').map(function(s){ return s.trim(); }).join(' · '),
+                dIni: dIni, dFin: dFin, semaforo: semaforo
+            });
+        }
+
+        /* PUNTO 2 del PDF: el "Detalle Completo de Registros" ahora excluye
+           TANTO Cercanía como Interferencias. Solo quedan trazados normales. */
+        var cat = (row[0] || '').trim().toUpperCase();
+        var esNormal = !cat.includes('CERCAN') && !cat.includes('INTERFEREN') && !esCritico;
+        if (esNormal) {
+            var colorF = semaforo.color;
+            var per = calcularPeriodo(dIni, dFin);
+            var celdaFechas = (dIni && dIni!=='N/A') ? per.texto + per.nota : 'N/A';
+            pdfRows += '<tr>' +
+                '<td>' + (row[0] || 'N/A') + '</td>' +
+                '<td>' + (row[1] || 'N/A') + '</td>' +
+                '<td>' + (row[2] || 'N/A') + '</td>' +
+                '<td>' + (row[4] || 'N/A') + '</td>' +
+                '<td>' + (row[6] || 'N/A') + '</td>' +
+                '<td>' + (row[7] || 'N/A') + '</td>' +
+                '<td>' + celdaFechas + '</td>' +
+                '<td style="color:' + colorF + ';font-weight:bold;text-align:center;">' + semaforo.emoji + ' ' + semaforo.label + '</td>' +
+                '</tr>';
+        }
+    });
+
+    /* =====================================================================
+       CONSTRUCCIÓN DE LAS TARJETAS CRÍTICAS
+       - Orden: Contratistas -> Contratos -> Frentes -> Período (Punto 1a)
+       - Período recortado a la ventana de fechas del filtro (Punto 1b)
+       - Agrupación por mismo Contratista + Contrato + mismas fechas exactas,
+         uniendo los distintos Frentes en una sola tarjeta (Punto 1c)
+       ===================================================================== */
+    function tarjetaCritica(contratistas, contratos, frentes, dIni, dFin, semaforo, notaFrentes) {
+        var per = calcularPeriodo(dIni, dFin);
+        return '<div class="critico-card">' +
+            '<div class="critico-card-header">' +
+            '<span class="critico-card-badge">⚠ Interferencia Crítica</span>' +
+            '<span class="critico-card-title">' + contratistas + '</span>' +
+            '</div>' +
+            '<div class="critico-card-grid">' +
+            '<div style="grid-column:1/-1;"><div class="critico-field-label">Contratistas involucrados</div><div class="critico-field-value">' + contratistas + '</div></div>' +
+            '<div style="grid-column:1/-1;"><div class="critico-field-label">Contratos involucrados</div><div class="critico-field-value">' + contratos + '</div></div>' +
+            '<div style="grid-column:1/-1;"><div class="critico-field-label">Frentes que se interfieren</div><div class="critico-field-value">' + frentes + (notaFrentes || '') + '</div></div>' +
+            '</div>' +
+            '<div class="critico-fechas-bar">📅 Período: <strong>' + per.texto + '</strong> &nbsp;|&nbsp; ' + semaforo.emoji + ' Vigencia: <strong>' + semaforo.label + '</strong>' + per.nota + '</div>' +
+            '</div>';
+    }
+
+    var criticosHTML = '';
+    if (agrupar) {
+        // Agrupamos por Contratistas + Contratos + fechas exactas de inicio y fin
+        var grupos = {};
+        listaCriticas.forEach(function(c) {
+            var clave = c.contratistas + '||' + c.contratos + '||' + c.dIni + '||' + c.dFin;
+            if (!grupos[clave]) grupos[clave] = { base: c, frentes: [] };
+            c.frentes.split(' · ').forEach(function(f){
+                if (grupos[clave].frentes.indexOf(f) === -1) grupos[clave].frentes.push(f);
+            });
+        });
+        Object.keys(grupos).forEach(function(clave) {
+            var g = grupos[clave], c = g.base;
+            var nota = g.frentes.length > 2
+                ? '<div class="critico-agrupada-nota">' + g.frentes.length + ' frentes agrupados en el mismo contratista, contrato y período.</div>'
+                : '';
+            criticosHTML += tarjetaCritica(c.contratistas, c.contratos, g.frentes.join(' · '), c.dIni, c.dFin, c.semaforo, nota);
+        });
+    } else {
+        listaCriticas.forEach(function(c) {
+            criticosHTML += tarjetaCritica(c.contratistas, c.contratos, c.frentes, c.dIni, c.dFin, c.semaforo, '');
+        });
+    }
+
+    if (!progressHTML) progressHTML = '<i style="font-size:10px;">No hay trazados con fechas válidas.</i>';
+    if (!pdfRows) pdfRows = '<tr><td colspan="8" style="text-align:center;font-style:italic;color:#868e96;">No hay trazados normales en la selección actual.</td></tr>';
+
+    var secCrit = document.getElementById('pdf-criticos-section');
+    secCrit.style.display = criticos > 0 ? 'block' : 'none';
+    document.getElementById('pdf-criticos-container').innerHTML = criticosHTML;
+
+    var dateR = minDate && maxDate
+        ? minDate.toLocaleDateString('es-CO') + ' al ' + maxDate.toLocaleDateString('es-CO')
+        : 'Sin fechas definidas';
+
+    document.getElementById('pdf-date-gen').innerText   = 'Generado el: ' + new Date().toLocaleString('es-CO');
+    document.getElementById('pdf-total-reg').innerText  = totalReg;
+    document.getElementById('pdf-total-crit').innerText = criticos;
+    document.getElementById('pdf-total-cont').innerText = contratosSet.size;
+    document.getElementById('pdf-date-range').innerText = dateR;
+
+    var alertHTML = criticos > 0
+        ? '<br><br><span style="color:' + NARANJA_EPM + ';font-weight:bold;">⚠️ ALERTA DE GESTIÓN:</span> Se detectaron <strong>' + criticos + ' interferencias críticas</strong> por solapamiento de fechas e infraestructura. Ver detalle en sección específica.'
+        : '';
+
+    document.getElementById('pdf-executive-summary').innerHTML =
+        'El presente documento resume la gestión e interacción de Planes de Manejo de Tránsito (PMT) en el Visor Institucional. Se monitorean <strong>' + contratosSet.size + ' contratos</strong> y <strong>' + totalReg + ' frentes/interferencias</strong> operativas.' + alertHTML;
+
+    document.getElementById('pdf-progress-container').innerHTML = progressHTML;
+    document.getElementById('pdf-table-body').innerHTML         = pdfRows;
+
+    aplicarImagenMapaEnInforme();   // muestra la imagen del mapa si el usuario la adjuntó
+
+    document.getElementById('pdfModal').style.display = 'flex';
+
+    // Al cambiar el interruptor de agrupación, se regenera la vista previa al instante
+    var chk = document.getElementById('chkAgruparCriticas');
+    chk.onchange = function() { openPdfPreview(); };
+}
+
+function closePdfPreview() {
+    document.getElementById('pdfModal').style.display = 'none';
+}
+
+/* =========================================================================
+   DESCARGA DEL PDF
+   ========================================================================= */
+function downloadPDF() {
+    var opt = {
+        margin:     [10, 0, 10, 0],
+        filename:   'Informe_PMT_EPM.pdf',
+        image:      { type: 'jpeg', quality: 0.98 },
+        html2canvas:{ scale: 2 },
+        jsPDF:      { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:  { mode: ['css', 'legacy'] }
+    };
+
+    html2pdf().set(opt).from(document.getElementById('pdf-content')).save()
+        .then(function(){ closePdfPreview(); });
+}
+</script>
+</body>
+</html>
