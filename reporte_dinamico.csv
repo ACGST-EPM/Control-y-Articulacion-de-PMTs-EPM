@@ -1,6 +1,6 @@
 CATEGORIA,CONTRATO,CONTRATISTA,MUNICIPIO,FRENTE,DIRECCION,ESTADO_CIERRE,HORARIO,FECHA_INICIO,FECHA_FIN,DURACION_DIAS
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-2,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,TOTAL,Diurno,2026-09-01,2026-09-14,13
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,ENTRADA Y SALIDA,Diurno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2026-08-14,2026-09-30,47
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
@@ -11,8 +11,8 @@ Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
 Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,ENTRADA Y SALIDA,Diurno,2025-02-24,2026-10-31,614
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,ENTRADA Y SALIDA,Diurno,2025-02-03,2026-08-13,556
+Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,INGRESO Y SALIDA,Diurno,2025-02-24,2026-10-31,614
+Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2025-02-03,2026-08-13,556
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-05-05,2025-08-31,118
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-09-01,2025-12-31,121
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2026-01-01,2026-10-31,303
@@ -170,7 +170,7 @@ Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 4,No de
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 5,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 6,No definido,TOTAL,Diurno,2026-06-13,2026-09-30,109
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 7,No definido,PARCIAL,Diurno,2026-07-06,2026-12-31,178
-Trazado Normal,CW323849,COLECTOR LA PICACHA Y LA PAULITA,No definido,CLPA ET3 9 8,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 8,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 9,No definido,PARCIAL,Diurno,2026-07-06,2026-12-31,178
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 10,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_1,"Calle 31B con carrera 100, ambos costados no simultaneos",PARCIAL,Nocturno,2026-08-18,2026-09-24,37
@@ -188,7 +188,7 @@ Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_12,"C
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_13,Calle 31B entre carreras 89E y 100 costado sur,PARCIAL,Nocturno,2026-08-18,2026-08-29,11
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_1,No definido,TOTAL,Diurno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_2,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_3,No definido,INGRESO Y SALIDA DE VEHICULOS Y MAQUINARIA DE OBRA,Diurno,2026-07-01,2026-09-30,91
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_3,No definido,INGRESO Y SALIDA,Diurno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_4,No definido,PARCIAL,Diurno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_5,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_6,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
