@@ -198,9 +198,9 @@ Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_9,No d
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_10,No definido,PARCIAL,Nocturno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_11,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
 Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_12,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09,carrera 52 entre el puente de la Quebrada Altavista y la carrera 52 #31-83,PARCIAL,Diurno,2026-08-18,2026-12-20,124
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-2,Carril occidental de la Autopista sur entre la carrera 54 puente Avenida Guayabal y el lazo de salida al occidente de la Autopista sur a la calle 30,PARCIAL,Nocturno,2026-08-18,2026-12-20,124
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-3,Zona verde separador entre la Autopista sur y la carrera 52 al costado sur del puente de la Quebrada Altavista,TOTAL,Nocturno,2026-08-18,2026-12-20,124
+Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09,carrera 52 entre el puente de la Quebrada Altavista y la carrera 52 #31-83,PARCIAL,Diurno,2026-08-18,2026-12-15,119
+Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-2,Carril occidental de la Autopista sur entre la carrera 54 puente Avenida Guayabal y el lazo de salida al occidente de la Autopista sur a la calle 30,PARCIAL,Nocturno,2026-08-18,2026-12-15,119
+Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-3,Zona verde separador entre la Autopista sur y la carrera 52 al costado sur del puente de la Quebrada Altavista,TOTAL,Nocturno,2026-08-18,2026-12-15,119
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-CI01-2,No definido,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-CI01-1,carrera 49 entre calles 61B Sur y 67 Sur,TOTAL,Nocturno,2026-09-28,2026-12-20,83
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC02,No definido,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
@@ -208,7 +208,7 @@ Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-3,carrera 42 #79-3
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-2,carrera 42 #79-39 Motel Ibiza,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-4,carrera 42 #79-19 Empresa Icoltrans,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-1,carrera 42 #79-51 Punto de venta Crem Helado,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-CI03,Vía de acceso Estación de servicio TEXACO No.3 en carrera 42 Autopista Sur,TOTAL,Nocturno,2026-02-05,2026-05-13,97
+Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-CI03,Vía de acceso Estación de servicio TEXACO No.3 en carrera 42 Autopista Sur,TOTAL,Nocturno,2026-09-14,2026-12-04,81
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AO18-1,calle 51 con carrera 40,PARCIAL,Diurno,2026-05-18,2026-07-19,62
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC05-1,carrera 49 #52 sur - 225,PARCIAL,Diurno,2026-05-11,2026-11-07,180
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T23-CON-001-1,carrera 43F entre calles 11 y 10,TOTAL,Nocturno,2026-06-16,2026-10-13,119
@@ -241,7 +241,7 @@ Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-3,carrera 42 entre
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-4,carrera 42 entre el carril norte de la calle 66 y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-5,carrera 42 entre el carril sur de la calle 66 y la carrera 42 # 64A-95,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
 Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-6,zona verde Carrera 42 entre calle calles 66A y 66,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC01,Carrera 49 entre calles 61B Sur y 67 Sur - Vía de servicio,TOTAL,Nocturno,2026-06-22,2026-07-21,29
+Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC01,Carrera 49 entre calles 61B Sur y 67 Sur - Vía de servicio,TOTAL,Nocturno,2026-07-01,2026-08-31,61
 Trazado Normal,CW352217,MEXICHEM,No definido,CAMPAMENTO,TRANSVERSAL 49D ENTRE VÍA DE SERVICIO Y LAZO HACIA CALLE 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 1A,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 1B,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
