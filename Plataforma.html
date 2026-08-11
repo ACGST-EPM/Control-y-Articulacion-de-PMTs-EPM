@@ -177,6 +177,10 @@
                             <label class="fw-bold text-success form-label mb-1">Interferencia/Estado:</label>
                             <select id="filtroInterferencia" class="form-select form-select-sm" multiple></select>
                         </div>
+                        <div class="col-12" style="overflow:hidden; min-width:0;">
+                            <label class="fw-bold text-success form-label mb-1">🏛️ Municipio:</label>
+                            <select id="filtroMunicipio" class="form-select form-select-sm" multiple></select>
+                        </div>
                         <div class="col-6">
                             <label class="fw-bold text-secondary form-label mb-1">F. Inicio:</label>
                             <input type="date" id="filtroInicio" class="form-control form-control-sm">
@@ -564,11 +568,13 @@ $(document).ready(function() {
             var pCt = ($('#filtroContrato').val()      || []).filter(function(v){ return v && v !== ''; });
             var pF  = ($('#filtroFrente').val()        || []).filter(function(v){ return v && v !== ''; });
             var pI  = ($('#filtroInterferencia').val() || []).filter(function(v){ return v && v !== ''; });
+            var pM  = ($('#filtroMunicipio').val()     || []).filter(function(v){ return v && v !== ''; });
 
             if (pC.length  && !pC.some(function(v){  return data[2] && data[2].includes(v); })) return false;
             if (pCt.length && !pCt.some(function(v){ return data[1] && data[1].includes(v); })) return false;
             if (pF.length  && !pF.some(function(v){  return data[4] && data[4].includes(v); })) return false;
             if (pI.length  && !pI.some(function(v){  return data[6] === v || data[0] === v; })) return false;
+            if (pM.length  && !pM.some(function(v){  return data[3] && data[3].includes(v); })) return false;
 
             var rowStart = cleanDate(data[8]), rowEnd = cleanDate(data[9]);
             if (reproduccionActiva && fechaReproduccion) {
@@ -595,7 +601,7 @@ $(document).ready(function() {
             closeOnSelect: false, dropdownParent: $('body'),
             language: { noResults: function(){ return 'Sin resultados'; } }
         };
-        $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia').select2(s2Cfg);
+        $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia, #filtroMunicipio').select2(s2Cfg);
 
         /* LECTURA CSV - INTACTA */
         fetch('reporte_dinamico.csv?nocache=' + new Date().getTime())
@@ -616,7 +622,7 @@ $(document).ready(function() {
             var table = $('#tablaDatos').DataTable({
                 language: { url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json' },
                 pageLength: 5, lengthMenu: [5, 10, 25, 50, 'Todos'],
-                order: [[0, 'desc']], columnDefs: [{ targets: 3, visible: false }],
+                order: [[0, 'desc']], columnDefs: [{ targets: 3, visible: true }],
                 dom: "<'row'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-8 text-end'B>>" +
                      "<'row'<'col-sm-12'tr>>" +
                      "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
@@ -658,8 +664,9 @@ $(document).ready(function() {
                 var selCt = ($('#filtroContrato').val()     || []).filter(Boolean);
                 var selF  = ($('#filtroFrente').val()       || []).filter(Boolean);
                 var selI  = ($('#filtroInterferencia').val() || []).filter(Boolean);
+                var selM  = ($('#filtroMunicipio').val()     || []).filter(Boolean);
 
-                var sC = new Set(), sCt = new Set(), sF = new Set(), sI = new Set();
+                var sC = new Set(), sCt = new Set(), sF = new Set(), sI = new Set(), sM = new Set();
 
                 table.rows().data().each(function(row) {
                     var vC  = partes(row[2], ' vs ');   // contratistas de la fila
@@ -667,28 +674,36 @@ $(document).ready(function() {
                     var vF  = partes(row[4], ' / ');    // frentes de la fila
                     var vI  = (row[6] && row[6] !== 'N/A') ? [row[6].trim()] : [];
                     var vIcat = (row[0] && row[0] !== 'N/A') ? [row[0].trim()] : [];
+                    // Municipio: valor real (para coincidir) y valor "opción" (excluye "Varios"/"N/A" del menú)
+                    var vMun    = (row[3] && row[3] !== 'N/A') ? [row[3].trim()] : [];
+                    var vMunOpt = (row[3] && row[3] !== 'N/A' && row[3] !== 'Varios') ? [row[3].trim()] : [];
 
                     // Para Interferencia/Estado la coincidencia mira tanto la columna
                     // Estado/Cierre (row[6]) como la Categoría (row[0]), igual que el filtro real.
                     var matchI = !selI.length || selI.some(function(sel){
                         return vI.indexOf(sel) !== -1 || vIcat.indexOf(sel) !== -1;
                     });
+                    var matchM = coincide(selM, vMun);   // ¿la fila pertenece al municipio elegido?
 
-                    // CONTRATISTA: respeta Contrato + Frente + Interferencia (no a sí mismo)
-                    if (coincide(selCt, vCt) && coincide(selF, vF) && matchI) {
+                    // CONTRATISTA: respeta Contrato + Frente + Interferencia + Municipio (no a sí mismo)
+                    if (coincide(selCt, vCt) && coincide(selF, vF) && matchI && matchM) {
                         vC.forEach(function(v){ sC.add(v); });
                     }
-                    // CONTRATO: respeta Contratista + Frente + Interferencia
-                    if (coincide(selC, vC) && coincide(selF, vF) && matchI) {
+                    // CONTRATO: respeta Contratista + Frente + Interferencia + Municipio
+                    if (coincide(selC, vC) && coincide(selF, vF) && matchI && matchM) {
                         vCt.forEach(function(v){ sCt.add(v); });
                     }
-                    // FRENTE: respeta Contratista + Contrato + Interferencia
-                    if (coincide(selC, vC) && coincide(selCt, vCt) && matchI) {
+                    // FRENTE: respeta Contratista + Contrato + Interferencia + Municipio
+                    if (coincide(selC, vC) && coincide(selCt, vCt) && matchI && matchM) {
                         vF.forEach(function(v){ sF.add(v); });
                     }
-                    // INTERFERENCIA/ESTADO: respeta Contratista + Contrato + Frente
-                    if (coincide(selC, vC) && coincide(selCt, vCt) && coincide(selF, vF)) {
+                    // INTERFERENCIA/ESTADO: respeta Contratista + Contrato + Frente + Municipio
+                    if (coincide(selC, vC) && coincide(selCt, vCt) && coincide(selF, vF) && matchM) {
                         vI.forEach(function(v){ sI.add(v); });
+                    }
+                    // MUNICIPIO: respeta Contratista + Contrato + Frente + Interferencia
+                    if (coincide(selC, vC) && coincide(selCt, vCt) && coincide(selF, vF) && matchI) {
+                        vMunOpt.forEach(function(v){ sM.add(v); });
                     }
                 });
 
@@ -698,6 +713,7 @@ $(document).ready(function() {
                 selCt.forEach(function(v){ sCt.add(v); });
                 selF.forEach(function(v){ sF.add(v); });
                 selI.forEach(function(v){ sI.add(v); });
+                selM.forEach(function(v){ sM.add(v); });
 
                 function pop(id, set, prev) {
                     // No tocar la lista que el usuario está usando en este momento
@@ -713,18 +729,19 @@ $(document).ready(function() {
                 pop('#filtroContrato',      sCt, selCt);
                 pop('#filtroFrente',        sF,  selF);
                 pop('#filtroInterferencia', sI,  selI);
+                pop('#filtroMunicipio',     sM,  selM);
             }
 
             updateDropdowns();
 
-            $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia, #filtroInicio, #filtroFin')
+            $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia, #filtroMunicipio, #filtroInicio, #filtroFin')
                 .on('change', function() {
                     table.draw();
                     updateDropdowns(this.id);   // pasa la lista que cambió para no reconstruirla
                 });
 
             $('#btnLimpiar').click(function() {
-                $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia').val(null).trigger('change');
+                $('#filtroContratista, #filtroContrato, #filtroFrente, #filtroInterferencia, #filtroMunicipio').val(null).trigger('change');
                 $('#filtroInicio, #filtroFin, #repInicio, #repFin').val('');
                 detenerReproductor(true);
                 table.draw(); updateDropdowns();
