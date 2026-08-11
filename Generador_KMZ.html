@@ -56,14 +56,15 @@
       <div class="card-box">
         <div class="card-head"><span><span class="step-num">1</span>Base de datos maestra (la administra el gestor de la plataforma)</span>
           <div>
-            <button class="btn btn-sm btn-light" onclick="importarDB()">📥 Importar JSON</button>
+            <button id="btnLock" class="btn btn-sm btn-warning fw-bold" onclick="toggleLock()">🔒 Desbloquear edición</button>
+            <button id="btnImportDB" class="btn btn-sm btn-light" onclick="importarDB()" disabled>📥 Importar JSON</button>
             <button class="btn btn-sm btn-light" onclick="exportarDB()">💾 Exportar JSON</button>
           </div>
         </div>
         <div class="card-body2">
           <p class="mini mb-2">Aquí se registran una sola vez los valores que <b>deben repetirse idénticos</b>: contrato → contratista y proyecto.
           Un contrato puede tener <b>varios municipios</b> (sepáralos con <code>;</code>): al crear cada trazado se elige el municipio de un menú. El usuario nunca los escribe: los selecciona.
-          Guarda el JSON exportado como <code>contratos_db.json</code> en el repositorio para conservarlo.</p>
+          <b>🔒 La edición está protegida con clave de administrador EPM</b> para mantener uniformidad (p. ej. un mismo contratista en varios contratos debe escribirse igual). Guarda el JSON exportado como <code>contratos_db.json</code> en el repositorio para conservarlo.</p>
           <div class="table-responsive" style="max-height:200px; overflow:auto">
             <table class="table table-sm table-striped mb-2">
               <thead class="table-dark"><tr><th>Contrato</th><th>Contratista</th><th>Proyecto</th><th>Municipio</th><th></th></tr></thead>
@@ -75,7 +76,7 @@
             <div class="col"><input id="nContr" class="form-control form-control-sm" placeholder="Contratista"></div>
             <div class="col"><input id="nProy" class="form-control form-control-sm" placeholder="Proyecto"></div>
             <div class="col"><input id="nMun" class="form-control form-control-sm" placeholder="Municipio(s) — separa con ;"></div>
-            <div class="col-auto"><button class="btn btn-sm epm-btn-green" onclick="addDB()">+ Agregar</button></div>
+            <div class="col-auto"><button id="btnAddDB" class="btn btn-sm epm-btn-green" onclick="addDB()" disabled>+ Agregar</button></div>
           </div>
         </div>
       </div>
@@ -128,7 +129,7 @@
           <div class="mb-2">
             <label class="req-label">Tipo de cierre *</label>
             <select id="fTipoCierre" class="form-select form-select-sm"></select>
-            <span class="mini">Lista cerrada. Solo <b>total</b> y <b>parcial</b> reciben color propio en el mapa; otros valores se pintan como "Otros".</span>
+            <span class="mini">Lista cerrada (total, parcial, ingreso y salida). En el mapa: <b>total</b> rojo y <b>parcial</b> amarillo; <b>ingreso y salida</b> se clasifica como "Otros".</span>
           </div>
           <div class="row g-1 mb-2">
             <div class="col"><label class="req-label">Fecha y hora inicio *</label><input id="fInicio" type="datetime-local" class="form-control form-control-sm"></div>
@@ -182,10 +183,36 @@
 
 /* ---------- Estado global ---------- */
 let DB = [];                 // base maestra: {contrato, contratista, proyecto, municipio}
-let TIPOS_CIERRE = ['total','parcial'];   // lista cerrada configurable
+let TIPOS_CIERRE = ['total','parcial','ingreso y salida'];   // lista cerrada configurable
 let trazados = [];           // {id, nombre, geomType, coords:[[lat,lng],...], contrato, contratista, proyecto, municipio, tipo, inicio, fin, direccion}
 let editandoId = null;
 let idSeq = 1;
+
+/* ---------- Control de acceso a la Base maestra (solo personal EPM) ---------- */
+let dbUnlocked = false;
+// SHA-256 de la clave. Clave por defecto: EPM-PMT-2026  (ver instrucciones para cambiarla)
+const CLAVE_HASH = "144887dea6c6f4df6d7341dd219576dce28dd3a0adb5398fd1a1c2bc577cd200";
+async function sha256(txt){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function toggleLock(){
+  if(dbUnlocked){ dbUnlocked=false; aplicarLock(); return; }
+  const k = prompt('Clave de administrador EPM para editar la base de datos:');
+  if(k===null) return;
+  try{
+    const h = await sha256(k);
+    if(h===CLAVE_HASH){ dbUnlocked=true; aplicarLock(); }
+    else alert('Clave incorrecta.');
+  }catch(e){ alert('Este navegador no permite validar la clave (requiere HTTPS/GitHub Pages).'); }
+}
+function aplicarLock(){
+  const btn=document.getElementById('btnLock');
+  btn.textContent = dbUnlocked? '🔓 Bloquear edición' : '🔒 Desbloquear edición';
+  btn.className   = 'btn btn-sm fw-bold '+(dbUnlocked?'btn-success':'btn-warning');
+  ['btnImportDB','btnAddDB','nCon','nContr','nProy','nMun'].forEach(id=>{ const el=document.getElementById(id); if(el) el.disabled=!dbUnlocked; });
+  renderDB(); // re-dibuja para mostrar/ocultar botones de borrar
+}
 
 /* ---------- Semilla de base maestra (ejemplos reales del contexto) ---------- */
 const DB_SEED = [
@@ -227,6 +254,7 @@ async function init(){
   if(!DB.length) DB = JSON.parse(JSON.stringify(DB_SEED));
   DB = normalizeDB(DB);
   renderDB(); renderTiposCierre(); renderContratoSelect(); renderLista(); validar();
+  aplicarLock();  // arranca con la base bloqueada
   initMapa();
 }
 
@@ -238,11 +266,12 @@ function renderDB(){
   DB.forEach((r,i)=>{
     b.innerHTML += `<tr>
       <td>${esc(r.contrato)}</td><td>${esc(r.contratista)}</td><td>${esc(r.proyecto)}</td><td>${esc((r.municipios||[]).join('; '))}</td>
-      <td><button class="btn btn-sm btn-outline-danger py-0" onclick="delDB(${i})">🗑</button></td></tr>`;
+      <td>${dbUnlocked ? `<button class="btn btn-sm btn-outline-danger py-0" onclick="delDB(${i})">🗑</button>` : '<span class="mini">🔒</span>'}</td></tr>`;
   });
   guardarLocal();
 }
 function addDB(){
+  if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave de administrador EPM.'); return; }
   const c=val('nCon').trim().toUpperCase(), ct=val('nContr').trim(), p=val('nProy').trim();
   const muns=splitMunicipios(val('nMun'));
   if(!c || !ct || !p){ alert('Contrato, contratista y proyecto son obligatorios en la base.'); return; }
@@ -257,9 +286,10 @@ function addDB(){
   ['nCon','nContr','nProy','nMun'].forEach(id=>document.getElementById(id).value='');
   renderDB(); renderContratoSelect();
 }
-function delDB(i){ if(confirm('¿Eliminar '+DB[i].contrato+' de la base?')){ DB.splice(i,1); renderDB(); renderContratoSelect(); } }
+function delDB(i){ if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave.'); return; } if(confirm('¿Eliminar '+DB[i].contrato+' de la base?')){ DB.splice(i,1); renderDB(); renderContratoSelect(); } }
 function exportarDB(){ descargar(JSON.stringify(DB,null,2), 'contratos_db.json', 'application/json'); }
 function importarDB(){
+  if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave.'); return; }
   const inp=document.createElement('input'); inp.type='file'; inp.accept='.json';
   inp.onchange=e=>{ const f=e.target.files[0]; const rd=new FileReader();
     rd.onload=()=>{ try{ DB=normalizeDB(JSON.parse(rd.result)); renderDB(); renderContratoSelect(); alert('Base cargada: '+DB.length+' contratos.'); }catch(err){ alert('JSON inválido.'); } };
@@ -507,7 +537,7 @@ function dibujarTodo(){
     if(!t.coords||!t.coords.length) return;
     let lyr;
     if(t.geomType==='Point') lyr=L.circleMarker(t.coords[0],{radius:6,color:'#009300',fillColor:'#b7c200',fillOpacity:.9});
-    else lyr=L.polyline(t.coords,{color: t.tipo==='total'?'#e31a1c':(t.tipo==='parcial'?'#e6a800':'#969696'), weight:5});
+    else lyr=L.polyline(t.coords,{color: t.tipo==='total'?'#e31a1c':(t.tipo==='parcial'?'#e6a800':(t.tipo==='ingreso y salida'?'#1f78b4':'#969696')), weight:5});
     lyr.bindTooltip((t.nombre||'(sin nombre)')+' · '+(t.tipo||'sin tipo'));
     lyr.on('click',()=>editar(t.id));
     capaTrazados.addLayer(lyr);
