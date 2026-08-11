@@ -1,0 +1,71 @@
+[
+  {
+    "contrato": "CW323402",
+    "contratista": "CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024",
+    "proyecto": "ORFELINATO",
+    "municipios": [
+      "Medellín"
+    ]
+  },
+  {
+    "contrato": "CW322377",
+    "contratista": "Consorcio AMT24",
+    "proyecto": "AMPLIACION_TANQUES",
+    "municipios": [
+      "Medellín",
+      "Envigado"
+    ]
+  },
+  {
+    "contrato": "CW323849",
+    "contratista": "CONSORCIO REDES AMVA 2024",
+    "proyecto": "COLECTOR LA PICACHA Y LA PAULITA",
+    "municipios": [
+      "Medellín"
+    ]
+  },
+  {
+    "contrato": "CW328120",
+    "contratista": "SANEAR S.A.S",
+    "proyecto": "EDIE1",
+    "municipios": [
+      "Medellín",
+      "Envigado",
+      "Itagüí",
+      "Sabaneta"
+    ]
+  },
+  {
+    "contrato": "CW352217",
+    "contratista": "MEXICHEM",
+    "proyecto": "RIO F2",
+    "municipios": [
+      "Medellín"
+    ]
+  },
+  {
+    "contrato": "CW353556",
+    "contratista": "SANEAR S.A.S",
+    "proyecto": "DESCARGAS_CENTRO",
+    "municipios": [
+      "Medellín"
+    ]
+  },
+  {
+    "contrato": "CW366713",
+    "contratista": "PAECIA",
+    "proyecto": "DESCARGAS_NORTE",
+    "municipios": [
+      "Medellín",
+      "Bello"
+    ]
+  },
+  {
+    "contrato": "CW374202",
+    "contratista": "CONSORCIO REDES AMVA 2024",
+    "proyecto": "OBRAS COMPLEMENTARIAS RIO",
+    "municipios": [
+      "Medellín"
+    ]
+  }
+]
