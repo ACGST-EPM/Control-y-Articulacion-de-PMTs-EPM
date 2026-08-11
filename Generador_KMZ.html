@@ -61,8 +61,9 @@
           </div>
         </div>
         <div class="card-body2">
-          <p class="mini mb-2">Aquí se registran una sola vez los valores que <b>deben repetirse idénticos</b>: contrato → contratista, proyecto y municipio.
-          El usuario nunca los escribe: los selecciona. Guarda el JSON exportado como <code>contratos_db.json</code> en el repositorio para conservarlo.</p>
+          <p class="mini mb-2">Aquí se registran una sola vez los valores que <b>deben repetirse idénticos</b>: contrato → contratista y proyecto.
+          Un contrato puede tener <b>varios municipios</b> (sepáralos con <code>;</code>): al crear cada trazado se elige el municipio de un menú. El usuario nunca los escribe: los selecciona.
+          Guarda el JSON exportado como <code>contratos_db.json</code> en el repositorio para conservarlo.</p>
           <div class="table-responsive" style="max-height:200px; overflow:auto">
             <table class="table table-sm table-striped mb-2">
               <thead class="table-dark"><tr><th>Contrato</th><th>Contratista</th><th>Proyecto</th><th>Municipio</th><th></th></tr></thead>
@@ -73,7 +74,7 @@
             <div class="col"><input id="nCon" class="form-control form-control-sm" placeholder="Contrato (ej: CW323402)"></div>
             <div class="col"><input id="nContr" class="form-control form-control-sm" placeholder="Contratista"></div>
             <div class="col"><input id="nProy" class="form-control form-control-sm" placeholder="Proyecto"></div>
-            <div class="col"><input id="nMun" class="form-control form-control-sm" placeholder="Municipio"></div>
+            <div class="col"><input id="nMun" class="form-control form-control-sm" placeholder="Municipio(s) — separa con ;"></div>
             <div class="col-auto"><button class="btn btn-sm epm-btn-green" onclick="addDB()">+ Agregar</button></div>
           </div>
         </div>
@@ -122,7 +123,7 @@
           </div>
           <div class="row g-1 mb-2">
             <div class="col"><label class="req-label">Proyecto</label><input id="fProyecto" class="form-control form-control-sm auto-field" readonly></div>
-            <div class="col"><label class="req-label">Municipio</label><input id="fMunicipio" class="form-control form-control-sm auto-field" readonly></div>
+            <div class="col"><label class="req-label">Municipio *</label><select id="fMunicipio" class="form-select form-select-sm"></select></div>
           </div>
           <div class="mb-2">
             <label class="req-label">Tipo de cierre *</label>
@@ -188,9 +189,21 @@ let idSeq = 1;
 
 /* ---------- Semilla de base maestra (ejemplos reales del contexto) ---------- */
 const DB_SEED = [
-  {contrato:'CW323402', contratista:'CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024', proyecto:'ORFELINATO', municipio:'Medellín'},
-  {contrato:'CW328120', contratista:'SANEAR S.A.S', proyecto:'EDIE1', municipio:'Medellín'}
+  {contrato:'CW323402', contratista:'CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024', proyecto:'ORFELINATO', municipios:['Medellín']},
+  {contrato:'CW328120', contratista:'SANEAR S.A.S', proyecto:'EDIE1', municipios:['Medellín']}
 ];
+/* Normaliza la base: garantiza que cada contrato tenga una LISTA de municipios
+   (convierte el formato antiguo {municipio:'X'} a {municipios:['X']}) */
+function normalizeDB(db){
+  return (db||[]).map(r=>{
+    let muns = r.municipios;
+    if(!Array.isArray(muns)) muns = r.municipio ? [r.municipio] : [];
+    muns = muns.map(x=>String(x).trim()).filter(Boolean);
+    return {contrato:r.contrato, contratista:r.contratista, proyecto:r.proyecto, municipios:muns};
+  });
+}
+function splitMunicipios(txt){ return String(txt||'').split(/[;,]/).map(s=>s.trim()).filter(Boolean); }
+function municipiosDe(contrato){ const r=DB.find(x=>x.contrato===contrato); return r? (r.municipios||[]) : []; }
 
 /* ---------- Persistencia suave (localStorage con try/catch) ---------- */
 function guardarLocal(){ try{ localStorage.setItem('pmt_db', JSON.stringify(DB)); localStorage.setItem('pmt_tipos', JSON.stringify(TIPOS_CIERRE)); }catch(e){} }
@@ -212,6 +225,7 @@ async function init(){
     }catch(e){}
   }
   if(!DB.length) DB = JSON.parse(JSON.stringify(DB_SEED));
+  DB = normalizeDB(DB);
   renderDB(); renderTiposCierre(); renderContratoSelect(); renderLista(); validar();
   initMapa();
 }
@@ -223,16 +237,23 @@ function renderDB(){
   const b = document.getElementById('dbBody'); b.innerHTML='';
   DB.forEach((r,i)=>{
     b.innerHTML += `<tr>
-      <td>${esc(r.contrato)}</td><td>${esc(r.contratista)}</td><td>${esc(r.proyecto)}</td><td>${esc(r.municipio||'')}</td>
+      <td>${esc(r.contrato)}</td><td>${esc(r.contratista)}</td><td>${esc(r.proyecto)}</td><td>${esc((r.municipios||[]).join('; '))}</td>
       <td><button class="btn btn-sm btn-outline-danger py-0" onclick="delDB(${i})">🗑</button></td></tr>`;
   });
   guardarLocal();
 }
 function addDB(){
-  const c=val('nCon').trim().toUpperCase(), ct=val('nContr').trim(), p=val('nProy').trim(), m=val('nMun').trim();
+  const c=val('nCon').trim().toUpperCase(), ct=val('nContr').trim(), p=val('nProy').trim();
+  const muns=splitMunicipios(val('nMun'));
   if(!c || !ct || !p){ alert('Contrato, contratista y proyecto son obligatorios en la base.'); return; }
-  if(DB.some(x=>x.contrato===c)){ alert('Ese contrato ya existe en la base.'); return; }
-  DB.push({contrato:c, contratista:ct, proyecto:p, municipio:m});
+  const ex = DB.find(x=>x.contrato===c);
+  if(ex){
+    // Mismo contrato: NO se duplica la fila; se agregan los municipios nuevos a su lista.
+    let nuevos=0; muns.forEach(mn=>{ if(mn && !ex.municipios.includes(mn)){ ex.municipios.push(mn); nuevos++; } });
+    alert('El contrato '+c+' ya existía. Se añadieron '+nuevos+' municipio(s) a su lista.');
+  } else {
+    DB.push({contrato:c, contratista:ct, proyecto:p, municipios:muns});
+  }
   ['nCon','nContr','nProy','nMun'].forEach(id=>document.getElementById(id).value='');
   renderDB(); renderContratoSelect();
 }
@@ -241,7 +262,7 @@ function exportarDB(){ descargar(JSON.stringify(DB,null,2), 'contratos_db.json',
 function importarDB(){
   const inp=document.createElement('input'); inp.type='file'; inp.accept='.json';
   inp.onchange=e=>{ const f=e.target.files[0]; const rd=new FileReader();
-    rd.onload=()=>{ try{ DB=JSON.parse(rd.result); renderDB(); renderContratoSelect(); alert('Base cargada: '+DB.length+' contratos.'); }catch(err){ alert('JSON inválido.'); } };
+    rd.onload=()=>{ try{ DB=normalizeDB(JSON.parse(rd.result)); renderDB(); renderContratoSelect(); alert('Base cargada: '+DB.length+' contratos.'); }catch(err){ alert('JSON inválido.'); } };
     rd.readAsText(f); };
   inp.click();
 }
@@ -260,11 +281,25 @@ function renderTiposCierre(){
   s.innerHTML='<option value="">— Seleccione —</option>';
   TIPOS_CIERRE.forEach(t=> s.innerHTML+=`<option value="${esc(t)}">${esc(t)}</option>`);
 }
-function autoLlenar(){
+function autoLlenar(municipioSel){
   const c=val('fContrato'); const r=DB.find(x=>x.contrato===c);
   document.getElementById('fContratista').value = r? r.contratista : '';
   document.getElementById('fProyecto').value    = r? r.proyecto    : '';
-  document.getElementById('fMunicipio').value   = r? (r.municipio||'') : '';
+  llenarMunicipios(r? r.municipios : [], municipioSel);
+}
+/* Construye el menú de municipios del contrato elegido.
+   - 1 municipio  -> se selecciona solo.
+   - varios       -> muestra "Seleccione" para forzar elección consciente.
+   - 'sel' conserva un municipio importado aunque no esté en la base. */
+function llenarMunicipios(lista, sel){
+  const s=document.getElementById('fMunicipio');
+  const arr=(lista||[]).slice();
+  if(sel && !arr.includes(sel)) arr.push(sel);
+  let html='';
+  if(arr.length!==1) html+='<option value="">— Seleccione municipio —</option>';
+  arr.forEach(m=> html+=`<option value="${esc(m)}">${esc(m)}</option>`);
+  s.innerHTML=html;
+  if(sel) s.value=sel; else if(arr.length===1) s.value=arr[0];
 }
 
 /* ===========================================================
@@ -351,7 +386,8 @@ async function importarGeom(file){
     t.contrato   = (meta.contrato||'').toUpperCase();
     t.contratista= enBase? enBase.contratista : (meta.contratista||'');
     t.proyecto   = enBase? enBase.proyecto    : (meta.proyecto||'');
-    t.municipio  = enBase? enBase.municipio   : (meta.municipio||'');
+    // municipio: prioriza el del KMZ; si no viene y el contrato tiene un único municipio, lo asume
+    t.municipio  = (meta.municipio||'').trim() || (enBase && (enBase.municipios||[]).length===1 ? enBase.municipios[0] : '');
     t.tipo       = normalizarTipo(meta.tipo_cierre||'');
     t.inicio     = normalizarFechaEntrada(meta.fecha_inicio||'');
     t.fin        = normalizarFechaEntrada(meta.fecha_fin||'');
@@ -370,9 +406,10 @@ function nuevoTrazadoVacio(){
 }
 function cargarEnForm(t){
   editandoId=t.id;
-  set('fNombre',t.nombre); set('fContrato',t.contrato); autoLlenar();
-  // si el contrato no estaba en la base, respeta lo importado
-  if(!DB.find(x=>x.contrato===t.contrato)){ set('fContratista',t.contratista); set('fProyecto',t.proyecto); set('fMunicipio',t.municipio); }
+  set('fNombre',t.nombre); set('fContrato',t.contrato);
+  autoLlenar(t.municipio);   // arma el menú de municipios y selecciona el del trazado
+  // si el contrato no estaba en la base, respeta contratista/proyecto importados
+  if(!DB.find(x=>x.contrato===t.contrato)){ set('fContratista',t.contratista); set('fProyecto',t.proyecto); }
   set('fTipoCierre',t.tipo); set('fInicio',aInputDateTime(t.inicio)); set('fFin',aInputDateTime(t.fin)); set('fDireccion',t.direccion);
   document.getElementById('editHint').textContent='Editando: '+(t.nombre||'(sin nombre)');
 }
@@ -396,6 +433,7 @@ function limpiarForm(){
   editandoId=null;
   ['fNombre','fContratista','fProyecto','fMunicipio','fInicio','fFin','fDireccion'].forEach(id=>set(id,''));
   set('fContrato',''); set('fTipoCierre','');
+  autoLlenar();  // limpia el menú de municipios
   document.getElementById('editHint').textContent='';
 }
 function sugerirNombre(){
@@ -431,6 +469,8 @@ function faltantes(t){
   if(!t.fin) f.push('fecha_fin'); if(!t.direccion) f.push('direccion');
   if(!t.geomType) f.push('geometría');
   if(t.inicio && t.fin && t.fin < t.inicio) f.push('fin<inicio');
+  const rc=DB.find(x=>x.contrato===t.contrato);
+  if(rc && (rc.municipios||[]).length && !t.municipio) f.push('municipio');
   return f;
 }
 function renderLista(){
