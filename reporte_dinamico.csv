@@ -1,18 +1,18 @@
 CATEGORIA,CONTRATO,CONTRATISTA,MUNICIPIO,FRENTE,DIRECCION,ESTADO_CIERRE,HORARIO,FECHA_INICIO,FECHA_FIN,DURACION_DIAS
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-2,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,TOTAL,Diurno,2026-09-01,2026-09-14,13
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2025-10-23,2026-08-13,294
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,INGRESO Y SALIDA,Diurno,2025-02-24,2026-10-31,614
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2025-02-03,2026-08-13,556
+Trazado Normal,CW322377,Consorcio AMT24,Envigado,LAS FLORES-2,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,TOTAL,Diurno,2026-09-01,2026-09-14,13
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2025-10-23,2026-08-14,295
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2025-05-22,2026-08-14,449
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2025-05-22,2026-08-14,449
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
+Trazado Normal,CW322377,Consorcio AMT24,Envigado,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,INGRESO Y SALIDA,Diurno,2025-02-24,2026-10-31,614
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2025-02-03,2026-08-13,556
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-05-05,2025-08-31,118
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-09-01,2025-12-31,121
 Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2026-01-01,2026-10-31,303
