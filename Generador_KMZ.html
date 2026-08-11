@@ -232,12 +232,15 @@ function normalizeDB(db){
 function splitMunicipios(txt){ return String(txt||'').split(/[;,]/).map(s=>s.trim()).filter(Boolean); }
 function municipiosDe(contrato){ const r=DB.find(x=>x.contrato===contrato); return r? (r.municipios||[]) : []; }
 
-/* ---------- Persistencia suave (localStorage con try/catch) ---------- */
-function guardarLocal(){ try{ localStorage.setItem('pmt_db', JSON.stringify(DB)); localStorage.setItem('pmt_tipos', JSON.stringify(TIPOS_CIERRE)); }catch(e){} }
+/* ---------- Persistencia suave (localStorage con try/catch) ----------
+   Solo se persiste la base de contratos (pmt_db). La lista de tipos de cierre
+   es un valor canónico del código y NO se cachea, para que siempre gane la
+   versión del archivo (evita que una lista antigua guardada la sobrescriba). */
+function guardarLocal(){ try{ localStorage.setItem('pmt_db', JSON.stringify(DB)); }catch(e){} }
 function cargarLocal(){
   try{
     const d = localStorage.getItem('pmt_db'); if(d) DB = JSON.parse(d);
-    const t = localStorage.getItem('pmt_tipos'); if(t) TIPOS_CIERRE = JSON.parse(t);
+    localStorage.removeItem('pmt_tipos'); // limpia cualquier lista antigua cacheada
   }catch(e){}
 }
 
