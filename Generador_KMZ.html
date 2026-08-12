@@ -458,7 +458,13 @@ function guardarTrazado(){
   t.inicio    = deInputDateTime(val('fInicio'));
   t.fin       = deInputDateTime(val('fFin'));
   t.direccion = val('fDireccion').trim().replace(/\|/g,'/');  // protege el separador
-  if(!t.geomType){ alert('Este trazado no tiene geometría. Dibuja o importa primero.'); return; }
+  // Si hay un dibujo en curso SIN finalizar (no se hizo doble-clic), se toma como geometría.
+  // El doble-clic sigue funcionando igual; esto solo añade una vía alterna para no perder el trazo.
+  if(!t.geomType && dibujoTemp.length){
+    if(dibujoModo==='linea' && dibujoTemp.length>=2){ t.geomType='LineString'; t.coords=dibujoTemp.slice(); cancelarDibujo(); }
+    else if(dibujoModo==='punto'){ t.geomType='Point'; t.coords=[dibujoTemp[0]]; cancelarDibujo(); }
+  }
+  if(!t.geomType){ alert('Este trazado no tiene geometría. Dibuja la línea (un clic por vértice) o importa primero.'); return; }
   renderLista(); dibujarTodo(); validar();
   document.getElementById('editHint').textContent='Guardado ✔';
 }
