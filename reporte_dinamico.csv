@@ -233,6 +233,7 @@ Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-3,carrera 42 entre la
 Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-4,carrera 42 entre el carril norte de la calle 66 y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
 Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-5,carrera 42 entre el carril sur de la calle 66 y la carrera 42 # 64A-95,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
 Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC01,Carrera 49 entre calles 61B Sur y 67 Sur - Vía de servicio,TOTAL,Nocturno,2026-07-01,2026-08-31,61
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-CI03,Vía de acceso Estación de servicio TEXACO No.3 en carrera 42 Autopista Sur,TOTAL,Nocturno,2026-09-14,2026-12-04,81
 Trazado Normal,CW352217,MEXICHEM,Medellín,CAMPAMENTO,TRANSVERSAL 49D ENTRE VÍA DE SERVICIO Y LAZO HACIA CALLE 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 1A,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 1B,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
@@ -350,64 +351,69 @@ Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_2,Carrera 33 entre cal
 Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_3,calle 45 entre carrera 33 y 33A,PARCIAL,Diurno,2026-08-01,2026-09-14,44
 Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_4,calle 45 entre carrera 33 y 33A,TOTAL,Diurno,2026-08-01,2026-09-14,44
 Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_5,Carrera 33 entre calles 43 y 44 carril occidenta Campamento,PARCIAL,Diurno,2026-08-01,2026-09-14,44
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-08-24,2026-09-06,13
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-08-24,2026-09-06,13
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-07-16,2026-08-09,24
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-07-16,2026-08-09,24
-Trazado Normal,CW366713,PAECIA,No definido,BER_RC_3 _1,"Calle 83 entre carreras 50A y 50B Carril, andén y zona verde norte",PARCIAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_3 _2,"Carrera 50A entre calles 83 y 84 Carril, andén y zona dura occidental",PARCIAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_3 _3,"Carrera 50A entre calles 83 y 84 Calzada, andén y zona dura occidental",TOTAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-06-19,2026-12-31,195
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_3,Carrera 48 entre calles 92 y 90 Carril occidental,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_2,Calle 90 entre carreras 48 y 49 Carril norte,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_1,Calle 90 entre carreras 49 y 49A Carril norte,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-02-16,2026-06-18,122
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_1,Calle 92 entre carreras 49 y 46A costado sur,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM-RC_4_2,Calle 92 entre carreras 49 y 48 costado norte,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_3,Carrera 47 entre calles 90 y 92 costado occidental,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_4,Carrera 46A entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_5,Carrera 47 entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-05-16,2026-07-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-05-16,2026-07-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-06-01,2026-06-30,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-06-01,2026-06-30,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_5_1,Calle 92C entre carreras 67 y 68B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_5_2,Carrera 68B entre calles 92C y 92CC,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-09-01,2026-10-01,30
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-08-24,2026-09-06,13
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-08-24,2026-09-06,13
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-07-16,2026-08-10,25
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-07-16,2026-08-10,25
+Trazado Normal,CW366713,PAECIA,Medellín,BER_RC_3 _1,"Calle 83 entre carreras 50A y 50B Carril, andén y zona verde norte",PARCIAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_3 _2,"Carrera 50A entre calles 83 y 84 Carril, andén y zona dura occidental",PARCIAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_3 _3,"Carrera 50A entre calles 83 y 84 Calzada, andén y zona dura occidental",TOTAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-06-19,2027-01-01,196
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_3,Carrera 48 entre calles 92 y 90 Carril occidental,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_2,Calle 90 entre carreras 48 y 49 Carril norte,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_1,Calle 90 entre carreras 49 y 49A Carril norte,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-02-16,2026-06-19,123
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_1,Calle 92 entre carreras 49 y 46A costado sur,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM-RC_4_2,Calle 92 entre carreras 49 y 48 costado norte,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_3,Carrera 47 entre calles 90 y 92 costado occidental,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_4,Carrera 46A entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_5,Carrera 47 entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-05-16,2026-07-16,61
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-05-16,2026-07-16,61
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-06-01,2026-06-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-06-01,2026-06-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_5_1,Calle 92C entre carreras 67 y 68B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_5_2,Carrera 68B entre calles 92C y 92CC,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-03-09,2026-04-21,43
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-04-22,2026-05-21,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-03-09,2026-04-21,43
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-04-22,2026-05-21,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-03-09,2026-04-22,44
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-04-22,2026-05-22,30
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-23,28
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-23,28
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-03-07,2026-03-20,13
 Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_1,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
 Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_2,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
 Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_3,,PARCIAL,Nocturno,2026-05-11,2026-08-24,105
