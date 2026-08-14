@@ -101,6 +101,8 @@
   .panel .cap{ font-size:11.5px; color:var(--tenue); margin:0 0 10px; }
   .chart-box{ position:relative; height:250px; }
   .chart-box.tall{ height:300px; }
+  .chart-box.xtall{ height:460px; }
+  td.trunc{ max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .span2{ grid-column:1 / -1; }
 
   /* ---------- Tabla ---------- */
@@ -215,8 +217,24 @@
   <!-- Filtros -->
   <div class="filtros">
     <div class="campo">
+      <label>Contratista</label>
+      <select id="fContratista"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Proyecto</label>
+      <select id="fProyecto"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
       <label>Contrato</label>
       <select id="fContrato"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Frente</label>
+      <select id="fFrente"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Tipo de cierre</label>
+      <select id="fCierre"><option value="">Todos</option></select>
     </div>
     <div class="campo" id="wrapFase" style="display:none">
       <label>Fase / Etapa</label>
@@ -277,9 +295,9 @@
       <div class="chart-box"><canvas id="chContrato"></canvas></div>
     </div>
     <div class="card panel span2">
-      <h3>Ítems con más incumplimientos</h3>
-      <p class="cap">Los criterios que más veces se marcaron como “No cumple” en las inspecciones filtradas. Aquí se enfoca la gestión.</p>
-      <div class="chart-box tall"><canvas id="chFallas"></canvas></div>
+      <h3>Desempeño por ítem evaluado</h3>
+      <p class="cap">Porcentaje de cumplimiento de <b>cada ítem</b> del checklist en las inspecciones filtradas (100% = siempre cumple; incluye “No aplica” como cumple). Ordenado del más débil al más fuerte para enfocar la gestión.</p>
+      <div class="chart-box xtall"><canvas id="chItems"></canvas></div>
     </div>
     <div class="card panel span2">
       <h3>Evolución mensual del cumplimiento</h3>
@@ -349,6 +367,14 @@ const FASE_NOMBRE = {
   PO:'Puesta en operación', DO:'Durante la operación', FO:'Finalización', DG:'Datos generales', '—':'Sin fase'
 };
 const MES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+// Relación contrato -> proyecto y contratista (del modelo base .pbix)
+const PROYECTOS = {"CW309535":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES INTEGRAL SEDIC"},"CW309538":{"proyecto":"Compra Conjunta","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW296899":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"MAPER S.A."},"CW287632":{"proyecto":"Compra Conjunta","contratista":"AYESA INGENIERIA Y ARQUITECTURA S. A. U SUCURSAL COLOMBIA"},"CW287622":{"proyecto":"Compra Conjunta","contratista":"CONHYDRA S.A. E.S.P."},"CW287608":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO APPLUS CCC"},"CW287625":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO INTEGRAL INTERVENTORIA REDES"},"CW287629":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287648":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW287543":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287638":{"proyecto":"Compra Conjunta","contratista":"DIRAC, S.A.P.I. DE C.V., SUCURSAL COLOMBIA"},"CW363557":{"proyecto":"PTAR Palmitas","contratista":"Consorcio Redes Integral Sedic"},"CW319425":{"proyecto":"Ampliación de la capacidad del alcantarillado de Sabaneta","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW318345":{"proyecto":"Mejora Estructural de Tanques de Almacenamiento en Concreto Etapa II","contratista":"CONSORCIO REDES INTEGRAL SEDIC"},"CW279853":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"CDM SMITH INC"},"CW289560":{"proyecto":"Ampliación Tanques La Ye, Las Flores y Piñuela - Etapa 1","contratista":"HMV Ingenieros LTDA"},"CW287549":{"proyecto":"Expansión circuito Yulimar - Tercera salida Manantiales","contratista":"CONSORCIO REDES"},"CW328217":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287515":{"proyecto":"Compra Conjunta","contratista":"INGENIERIA TECNOLOGIA E INSTRUMENTACION S.A."},"CW287795":{"proyecto":"Compra Conjunta","contratista":"HMV Ingenieros LTDA"},"CW287520":{"proyecto":"Compra Conjunta","contratista":"INTEGRAL S A"},"CW287522":{"proyecto":"Compra Conjunta","contratista":"IDOM CONSULTING, ENGINEERING, ARCHITECTURE S.A.U."},"CW287184":{"proyecto":"Expansión circuito Yulimar - Tercera salida Manantiales","contratista":"CONSORCIO CIRCUITO YULIMAR 2023"},"CW302331":{"proyecto":"Mejora estructural de tanques de almacenamiento en concreto","contratista":"INGEOMEGA S.A.S."},"CW313583":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES AMVA 2024"},"CW313588":{"proyecto":"Compra Conjunta","contratista":"SANEAR S.A."},"CW313592":{"proyecto":"Compra Conjunta","contratista":"PAECIA S.A.S"},"CW313598":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES SYEMA"},"CT-001-2019":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"TICSA"},"CW164633":{"proyecto":"Modernización Planta Manantiales","contratista":"CONSORCIO MANANTIALES"},"CW316106":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"AYESA INGENIERIA Y ARQUITECTURA S. A. U SUCURSAL COLOMBIA"},"CW187131":{"proyecto":"Modernización Planta Manantiales","contratista":"NIPPON KOEI CO., LTD. SUCURSAL COLOMBIA"},"CW268428":{"proyecto":"Modernización y reposición redes circuitos Castilla, Castilla - Bello y Potrerito","contratista":"CONHYDRA S.A. E.S.P."},"CW154899":{"proyecto":"Compra Conjunta","contratista":"NIPPON KOEI CO., LTD. SUCURSAL COLOMBIA"},"CW137408":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"IDOM CONSULTING, ENGINEERING, ARCHITECTURE S.A.U."},"OC2910178":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"Giovanna Spera"},"CW279601":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"CONHYDRA S.A. E.S.P."},"CW266882":{"proyecto":"Modernización y reposición redes circuitos Castilla, Castilla - Bello y Potrerito","contratista":"UNION TEMPORAL CASTILLA SYEMA"},"CW317749":{"proyecto":"Nuevo sistema de captación Barbosa","contratista":"COMERCIALIZADORA S.Y E. Y CIA S.A."},"CW316154":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"ESPINA Y DELFIN SL"},"CW283635":{"proyecto":"Compra Conjunta","contratista":"SHANNON & WILSON, INC."},"CW322377":{"proyecto":"Ampliación Tanques La Ye, Las Flores y Piñuela - Etapa 1","contratista":"CONSORCIO AMT24"},"CW323402":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"Consorcio Infraestructura de Aguas 2024"},"CW328205":{"proyecto":"Renovación Colectores Etapa 2","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW323849":{"proyecto":"Renovación Colectores Etapa 2","contratista":"CONSORCIO REDES AMVA 2024"},"CW322015":{"proyecto":"Nuevo sistema de captación Barbosa","contratista":"CONSORCIO APPLUS CCC"},"CW323671":{"proyecto":"Interceptor Copacabana","contratista":"Consorcio Redes Integral Sedic"},"CW328120":{"proyecto":"ESTRUCTURAS DE DESVÍO","contratista":"SANEAR S.A."},"CW345497":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"EWE SOLUTION SAS"},"CW348086":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"MAPER S.A."},"CW304879":{"proyecto":"Eliminación descargas PSMV","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW345820":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"MAPER S.A."},"CW345831":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"EWE SOLUTION SAS"},"CW354244":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"MAPER"},"CW353548":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO SYEMA"},"CW353551":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO REDES AMVA 2024"},"CW355772":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW353556":{"proyecto":"Eliminación descargas PSMV","contratista":"SANEAR S.A"},"CW354529":{"proyecto":"Eliminación descargas PSMV","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW348929":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"CALCULO Y CONSTRUCCIONES SAS"},"CW352217":{"proyecto":"Rehabilitación Interceptor Oriental y obras complementarias","contratista":"MEXICHEM COLOMBIA S A S"},"CW374202":{"proyecto":"Rehabilitación Interceptor Oriental y obras complementarias","contratista":"CONSORCIO REDES AMVA 2024"}};
+function infoContrato(c){ return PROYECTOS[c] || {proyecto:'', contratista:''}; }
+
+// Lista COMPLETA de criterios evaluados por lista (orden por peso), para el desempeño por ítem
+const CRITERIOS_RUT = ['Canalización y cierre','Señalización vertical','Auxiliares de tránsito','Vía limpia','Pavimento/platinas','Dispositivos luminosos','Sendero peatonal','Estado de señales','PMT en sitio','Rotura en sitio'];
+const CRITERIOS_IMP = ['Ancho de carril','Longitud de transición','Longitud de seguridad','Auxiliares - cantidad','Horario de inicio','Reposición señales hurtadas','Flashers','Canalización según planos','Espaciamiento de señales','Tamaño de señales','PMT impreso','Señalización según planos','Canalización sentido flujo','Canalización lastrada','Canalización reflectividad','Área de acopio','Auxiliares - bastón luminoso'];
 
 let LISTA = 'rut';           // pestaña activa
 let DATOS = {rut:[], imp:[]}; // fuentes cargadas
@@ -454,28 +480,30 @@ const NOMBRE = {
 };
 // evalúa una fila con una tabla de pesos -> [pct 0..100 | null, n_items, fallas[]]
 function evaluarPonderado(row, pesos){
-  let p=0, n=0; const fallas=[];
+  let p=0, n=0; const fallas=[]; const items={};
   for(const col in pesos){
     const def=pesos[col];
     const esCal=Array.isArray(def);
     const w=esCal?def[1]:def;
     const v=esCal?valCal(row[col]):valBool(row[col]);
     if(v===null) continue;
-    n++; p+=v*w;
-    if(v<1) fallas.push(NOMBRE[col]||col);
+    n++; p+=v*w; const nom=NOMBRE[col]||col; items[nom]=v;
+    if(v<1) fallas.push(nom);
   }
-  return [ n? Math.round(p*1000)/10 : null, n, fallas ];  // 1 decimal
+  return [ n? Math.round(p*1000)/10 : null, n, fallas, items ];  // 1 decimal
 }
 function mapearRutinarios(filas){
   const out=[];
   for(const r of filas){
-    const [pct,n,fallas]=evaluarPonderado(r, PESOS_RUT);
+    const [pct,n,fallas,items]=evaluarPonderado(r, PESOS_RUT);
     if(pct===null) continue;
+    const co=normContrato(r['Contrato']); const inf=infoContrato(co);
     out.push({ fecha:normFecha(r['Fecha']), frente:(r['Frentes']||'').trim(),
-      contrato:normContrato(r['Contrato']), inspector:(r['Diligenciado por (N° Registro)']||'').trim(),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
+      inspector:(r['Diligenciado por (N° Registro)']||'').trim(),
       direccion:(r['Dirección']||'').trim(), tipo_cierre:(r['Tipo de cierre']||'').trim(),
       obs:(r['Observaciones generales']||'').trim(),
-      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
   }
   return out;
 }
@@ -483,15 +511,16 @@ function mapearImplementacion(filas){
   const out=[];
   for(const r of filas){
     // solo cuentan las inspecciones con checklist de Puesta en Operación (PO)
-    const [pct,n,fallas]=evaluarPonderado(r, PESOS_PO);
+    const [pct,n,fallas,items]=evaluarPonderado(r, PESOS_PO);
     if(pct===null) continue;
+    const co=normContrato(r['Contrato (PO)']||r['Contrato (DG)']); const inf=infoContrato(co);
     out.push({ fecha:normFecha(r['Fecha (PO)']||r['Fecha (DG)']),
-      contrato:normContrato(r['Contrato (PO)']||r['Contrato (DG)']),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
       frente:(r['Frente (PO)']||r['Frente (DG)']||'').trim(),
       jornada:(r['Jornada']||'').trim(), inspector:(r['Diligenciado por']||'').trim(),
       direccion:(r['Dirección']||'').trim(), tipo_cierre:(r['Tipo de cierre']||'').trim(),
       obs:(r['Observaciones generales (PO)']||'').trim(),
-      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
   }
   return out;
 }
@@ -544,41 +573,43 @@ const CRUDO_PO = {
   'Gesti_x00f3_nauxiliaresdetr_x00e1':[0.03,'Auxiliares - bastón luminoso'],
 };
 function evaluarCrudo(row, pesos){
-  let p=0,n=0; const fallas=[];
+  let p=0,n=0; const fallas=[]; const items={};
   for(const k in pesos){
     const def=pesos[k]; const esCal=def[0]==='cal';
     const w=esCal?def[1]:def[0]; const nom=esCal?def[2]:def[1];
     const v=esCal?valCalSP(row[k]):valBoolSP(row[k]);
     if(v===null) continue;
-    n++; p+=v*w; if(v<1) fallas.push(nom);
+    n++; p+=v*w; items[nom]=v; if(v<1) fallas.push(nom);
   }
-  return [ n? Math.round(p*1000)/10 : null, n, fallas ];
+  return [ n? Math.round(p*1000)/10 : null, n, fallas, items ];
 }
 function mapearCrudoRutinarios(filas){
   const out=[];
   for(const r of filas){
-    const [pct,n,fallas]=evaluarCrudo(r, CRUDO_RUT);
+    const [pct,n,fallas,items]=evaluarCrudo(r, CRUDO_RUT);
     if(pct===null) continue;
-    out.push({ fecha:normFecha(spVal(r['Fecha'])), contrato:normContrato(spVal(r['Contrato'])),
+    const co=normContrato(spVal(r['Contrato'])); const inf=infoContrato(co);
+    out.push({ fecha:normFecha(spVal(r['Fecha'])), contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
       frente:(''+(spVal(r['Seguimiento'])||'')).trim(), inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
       direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
       obs:(''+(spVal(r['Observacionesgenerales_x0028_FO_'])||'')).trim(),
-      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
   }
   return out;
 }
 function mapearCrudoImplementacion(filas){
   const out=[];
   for(const r of filas){
-    const [pct,n,fallas]=evaluarCrudo(r, CRUDO_PO);
+    const [pct,n,fallas,items]=evaluarCrudo(r, CRUDO_PO);
     if(pct===null) continue;  // solo inspecciones con checklist de PO
+    const co=normContrato(spVal(r['Contrato_x0028_PO_x0029_'])||spVal(r['Contrato_x0028_DO_x0029_'])||spVal(r['Contrato'])); const inf=infoContrato(co);
     out.push({ fecha:normFecha(spVal(r['Fecha_x0028_PO_x0029_'])||spVal(r['Fecha'])),
-      contrato:normContrato(spVal(r['Contrato_x0028_PO_x0029_'])||spVal(r['Contrato_x0028_DO_x0029_'])||spVal(r['Contrato'])),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
       frente:(''+(spVal(r['Seguimiento_x0028_PO_x0029_'])||spVal(r['Seguimiento'])||'')).trim(),
       inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
       direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
       obs:(''+(spVal(r['Observacionesgenerales'])||'')).trim(),
-      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
   }
   return out;
 }
@@ -671,37 +702,57 @@ function cambiarLista(l){
 
 function base(){ return DATOS[LISTA]; }
 
+const FILTROS = ['fContratista','fProyecto','fContrato','fFrente','fCierre','fSem','fDesde','fHasta'];
+// devuelve registros que pasan todos los filtros EXCEPTO el indicado (para poblar opciones cruzadas)
+function pasaExcepto(x, omitir){
+  const g=id=>document.getElementById(id).value;
+  if(omitir!=='fContratista' && g('fContratista') && x.contratista!==g('fContratista')) return false;
+  if(omitir!=='fProyecto'   && g('fProyecto')   && x.proyecto!==g('fProyecto'))       return false;
+  if(omitir!=='fContrato'   && g('fContrato')   && x.contrato!==g('fContrato'))       return false;
+  if(omitir!=='fFrente'     && g('fFrente')     && (''+(x.frente||''))!==g('fFrente'))return false;
+  if(omitir!=='fCierre'     && g('fCierre')     && (x.tipo_cierre||'')!==g('fCierre'))return false;
+  if(omitir!=='fSem'        && g('fSem')        && x.semaforo!==g('fSem'))            return false;
+  if(omitir!=='fDesde'      && g('fDesde')      && (!x.fecha || x.fecha<g('fDesde'))) return false;
+  if(omitir!=='fHasta'      && g('fHasta')      && (!x.fecha || x.fecha>g('fHasta'))) return false;
+  return true;
+}
+function opciones(campo, omitir, orden){
+  const d=base();
+  let vals=[...new Set(d.filter(x=>pasaExcepto(x,omitir)).map(campo).filter(v=>v!==''&&v!=null))];
+  vals.sort(orden||((a,b)=>(''+a).localeCompare(''+b,'es',{numeric:true})));
+  return vals;
+}
+function llenarSelect(id, vals){
+  const sel=document.getElementById(id); const actual=sel.value;
+  sel.innerHTML='<option value="">Todos</option>'+vals.map(v=>`<option>${v}</option>`).join('');
+  if(vals.includes(actual)) sel.value=actual; else sel.value='';
+}
 function poblarFiltros(){
-  const d = base();
-  const contratos = [...new Set(d.map(x=>x.contrato).filter(Boolean))].sort();
-  const selC = document.getElementById('fContrato');
-  selC.innerHTML = '<option value="">Todos</option>' + contratos.map(c=>`<option>${c}</option>`).join('');
-  if(LISTA==='imp'){
-    const fases = [...new Set(d.map(x=>x.fase).filter(Boolean))];
-    const orden = ['DG','PO','DO','FO','—'];
-    fases.sort((a,b)=>orden.indexOf(a)-orden.indexOf(b));
-    document.getElementById('fFase').innerHTML =
-      '<option value="">Todas</option>' + fases.map(f=>`<option value="${f}">${f} · ${FASE_NOMBRE[f]||f}</option>`).join('');
-  }
+  llenarSelect('fContratista', opciones(x=>x.contratista,'fContratista'));
+  llenarSelect('fProyecto',    opciones(x=>x.proyecto,'fProyecto'));
+  llenarSelect('fContrato',    opciones(x=>x.contrato,'fContrato'));
+  llenarSelect('fFrente',      opciones(x=>(''+(x.frente||'')),'fFrente'));
+  llenarSelect('fCierre',      opciones(x=>x.tipo_cierre,'fCierre'));
 }
 
 function limpiar(rerender=true){
-  ['fContrato','fFase','fSem','fDesde','fHasta'].forEach(id=>document.getElementById(id).value='');
+  ['fContratista','fProyecto','fContrato','fFrente','fCierre','fFase','fSem','fDesde','fHasta']
+    .forEach(id=>{const e=document.getElementById(id); if(e) e.value='';});
+  poblarFiltros();
   if(rerender) render();
 }
 
 function filtrar(){
-  const c = document.getElementById('fContrato').value;
-  const f = document.getElementById('fFase').value;
-  const s = document.getElementById('fSem').value;
-  const d1 = document.getElementById('fDesde').value;
-  const d2 = document.getElementById('fHasta').value;
+  const g=id=>document.getElementById(id).value;
   return base().filter(x=>{
-    if(c && x.contrato!==c) return false;
-    if(LISTA==='imp' && f && x.fase!==f) return false;
-    if(s && x.semaforo!==s) return false;
-    if(d1 && (!x.fecha || x.fecha < d1)) return false;
-    if(d2 && (!x.fecha || x.fecha > d2)) return false;
+    if(g('fContratista') && x.contratista!==g('fContratista')) return false;
+    if(g('fProyecto')   && x.proyecto!==g('fProyecto'))       return false;
+    if(g('fContrato')   && x.contrato!==g('fContrato'))       return false;
+    if(g('fFrente')     && (''+(x.frente||''))!==g('fFrente'))return false;
+    if(g('fCierre')     && (x.tipo_cierre||'')!==g('fCierre'))return false;
+    if(g('fSem')        && x.semaforo!==g('fSem'))            return false;
+    if(g('fDesde')      && (!x.fecha || x.fecha<g('fDesde'))) return false;
+    if(g('fHasta')      && (!x.fecha || x.fecha>g('fHasta'))) return false;
     return true;
   });
 }
@@ -717,11 +768,11 @@ function dibujarGauge(pct){
     return `<path d="M ${x1.toFixed(1)} ${y1.toFixed(1)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(1)} ${y2.toFixed(1)}"
              fill="none" stroke="${color}" stroke-width="16" stroke-linecap="round"/>`;
   };
-  // bandas: 0-70 rojo, 70-90 amarillo, 90-100 verde (mapeadas a 0-180°)
-  let s = `${arco(0, 126, '#f0d2cd')}${arco(126, 162, '#f5e6b8')}${arco(162, 180, '#c9e8d1')}`;
+  // bandas: 0-70 rojo, 70-80 amarillo, 80-100 verde (mapeadas a 0-180°)
+  let s = `${arco(0, 126, '#f0d2cd')}${arco(126, 144, '#f5e6b8')}${arco(144, 180, '#c9e8d1')}`;
   if(pct!==null && pct!==undefined){
     const ang = Math.max(0, Math.min(180, pct*1.8));
-    const col = pct>=90?SEM.verde.color : pct>=70?SEM.amarillo.color : SEM.rojo.color;
+    const col = pct>=80?SEM.verde.color : pct>70?SEM.amarillo.color : SEM.rojo.color;
     s += arco(0, Math.max(1,ang), col);
     const [nx,ny]=pol(ang);
     s += `<circle cx="${nx.toFixed(1)}" cy="${ny.toFixed(1)}" r="8" fill="#fff" stroke="${col}" stroke-width="3"/>`;
@@ -784,20 +835,31 @@ function graficos(f, evalua){
       borderRadius:6, barThickness:'flex', maxBarThickness:46 }]},
     options:{ animation:NOANIM, maintainAspectRatio:false, indexAxis:'y',
       scales:{ x:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#eef1ee'}}, y:{grid:{display:false}} },
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+c.parsed.x+'% de cumplimiento'}} } }
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{
+        title:c=>{const co=c[0].label; const i=infoContrato(co); return i.proyecto? co+' · '+i.proyecto : co;},
+        label:c=>' '+c.parsed.x+'% de cumplimiento',
+        afterLabel:c=>{const i=infoContrato(c.label); return i.contratista? 'Contratista: '+i.contratista : '';} }} } }
   });
 
-  // 3) Top incumplimientos
-  const fc = {};
-  f.forEach(x=>(x.fallas||[]).forEach(k=>fc[k]=(fc[k]||0)+1));
-  const top = Object.entries(fc).sort((a,b)=>b[1]-a[1]).slice(0,10);
-  nuevo('chFallas', {
+  // 3) Desempeño por ítem (TODOS los ítems evaluados)
+  const criterios = LISTA==='imp' ? CRITERIOS_IMP : CRITERIOS_RUT;
+  const acum = {}; criterios.forEach(c=>acum[c]={suma:0,n:0});
+  f.forEach(x=>{ const it=x.items||{}; for(const c in it){ if(acum[c]){ acum[c].suma+=it[c]; acum[c].n++; } } });
+  const filas = criterios.map(c=>({ nombre:c, n:acum[c].n,
+      pct: acum[c].n ? Math.round(1000*acum[c].suma/acum[c].n)/10 : null }))
+    .filter(r=>r.n>0)
+    .sort((a,b)=>a.pct-b.pct);   // del más débil al más fuerte
+  nuevo('chItems', {
     type:'bar',
-    data:{ labels:top.map(t=>t[0].replace(/^¿|\?$/g,'')), datasets:[{ label:'Veces marcado “No cumple”',
-      data:top.map(t=>t[1]), backgroundColor:'#d56b00', borderRadius:6, maxBarThickness:34 }]},
+    data:{ labels:filas.map(r=>r.nombre),
+      datasets:[{ label:'% de cumplimiento del ítem', data:filas.map(r=>r.pct),
+        backgroundColor:filas.map(r=>r.pct>=80?SEM.verde.color:r.pct>=70?SEM.amarillo.color:SEM.rojo.color),
+        borderRadius:6, maxBarThickness:26 }]},
     options:{ animation:NOANIM, maintainAspectRatio:false, indexAxis:'y',
-      scales:{ x:{beginAtZero:true,grid:{color:'#eef1ee'},ticks:{precision:0}}, y:{grid:{display:false},ticks:{font:{size:11}}} },
-      plugins:{ legend:{display:false} } }
+      scales:{ x:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#eef1ee'}},
+               y:{grid:{display:false},ticks:{font:{size:11},autoSkip:false}} },
+      plugins:{ legend:{display:false},
+        tooltip:{callbacks:{label:c=>{const r=filas[c.dataIndex]; return ` ${r.pct}% cumplimiento · ${r.n} inspección(es)`;}}} } }
   });
 
   // 4) Evolución mensual
@@ -818,14 +880,12 @@ function graficos(f, evalua){
 
 // ---------- Tabla ----------
 function tabla(f){
-  const esImp = LISTA==='imp';
   document.getElementById('tablaCnt').textContent = `${f.length} registro(s)`;
-  const cols = esImp
-    ? ['Fecha','Contrato','Frente','Dirección','Cumpl.','Semáforo','Incumplimientos']
-    : ['Fecha','Contrato','Frente','Dirección','Cumpl.','Semáforo','Incumplimientos'];
+  const cols = ['Fecha','Contrato','Proyecto','Contratista','Frente','Tipo cierre','Dirección','Cumpl.','Semáforo','Incumplimientos'];
   document.getElementById('tablaHead').innerHTML = '<tr>'+cols.map(c=>`<th>${c}</th>`).join('')+'</tr>';
 
   const orden = f.slice().sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||''));
+  const cel=(t)=>`<td class="trunc" title="${(t||'').replace(/"/g,'&quot;')}">${t||'—'}</td>`;
   document.getElementById('tablaBody').innerHTML = orden.map(x=>{
     const s = SEM[x.semaforo];
     const chip = `<span class="chip ${s.clase}">${s.lab}</span>`;
@@ -833,15 +893,17 @@ function tabla(f){
     const fallas = (x.fallas&&x.fallas.length)
       ? `<span class="fallas-list">${x.fallas.map(k=>k.replace(/^¿|\?$/g,'')).join(' · ')}</span>`
       : (x.semaforo==='sin_dato' ? '<span style="color:#9aa0a6">Registro sin ítems de evaluación</span>' : '<span class="fallas-ok">Sin incumplimientos ✓</span>');
-    const fecha = x.fecha || '—';
-    return `<tr><td>${fecha}</td><td>${x.contrato||'—'}</td><td>${x.frente||'—'}</td>
-      <td>${x.direccion||'—'}</td><td class="pct-cell">${pct}</td><td>${chip}</td><td>${fallas}</td></tr>`;
+    return `<tr><td>${x.fecha||'—'}</td><td>${x.contrato||'—'}</td>${cel(x.proyecto)}${cel(x.contratista)}`+
+      `<td>${x.frente||'—'}</td><td>${x.tipo_cierre||'—'}</td>${cel(x.direccion)}`+
+      `<td class="pct-cell">${pct}</td><td>${chip}</td><td>${fallas}</td></tr>`;
   }).join('');
 }
 
-// eventos
-['fContrato','fFase','fSem','fDesde','fHasta'].forEach(id=>
-  document.getElementById(id).addEventListener('change', render));
+// eventos: al cambiar un filtro, se recalculan las opciones cruzadas y se redibuja
+function alCambiarFiltro(){ poblarFiltros(); render(); }
+['fContratista','fProyecto','fContrato','fFrente','fCierre','fSem','fDesde','fHasta'].forEach(id=>{
+  const e=document.getElementById(id); if(e) e.addEventListener('change', alCambiarFiltro);
+});
 document.getElementById('wrapFase').style.display='none';
 conectarCargaCSV();
 cargar();
