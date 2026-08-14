@@ -496,6 +496,93 @@ function mapearImplementacion(filas){
   return out;
 }
 
+/* ===========================================================
+   MAPEO DE DATOS AUTOMÁTICOS (crudo_*.json de Power Automate)
+   Los datos vienen con los NOMBRES INTERNOS de SharePoint y los
+   valores de opción como objeto { Value: "Si" }. Aquí se traducen
+   al modelo oficial. Los pesos son los mismos del reporte Power BI.
+   =========================================================== */
+function spVal(v){ return (v && typeof v==='object') ? v.Value : v; }
+function valBoolSP(v){
+  const lo=(spVal(v)==null?'':(''+spVal(v))).trim().toLowerCase();
+  if(lo==='si'||lo==='sí') return 1; if(lo==='no') return 0; if(lo==='no aplica') return 1; return null;
+}
+function valCalSP(v){
+  const lo=(spVal(v)==null?'':(''+spVal(v))).trim().toLowerCase();
+  if(lo==='bueno') return 1; if(lo==='regular') return 0.6; if(lo==='malo') return 0; return null;
+}
+// interno -> [peso, nombreAmable]  ('cal' marca el ítem de calidad)
+const CRUDO_RUT = {
+  'PlandeManejodeTr_x00e1_nsito':[0.02,'PMT en sitio'],
+  'PermisodeRotura':[0.02,'Rotura en sitio'],
+  'Se_x00f1_alizaci_x00f3_nVertical':[0.15,'Señalización vertical'],
+  'Estadodese_x00f1_ales':['cal',0.05,'Estado de señales'],
+  'Canalizaci_x00f3_n_x002d_Ensenti':[0.22,'Canalización y cierre'],
+  'Gesti_x00f3_ncierrevial_x002d_Fl':[0.10,'Dispositivos luminosos'],
+  'Gesti_x00f3_nauxiliatesdetr_x00e':[0.12,'Auxiliares de tránsito'],
+  'V_x00ed_alimpiayencondicionesdeo':[0.12,'Vía limpia'],
+  'Platinas_x003a_pernadas_x002c_an':[0.12,'Pavimento/platinas'],
+  'V_x00ed_adespejada':[0.08,'Sendero peatonal'],
+};
+const CRUDO_PO = {
+  'PlandeManejodeTr_x00e1_nsito':[0.03,'PMT impreso'],
+  'Inicioenhoraautorizada':[0.08,'Horario de inicio'],
+  'Reposici_x00f3_ndese_x00f1_ales':[0.08,'Reposición señales hurtadas'],
+  'Se_x00f1_alizaci_x00f3_nVertical':[0.03,'Señalización según planos'],
+  'Se_x00f1_alizaci_x00f3_nvertical0':[0.04,'Espaciamiento de señales'],
+  'Se_x00f1_alizaci_x00f3_nvertical1':[0.04,'Tamaño de señales'],
+  'Canalizaci_x00f3_n_x002d_Ensenti':[0.03,'Canalización sentido flujo'],
+  'Canalizaci_x00f3_n_x002d_Ubicaci':[0.07,'Canalización según planos'],
+  'Hola':[0.03,'Canalización lastrada'],
+  'Canalizaci_x00f3_n_x002d_Element':[0.03,'Canalización reflectividad'],
+  'Gesti_x00f3_ncierrevial_x002d_An':[0.10,'Ancho de carril'],
+  'Gesti_x00f3_ncierrevial_x002d_Lo':[0.10,'Longitud de transición'],
+  'Gesti_x00f3_ncierrevial_x002d_Lo0':[0.10,'Longitud de seguridad'],
+  'Gesti_x00f3_ncierrevial_x002d__x':[0.03,'Área de acopio'],
+  'Gesti_x00f3_ncierrevial_x002d_Fl':[0.08,'Flashers'],
+  'Gesti_x00f3_nauxiliatesdetr_x00e':[0.10,'Auxiliares - cantidad'],
+  'Gesti_x00f3_nauxiliaresdetr_x00e1':[0.03,'Auxiliares - bastón luminoso'],
+};
+function evaluarCrudo(row, pesos){
+  let p=0,n=0; const fallas=[];
+  for(const k in pesos){
+    const def=pesos[k]; const esCal=def[0]==='cal';
+    const w=esCal?def[1]:def[0]; const nom=esCal?def[2]:def[1];
+    const v=esCal?valCalSP(row[k]):valBoolSP(row[k]);
+    if(v===null) continue;
+    n++; p+=v*w; if(v<1) fallas.push(nom);
+  }
+  return [ n? Math.round(p*1000)/10 : null, n, fallas ];
+}
+function mapearCrudoRutinarios(filas){
+  const out=[];
+  for(const r of filas){
+    const [pct,n,fallas]=evaluarCrudo(r, CRUDO_RUT);
+    if(pct===null) continue;
+    out.push({ fecha:normFecha(spVal(r['Fecha'])), contrato:normContrato(spVal(r['Contrato'])),
+      frente:(''+(spVal(r['Seguimiento'])||'')).trim(), inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
+      direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
+      obs:(''+(spVal(r['Observacionesgenerales_x0028_FO_'])||'')).trim(),
+      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+function mapearCrudoImplementacion(filas){
+  const out=[];
+  for(const r of filas){
+    const [pct,n,fallas]=evaluarCrudo(r, CRUDO_PO);
+    if(pct===null) continue;  // solo inspecciones con checklist de PO
+    out.push({ fecha:normFecha(spVal(r['Fecha_x0028_PO_x0029_'])||spVal(r['Fecha'])),
+      contrato:normContrato(spVal(r['Contrato_x0028_PO_x0029_'])||spVal(r['Contrato_x0028_DO_x0029_'])||spVal(r['Contrato'])),
+      frente:(''+(spVal(r['Seguimiento_x0028_PO_x0029_'])||spVal(r['Seguimiento'])||'')).trim(),
+      inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
+      direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
+      obs:(''+(spVal(r['Observacionesgenerales'])||'')).trim(),
+      cumplimiento:pct, n_items:n, fallas, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+
 function leerCSV(file, cb){
   const rd=new FileReader();
   rd.onload=e=>{
@@ -552,7 +639,7 @@ async function cargar(){
     cargarUrl('crudo_rutinarios.json'), cargarUrl('crudo_implementacion.json')
   ]);
   if(Array.isArray(crRut) && Array.isArray(crImp)){
-    rut = mapearRutinarios(crRut); imp = mapearImplementacion(crImp); fuente = 'auto';
+    rut = mapearCrudoRutinarios(crRut); imp = mapearCrudoImplementacion(crImp); fuente = 'auto';
   } else {
     // 2) datos ya puntuados
     const [r1, r2] = await Promise.all([
