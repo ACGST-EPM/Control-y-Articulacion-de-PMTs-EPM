@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard de Seguimiento de PMTs — EPM</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<style>
+  :root{
+    --epm-verde:#009300; --epm-verde-osc:#007a00; --epm-lima:#b7c200; --epm-naranja:#d56b00;
+    --sem-verde:#1e9e3e; --sem-amar:#e5a100; --sem-rojo:#d64533; --sem-gris:#9aa0a6;
+    --tinta:#1f2a1f; --tenue:#6b7280; --linea:#e6e9e6; --panel:#ffffff; --fondo:#f3f6f3;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    background:var(--fondo); color:var(--tinta); margin:0;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; font-size:14px;
+  }
+  /* ---------- Encabezado ---------- */
+  .epm-header{
+    background:#fff; border-bottom:4px solid var(--epm-verde);
+    box-shadow:0 2px 8px rgba(0,0,0,.08); padding:10px 22px;
+    display:flex; align-items:center; gap:14px; position:sticky; top:0; z-index:1000;
+  }
+  .epm-mark{
+    width:40px; height:40px; border-radius:9px; flex:none;
+    background:linear-gradient(135deg,var(--epm-verde),var(--epm-lima));
+    color:#fff; font-weight:800; font-size:18px; display:grid; place-items:center;
+    letter-spacing:-1px; box-shadow:0 2px 6px rgba(0,147,0,.35);
+  }
+  .epm-title{ line-height:1.15; }
+  .epm-title b{ color:var(--epm-verde); font-size:17px; letter-spacing:.2px; }
+  .epm-title span{ display:block; color:var(--tenue); font-size:11.5px; }
+  .epm-header .right{ margin-left:auto; display:flex; gap:8px; align-items:center; }
+  .badge-fuente{ font-size:11px; padding:4px 9px; border-radius:20px; font-weight:600; }
+  .fuente-muestra{ background:#fff3e0; color:#b45309; border:1px solid #f4c98a; }
+  .fuente-viva{ background:#e6f5ea; color:#0a6d2b; border:1px solid #a9dcb8; }
+
+  .wrap{ max-width:1320px; margin:0 auto; padding:18px 20px 60px; }
+
+  /* ---------- Pestañas de lista ---------- */
+  .tabs{ display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
+  .tab{
+    border:1px solid var(--linea); background:#fff; color:var(--tenue);
+    padding:9px 18px; border-radius:10px; cursor:pointer; font-weight:600; font-size:13.5px;
+    display:flex; align-items:center; gap:8px; transition:.15s;
+  }
+  .tab .n{ background:var(--fondo); color:var(--tenue); border-radius:20px; padding:1px 9px; font-size:11.5px; font-weight:700; }
+  .tab:hover{ border-color:var(--epm-lima); }
+  .tab.on{ background:var(--epm-verde); color:#fff; border-color:var(--epm-verde); box-shadow:0 3px 10px rgba(0,147,0,.25); }
+  .tab.on .n{ background:rgba(255,255,255,.25); color:#fff; }
+
+  /* ---------- Barra de filtros ---------- */
+  .filtros{
+    background:#fff; border:1px solid var(--linea); border-radius:12px; padding:12px 14px;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:18px;
+  }
+  .filtros .campo{ display:flex; flex-direction:column; gap:3px; }
+  .filtros label{ font-size:11px; font-weight:700; color:var(--tenue); text-transform:uppercase; letter-spacing:.4px; }
+  .filtros select, .filtros input{
+    border:1px solid var(--linea); border-radius:8px; padding:7px 9px; font-size:13px; background:#fbfdfb; color:var(--tinta);
+  }
+  .filtros select:focus, .filtros input:focus{ outline:2px solid var(--epm-lima); border-color:var(--epm-lima); }
+  .btn-limpiar{
+    align-self:end; background:var(--epm-lima); color:#26330a; border:none; border-radius:8px;
+    padding:8px 12px; font-weight:700; cursor:pointer; font-size:12.5px;
+  }
+  .btn-limpiar:hover{ background:#a2ad00; }
+  .btn-pdf{
+    align-self:end; background:var(--epm-naranja); color:#fff; border:none; border-radius:8px;
+    padding:8px 12px; font-weight:700; cursor:pointer; font-size:12.5px;
+  }
+  .btn-pdf:hover{ background:#bd5f00; }
+
+  /* ---------- KPIs ---------- */
+  .grid-kpi{ display:grid; grid-template-columns:1.25fr 1fr 1fr 1fr 1fr; gap:14px; margin-bottom:16px; }
+  .card{ background:var(--panel); border:1px solid var(--linea); border-radius:14px; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .kpi{ padding:14px 16px; display:flex; flex-direction:column; justify-content:center; }
+  .kpi .lab{ font-size:11.5px; color:var(--tenue); font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+  .kpi .val{ font-size:30px; font-weight:800; line-height:1.05; margin-top:4px; }
+  .kpi .sub{ font-size:11.5px; color:var(--tenue); margin-top:2px; }
+  .kpi.acc-v .val{ color:var(--sem-verde);} .kpi.acc-a .val{ color:var(--sem-amar);}
+  .kpi.acc-r .val{ color:var(--sem-rojo);} .kpi.acc-g .val{ color:var(--epm-verde);}
+
+  /* ---------- Medidor (elemento distintivo) ---------- */
+  .gauge-card{ padding:12px 14px 8px; display:flex; flex-direction:column; align-items:center; }
+  .gauge-card .titl{ font-size:11.5px; color:var(--tenue); font-weight:700; text-transform:uppercase; letter-spacing:.4px; align-self:flex-start; }
+  .gauge-wrap{ position:relative; width:200px; height:120px; margin-top:2px; }
+  .gauge-num{ position:absolute; bottom:2px; left:0; right:0; text-align:center; }
+  .gauge-num b{ font-size:27px; font-weight:800; }
+  .gauge-num small{ display:block; font-size:10.5px; color:var(--tenue); font-weight:700; letter-spacing:.3px; }
+
+  /* ---------- Paneles de gráficos ---------- */
+  .grid-charts{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
+  .panel{ padding:14px 16px; }
+  .panel h3{ margin:0 0 2px; font-size:14px; color:var(--tinta); font-weight:800; }
+  .panel .cap{ font-size:11.5px; color:var(--tenue); margin:0 0 10px; }
+  .chart-box{ position:relative; height:250px; }
+  .chart-box.tall{ height:300px; }
+  .chart-box.xtall{ height:460px; }
+  td.trunc{ max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .span2{ grid-column:1 / -1; }
+
+  /* ---------- Tabla ---------- */
+  .tabla-card{ padding:0; overflow:hidden; }
+  .tabla-head{ padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--linea); }
+  .tabla-head h3{ margin:0; font-size:14px; font-weight:800; }
+  .tabla-head .cnt{ font-size:12px; color:var(--tenue); }
+  .scroll{ max-height:460px; overflow:auto; }
+  table.data{ width:100%; border-collapse:collapse; font-size:12.5px; }
+  table.data th{
+    position:sticky; top:0; background:#f7faf7; text-align:left; padding:9px 12px; font-size:11px;
+    text-transform:uppercase; letter-spacing:.3px; color:var(--tenue); border-bottom:1px solid var(--linea); z-index:2;
+  }
+  table.data td{ padding:9px 12px; border-bottom:1px solid #f0f2f0; vertical-align:top; }
+  table.data tr:hover td{ background:#fbfdf8; }
+  .chip{ display:inline-block; padding:2px 9px; border-radius:20px; font-size:11px; font-weight:700; color:#fff; white-space:nowrap; }
+  .c-verde{ background:var(--sem-verde);} .c-amar{ background:var(--sem-amar);} .c-rojo{ background:var(--sem-rojo);} .c-gris{ background:var(--sem-gris);}
+  .fase-tag{ font-size:10.5px; font-weight:700; color:var(--epm-verde); background:#e9f6ec; padding:1px 7px; border-radius:6px; }
+  .fallas-list{ color:var(--sem-rojo); font-size:11.5px; }
+  .fallas-ok{ color:var(--sem-verde); font-weight:600; }
+  .pct-cell b{ font-size:13px; }
+
+  /* ---------- Info / modelo ---------- */
+  .nota{
+    background:#fffdf5; border:1px solid #f0e4b8; border-left:4px solid var(--epm-lima);
+    border-radius:10px; padding:11px 14px; font-size:12.5px; color:#5c531f; margin-bottom:16px;
+  }
+  .nota b{ color:#7a6d16; }
+  details.modelo{ margin-top:6px; }
+  details.modelo summary{ cursor:pointer; font-weight:700; color:var(--epm-verde); font-size:12.5px; }
+  details.modelo table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:12px; }
+  details.modelo td{ padding:4px 8px; border-bottom:1px solid #eee; }
+
+  .leyenda{ display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--tenue); margin-top:8px; }
+  .leyenda span{ display:inline-flex; align-items:center; gap:6px; }
+  .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; }
+
+  @media (max-width:1100px){
+    .grid-kpi{ grid-template-columns:1fr 1fr 1fr; }
+    .grid-charts{ grid-template-columns:1fr; }
+  }
+  @media (max-width:640px){
+    .grid-kpi{ grid-template-columns:1fr 1fr; }
+    .wrap{ padding:14px 12px 50px; }
+  }
+  /* ---------- Impresión / PDF ---------- */
+  @media print{
+    .epm-header{ position:static; }
+    .filtros .btn-limpiar, .filtros .btn-pdf, .tabs{ display:none !important; }
+    .no-print{ display:none !important; }
+    body{ background:#fff; }
+    .card,.panel{ box-shadow:none; break-inside:avoid; }
+    .wrap{ max-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="epm-header">
+  <div class="epm-mark">EPM</div>
+  <div class="epm-title">
+    <b>DASHBOARD DE SEGUIMIENTO DE PMTs</b>
+    <span>Grupo EPM · Centro de Gestión Servicios Técnicos · Control y verificación en campo</span>
+  </div>
+  <div class="right">
+    <span id="fuenteBadge" class="badge-fuente fuente-muestra">● Datos de muestra</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- Pestañas de las dos listas -->
+  <div class="tabs no-print">
+    <div class="tab on" data-lista="rut" onclick="cambiarLista('rut')">
+      🔎 Verificación rutinaria <span class="n" id="nRut">0</span>
+    </div>
+    <div class="tab" data-lista="imp" onclick="cambiarLista('imp')">
+      🏗️ Implementación de PMT <span class="n" id="nImp">0</span>
+    </div>
+  </div>
+
+  <!-- Actualizar datos desde SharePoint (sin programar) -->
+  <details class="card no-print" style="margin-bottom:16px; padding:0; overflow:hidden">
+    <summary style="cursor:pointer; padding:12px 16px; font-weight:800; color:var(--epm-verde); list-style:none; display:flex; align-items:center; gap:10px;">
+      🔄 Actualizar datos desde SharePoint
+      <span style="font-weight:600; color:var(--tenue); font-size:12px;">— exporta las listas a CSV y cárgalas aquí (no requiere programar)</span>
+    </summary>
+    <div style="padding:4px 16px 16px; border-top:1px solid var(--linea);">
+      <p style="font-size:12.5px; color:var(--tenue); margin:10px 0 12px;">
+        En cada lista de SharePoint: <b>Exportar → CSV</b>. Luego selecciona aquí cada archivo; el tablero calcula el semáforo al instante.
+        Para publicar la actualización a todo el equipo, usa <b>“Descargar JSON”</b> y sube los dos archivos con GitHub Desktop (ver guía).
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div class="campo">
+          <label style="font-size:11px; font-weight:700; color:var(--tenue);">CSV · Verificación rutinaria</label>
+          <input type="file" id="csvRut" accept=".csv" style="border:1px solid var(--linea); border-radius:8px; padding:6px; font-size:12px; background:#fbfdfb;">
+          <span id="okRut" style="font-size:11.5px; color:var(--sem-verde); font-weight:600;"></span>
+        </div>
+        <div class="campo">
+          <label style="font-size:11px; font-weight:700; color:var(--tenue);">CSV · Implementación de PMT</label>
+          <input type="file" id="csvImp" accept=".csv" style="border:1px solid var(--linea); border-radius:8px; padding:6px; font-size:12px; background:#fbfdfb;">
+          <span id="okImp" style="font-size:11.5px; color:var(--sem-verde); font-weight:600;"></span>
+        </div>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn-limpiar" onclick="descargarJSON('rut')">⤓ Descargar JSON rutinarios</button>
+        <button class="btn-limpiar" onclick="descargarJSON('imp')">⤓ Descargar JSON implementación</button>
+      </div>
+    </div>
+  </details>
+
+  <!-- Filtros -->
+  <div class="filtros">
+    <div class="campo">
+      <label>Contratista</label>
+      <select id="fContratista"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Proyecto</label>
+      <select id="fProyecto"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Contrato</label>
+      <select id="fContrato"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Frente</label>
+      <select id="fFrente"><option value="">Todos</option></select>
+    </div>
+    <div class="campo">
+      <label>Tipo de cierre</label>
+      <select id="fCierre"><option value="">Todos</option></select>
+    </div>
+    <div class="campo" id="wrapFase" style="display:none">
+      <label>Fase / Etapa</label>
+      <select id="fFase"><option value="">Todas</option></select>
+    </div>
+    <div class="campo">
+      <label>Semáforo</label>
+      <select id="fSem">
+        <option value="">Todos</option>
+        <option value="verde">🟢 Cumple</option>
+        <option value="amarillo">🟡 Por mejorar</option>
+        <option value="rojo">🔴 Crítico</option>
+        <option value="sin_dato">⚪ Sin evaluación</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>Desde</label>
+      <input type="date" id="fDesde">
+    </div>
+    <div class="campo">
+      <label>Hasta</label>
+      <input type="date" id="fHasta">
+    </div>
+    <button class="btn-limpiar" onclick="limpiar()">Limpiar filtros</button>
+    <button class="btn-pdf" onclick="window.print()">⤓ Informe PDF</button>
+  </div>
+
+  <!-- KPIs + medidor -->
+  <div class="grid-kpi">
+    <div class="card gauge-card">
+      <div class="titl">Índice de cumplimiento</div>
+      <div class="gauge-wrap">
+        <svg viewBox="0 0 200 118" width="200" height="118" id="gaugeSvg"></svg>
+        <div class="gauge-num"><b id="gaugeVal">—</b><small id="gaugeLab">Promedio del periodo</small></div>
+      </div>
+    </div>
+    <div class="card kpi acc-g"><div class="lab">Inspecciones</div><div class="val" id="kTotal">0</div><div class="sub" id="kEval">0 evaluadas</div></div>
+    <div class="card kpi acc-v"><div class="lab">Cumplen</div><div class="val" id="kVerde">0</div><div class="sub" id="kVerdePct">0%</div></div>
+    <div class="card kpi acc-a"><div class="lab">Por mejorar</div><div class="val" id="kAmar">0</div><div class="sub" id="kAmarPct">0%</div></div>
+    <div class="card kpi acc-r"><div class="lab">Críticas</div><div class="val" id="kRojo">0</div><div class="sub" id="kRojoPct">0%</div></div>
+  </div>
+
+  <!-- Gráficos -->
+  <div class="grid-charts">
+    <div class="card panel">
+      <h3>Distribución del semáforo</h3>
+      <p class="cap">Cuántas inspecciones caen en cada nivel de cumplimiento.</p>
+      <div class="chart-box"><canvas id="chSem"></canvas></div>
+      <div class="leyenda">
+        <span><i class="dot" style="background:var(--sem-verde)"></i>Cumple ≥ 80%</span>
+        <span><i class="dot" style="background:var(--sem-amar)"></i>Por mejorar 70–80%</span>
+        <span><i class="dot" style="background:var(--sem-rojo)"></i>Crítico ≤ 70%</span>
+      </div>
+    </div>
+    <div class="card panel">
+      <h3>Cumplimiento por contrato</h3>
+      <p class="cap">Promedio del índice de cumplimiento en cada contrato.</p>
+      <div class="chart-box"><canvas id="chContrato"></canvas></div>
+    </div>
+    <div class="card panel span2">
+      <h3>Desempeño por ítem evaluado</h3>
+      <p class="cap">Porcentaje de cumplimiento de <b>cada ítem</b> del checklist en las inspecciones filtradas (100% = siempre cumple; incluye “No aplica” como cumple). Ordenado del más débil al más fuerte para enfocar la gestión.</p>
+      <div class="chart-box xtall"><canvas id="chItems"></canvas></div>
+    </div>
+    <div class="card panel span2">
+      <h3>Evolución mensual del cumplimiento</h3>
+      <p class="cap">Cómo se ha movido el índice promedio mes a mes.</p>
+      <div class="chart-box"><canvas id="chTiempo"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <div class="card tabla-card">
+    <div class="tabla-head">
+      <h3>Detalle de inspecciones</h3>
+      <span class="cnt" id="tablaCnt"></span>
+    </div>
+    <div class="scroll">
+      <table class="data">
+        <thead id="tablaHead"></thead>
+        <tbody id="tablaBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Nota metodológica -->
+  <div class="nota" style="margin-top:16px">
+    <b>Cómo se calcula el semáforo.</b> Cada inspección recibe un <b>índice de cumplimiento ponderado</b> = suma de (valor del ítem × su peso).
+    El valor es 1 si “Sí”, 0 si “No”, y <b>1 si “No aplica”</b> (cuenta como cumple, tal como el reporte oficial). El ítem “Estado de señales” usa Bueno = 1 · Regular = 0,6 · Malo = 0.
+    Los pesos suman 1,00 y provienen del reporte Power BI. Umbrales del medidor: <b>🟢 ≥ 80%</b>, <b>🟡 70–80%</b>, <b>🔴 ≤ 70%</b>.
+    En <b>Implementación</b> el índice corresponde a la fase de <i>Puesta en Operación (PO)</i>, que es la que el reporte pondera.
+    <details class="modelo">
+      <summary>Ver pesos oficiales por criterio</summary>
+      <table>
+        <tr><td colspan="2"><b>Verificación rutinaria</b></td></tr>
+        <tr><td>Canalización y cierre</td><td>0,22</td></tr>
+        <tr><td>Señalización vertical</td><td>0,15</td></tr>
+        <tr><td>Auxiliares de tránsito · Vía limpia · Pavimento/platinas</td><td>0,12 c/u</td></tr>
+        <tr><td>Dispositivos luminosos</td><td>0,10</td></tr>
+        <tr><td>Sendero peatonal</td><td>0,08</td></tr>
+        <tr><td>Estado de señales</td><td>0,05</td></tr>
+        <tr><td>PMT en sitio · Rotura en sitio</td><td>0,02 c/u</td></tr>
+        <tr><td colspan="2" style="padding-top:8px"><b>Implementación · Puesta en Operación</b></td></tr>
+        <tr><td>Ancho de carril · Long. transición · Long. seguridad · Auxiliares (cantidad)</td><td>0,10 c/u</td></tr>
+        <tr><td>Horario de inicio · Reposición de señales · Flashers</td><td>0,08 c/u</td></tr>
+        <tr><td>Canalización según planos</td><td>0,07</td></tr>
+        <tr><td>Espaciamiento y tamaño de señales</td><td>0,04 c/u</td></tr>
+        <tr><td>PMT impreso · Señalización · Canalización (sentido/lastre/reflect.) · Área acopio · Bastón luminoso</td><td>0,03 c/u</td></tr>
+      </table>
+    </details>
+  </div>
+
+</div>
+
+<!-- ============ DATOS DE MUESTRA (respaldo) ============ -->
+<script>
+const MUESTRA_RUTINARIOS=[{"fecha": "2025-10-22", "frente": "4", "contrato": "CW328120", "inspector": "119.011", "direccion": "ljyfl", "tipo_cierre": "Parcial", "pmt": "Si", "rotura": "Si", "senal_planos": "No", "senal_estado": "Regular", "canalizacion": "Si", "luminosos": "Si", "auxiliares": "Si", "via_limpia": "No", "platinas": "No", "peatonal": "Si", "obs": "fagva", "cumplimiento": 65, "n_items": 10, "fallas": ["\u00bfSe\u00f1alizaci\u00f3n Vertical - Seg\u00fan planos?", "\u00bfEstado y limpieza de se\u00f1ales?", "\u00bfV\u00eda limpia y en condiciones de operaci\u00f3n?", "\u00bfPavimento de impacto o Platinas antideslizantes en intervenciones previas?"], "semaforo": "rojo"}, {"fecha": "2025-10-23", "frente": "1", "contrato": "CW328120", "inspector": "118.995", "direccion": "CL 1 N 2 3", "tipo_cierre": "Parcial", "pmt": "Si", "rotura": "Si", "senal_planos": "Si", "senal_estado": "Bueno", "canalizacion": "Si", "luminosos": "Si", "auxiliares": "Si", "via_limpia": "Si", "platinas": "Si", "peatonal": "Si", "obs": "", "cumplimiento": 100, "n_items": 10, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-10-24", "frente": "1", "contrato": "CW328120", "inspector": "118.995", "direccion": "CL 1 N 2 14", "tipo_cierre": "Parcial y Total", "pmt": "Si", "rotura": "No", "senal_planos": "Si", "senal_estado": "Bueno", "canalizacion": "Si", "luminosos": "Si", "auxiliares": "Si", "via_limpia": "Si", "platinas": "Si", "peatonal": "Si", "obs": "", "cumplimiento": 90, "n_items": 10, "fallas": ["\u00bfPermiso de Rotura?"], "semaforo": "verde"}, {"fecha": "2025-11-11", "frente": "2", "contrato": "CW328120", "inspector": "118.995", "direccion": "CR 1 N 2 3", "tipo_cierre": "Parcial", "pmt": "Si", "rotura": "No", "senal_planos": "Si", "senal_estado": "Bueno", "canalizacion": "Si", "luminosos": "Si", "auxiliares": "Si", "via_limpia": "Si", "platinas": "Si", "peatonal": "Si", "obs": "", "cumplimiento": 90, "n_items": 10, "fallas": ["\u00bfPermiso de Rotura?"], "semaforo": "verde"}, {"fecha": "2025-11-11", "frente": "3", "contrato": "CW328120", "inspector": "118.995", "direccion": "FF", "tipo_cierre": "Total", "pmt": "Si", "rotura": "Si", "senal_planos": "Si", "senal_estado": "Regular", "canalizacion": "Si", "luminosos": "Si", "auxiliares": "Si", "via_limpia": "Si", "platinas": "Si", "peatonal": "No", "obs": "ABC", "cumplimiento": 85, "n_items": 10, "fallas": ["\u00bfEstado y limpieza de se\u00f1ales?", "\u00bfSe habilit\u00f3 en condiciones seguras el desplazamiento peatonal?"], "semaforo": "amarillo"}];
+const MUESTRA_IMPLEMENTACION=[{"fecha": "2025-04-24", "fase": "PO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 75, "n_items": 20, "fallas": ["Plan de Manejo de Tr\u00e1nsito", "Se\u00f1alizaci\u00f3n vertical - Marca contratista", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Anchos libre de carril", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "amarillo"}, {"fecha": "2025-08-13", "fase": "FO", "contrato": "CW328120", "frente": "8", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 10, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-06-24", "fase": "FO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 9, "fallas": ["Retiro definitivo de se\u00f1ales", "Desinstalaci\u00f3n de elementos en contraflujo", "Se retiran o tapan las se\u00f1ales / Horario no labora"], "semaforo": "rojo"}, {"fecha": "2025-04-29", "fase": "DO", "contrato": "CW328120", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 50, "n_items": 2, "fallas": ["Desplazamiento maquinaria con auxiliar"], "semaforo": "rojo"}, {"fecha": "2025-07-09", "fase": "DO", "contrato": "CW328120", "frente": "5", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 1, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-09-18", "fase": "DG", "contrato": "CW322377", "frente": "1", "jornada": "Diurna", "inspector": "Auxiliar de campo", "direccion": "Tanque la Pi\u00f1uela", "tipo_cierre": "Total", "clima": "Soleado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-06-25", "fase": "PO", "contrato": "CW327799", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 21, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-09-04", "fase": "FO", "contrato": "CW328120", "frente": "10", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 3, "fallas": ["Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "rojo"}, {"fecha": "2025-08-21", "fase": "PO", "contrato": "CW328120", "frente": "4", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 68, "n_items": 19, "fallas": ["Se\u00f1alizaci\u00f3n Vertical - Coherente con planos", "Canalizaci\u00f3n - Ubicaci\u00f3n y espaciamiento / Planos", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Longitud transici\u00f3n", "Gesti\u00f3n cierre vial - Longitud seguridad", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-06-26", "fase": "DG", "contrato": "CW328120", "frente": "3", "jornada": "Nocturna", "inspector": "Auxiliar de campo", "direccion": "T03-SOC-AC14", "tipo_cierre": "Parcial", "clima": "Nubado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-09-15", "fase": "DO", "contrato": "CW322377", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 50, "n_items": 2, "fallas": ["Desplazamiento maquinaria con auxiliar"], "semaforo": "rojo"}, {"fecha": "2025-07-24", "fase": "PO", "contrato": "CW328120", "frente": "5", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 63, "n_items": 19, "fallas": ["Se\u00f1alizaci\u00f3n Vertical - Coherente con planos", "Canalizaci\u00f3n - En sentido del flujo", "Canalizaci\u00f3n - Ubicaci\u00f3n y espaciamiento / Planos", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Longitud transici\u00f3n", "Gesti\u00f3n cierre vial - Longitud seguridad", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-09-11", "fase": "PO", "contrato": "CW322377", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 21, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-06-20", "fase": "DO", "contrato": "CW328120", "frente": "5", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 3, "fallas": ["Reporte oportuno de imprevistos"], "semaforo": "rojo"}, {"fecha": "2025-07-17", "fase": "DO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 1, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-08-22", "fase": "DO", "contrato": "CW328120", "frente": "7", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 50, "n_items": 2, "fallas": ["Desplazamiento maquinaria con auxiliar"], "semaforo": "rojo"}, {"fecha": "2025-05-15", "fase": "DO", "contrato": "CW327799", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 2, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-09-01", "fase": "FO", "contrato": "T02-SOR-AC-03", "frente": "9", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 3, "fallas": ["Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "rojo"}, {"fecha": "2025-10-07", "fase": "DO", "contrato": "CW352217", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 50, "n_items": 2, "fallas": ["Condici\u00f3n del flujo vehicular"], "semaforo": "rojo"}, {"fecha": "2025-06-24", "fase": "PO", "contrato": "CW328120", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 96, "n_items": 23, "fallas": ["Reposici\u00f3n de se\u00f1ales"], "semaforo": "verde"}, {"fecha": "2025-08-20", "fase": "PO", "contrato": "CW328120", "frente": "4", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 68, "n_items": 19, "fallas": ["Canalizaci\u00f3n - Ubicaci\u00f3n y espaciamiento / Planos", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Longitud transici\u00f3n", "Gesti\u00f3n cierre vial - Longitud seguridad", "Gesti\u00f3n auxiliates de tr\u00e1nsito - Cantidad/Planos", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-08-05", "fase": "DO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 2, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-11-05", "fase": "FO", "contrato": "CW328120", "frente": "12", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 5, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-04-23", "fase": "PO", "contrato": "CW328120", "frente": "1", "jornada": "24 horas", "inspector": "Auxiliar de campo", "direccion": "T03-SOC-AC13_1-CARRIL", "tipo_cierre": "Parcial", "clima": "Soleado", "cumplimiento": 68, "n_items": 22, "fallas": ["Plan de Manejo de Tr\u00e1nsito", "Se\u00f1alizaci\u00f3n vertical - Espaciamiento adecuado", "Se\u00f1alizaci\u00f3n vertical - Marca contratista", "Canalizaci\u00f3n - Correctamente lastrados", "Canalizaci\u00f3n - Elementos reflectivos", "Gesti\u00f3n cierre vial - Flashers (nocturno)", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-10-29", "fase": "DO", "contrato": "CW322377", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 2, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-09-30", "fase": "FO", "contrato": "CW328120", "frente": "6", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 30, "n_items": 10, "fallas": ["Platinas: pernadas, antideslizantes y seguras", "Pavimento provisional adecuado", "V\u00eda despejada", "Retiro definitivo de se\u00f1ales", "Desinstalaci\u00f3n de elementos en contraflujo", "Se retiran o tapan las se\u00f1ales / Horario no labora", "Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "rojo"}, {"fecha": "2025-10-28", "fase": "PO", "contrato": "CW328120", "frente": "10", "jornada": "24 horas", "inspector": "Juli\u00e1n S\u00e1nchez Corredor", "direccion": "T01-SOR-AO13", "tipo_cierre": "Parcial", "clima": "Soleado", "cumplimiento": 95, "n_items": 19, "fallas": ["Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "verde"}, {"fecha": "2025-06-18", "fase": "DG", "contrato": "CW328120", "frente": "3", "jornada": "Nocturna", "inspector": "Auxiliar de campo", "direccion": "T03-SOC-AC14", "tipo_cierre": "Parcial", "clima": "Despejado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-09-05", "fase": "FO", "contrato": "CW328120", "frente": "9", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 3, "fallas": ["Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "rojo"}, {"fecha": "2025-10-27", "fase": "DO", "contrato": "CW322377", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 1, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-06-27", "fase": "FO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 88, "n_items": 8, "fallas": ["Retiro definitivo de se\u00f1ales"], "semaforo": "amarillo"}, {"fecha": "2025-06-20", "fase": "FO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 80, "n_items": 10, "fallas": ["Platinas: pernadas, antideslizantes y seguras", "Se retiran o tapan las se\u00f1ales / Horario no labora"], "semaforo": "amarillo"}, {"fecha": "2025-09-11", "fase": "FO", "contrato": "CW328120", "frente": "6", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 40, "n_items": 10, "fallas": ["V\u00eda limpia y en condiciones de operaci\u00f3n", "V\u00eda despejada", "Retiro definitivo de se\u00f1ales", "Desinstalaci\u00f3n de elementos en contraflujo", "Se retiran o tapan las se\u00f1ales / Horario no labora", "Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "rojo"}, {"fecha": "2025-09-04", "fase": "FO", "contrato": "CW328120", "frente": "8", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 10, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-08-04", "fase": "DO", "contrato": "CW328120", "frente": "4", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 67, "n_items": 3, "fallas": ["Reporte oportuno de imprevistos"], "semaforo": "rojo"}, {"fecha": "2025-06-05", "fase": "PO", "contrato": "CW328120", "frente": "5", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 65, "n_items": 20, "fallas": ["Permiso de espacio p\u00fablico", "Canalizaci\u00f3n - Ubicaci\u00f3n y espaciamiento / Planos", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Longitud transici\u00f3n", "Gesti\u00f3n cierre vial - Longitud seguridad", "Gesti\u00f3n auxiliates de tr\u00e1nsito - Cantidad/Planos", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-10-08", "fase": "FO", "contrato": "CW322377", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 5, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-07-24", "fase": "FO", "contrato": "CW328120", "frente": "7", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 80, "n_items": 10, "fallas": ["Se retiran o tapan las se\u00f1ales / Horario no labora", "Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "amarillo"}, {"fecha": "2025-10-28", "fase": "DG", "contrato": "CW322377", "frente": "2", "jornada": "Diurna", "inspector": "Auxiliar de campo", "direccion": "Tanque las flores", "tipo_cierre": "Ingreso y Salida", "clima": "Soleado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-07-21", "fase": "FO", "contrato": "CW328120", "frente": "6", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 10, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-05-06", "fase": "PO", "contrato": "CW328120", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 88, "n_items": 17, "fallas": ["Permiso de espacio p\u00fablico", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "amarillo"}, {"fecha": "2025-10-01", "fase": "FO", "contrato": "CW322377", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 86, "n_items": 7, "fallas": ["Retiro definitivo de se\u00f1ales"], "semaforo": "amarillo"}, {"fecha": "2025-07-30", "fase": "PO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 21, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-09-24", "fase": "FO", "contrato": "CW322377", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 88, "n_items": 8, "fallas": ["Habilitaci\u00f3n vial en horario autorizado"], "semaforo": "amarillo"}, {"fecha": "2025-10-09", "fase": "PO", "contrato": "CW322377", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 20, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-10-06", "fase": "FO", "contrato": "CW352217", "frente": "2", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 88, "n_items": 8, "fallas": ["Siniestros viales"], "semaforo": "amarillo"}, {"fecha": "2025-04-25", "fase": "PO", "contrato": "CW328120", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 68, "n_items": 22, "fallas": ["Inicio en hora autorizada", "Se\u00f1alizaci\u00f3n Vertical - Coherente con planos", "Se\u00f1alizaci\u00f3n vertical - Espaciamiento adecuado", "Se\u00f1alizaci\u00f3n vertical - Marca contratista", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Flashers (nocturno)", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "rojo"}, {"fecha": "2025-05-16", "fase": "PO", "contrato": "CW328120", "frente": "4", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 73, "n_items": 22, "fallas": ["Permiso de espacio p\u00fablico", "Inicio en hora autorizada", "Se\u00f1alizaci\u00f3n Vertical - Coherente con planos", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n cierre vial - Flashers (nocturno)", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "amarillo"}, {"fecha": "2025-10-29", "fase": "FO", "contrato": "CW322377", "frente": "3", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 100, "n_items": 8, "fallas": [], "semaforo": "verde"}, {"fecha": "2025-06-17", "fase": "PO", "contrato": "CW328120", "frente": "5", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 89, "n_items": 19, "fallas": ["Permiso de espacio p\u00fablico", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "amarillo"}, {"fecha": "2025-05-14", "fase": "PO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 84, "n_items": 19, "fallas": ["Se\u00f1alizaci\u00f3n vertical - Marca contratista", "Canalizaci\u00f3n - Correctamente lastrados", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Indumentaria"], "semaforo": "amarillo"}, {"fecha": "2025-07-23", "fase": "DG", "contrato": "CW328120", "frente": "2", "jornada": "Nocturna", "inspector": "Auxiliar de campo", "direccion": "T03-SOC-AC13_2-CARRIL", "tipo_cierre": "Parcial", "clima": "Despejado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-09-02", "fase": "DG", "contrato": "CW328120", "frente": "8", "jornada": "Diurna", "inspector": "Auxiliar de campo", "direccion": "T01-SOC-AC16-1_CARRIL", "tipo_cierre": "Parcial", "clima": "Soleado", "cumplimiento": null, "n_items": 0, "fallas": [], "semaforo": "sin_dato"}, {"fecha": "2025-05-08", "fase": "PO", "contrato": "CW328120", "frente": "1", "jornada": "", "inspector": "", "direccion": "", "tipo_cierre": "", "clima": "", "cumplimiento": 86, "n_items": 22, "fallas": ["Se\u00f1alizaci\u00f3n vertical - Marca contratista", "Gesti\u00f3n cierre vial - Flashers (nocturno)", "Gesti\u00f3n auxiliares de tr\u00e1nsito - Bast\u00f3n luminoso"], "semaforo": "amarillo"}];
+</script>
+
+<!-- ============ LÓGICA DEL TABLERO ============ -->
+<script>
+const SEM = {
+  verde:  {lab:'Cumple',        clase:'c-verde', color:'#1e9e3e'},
+  amarillo:{lab:'Por mejorar',  clase:'c-amar',  color:'#e5a100'},
+  rojo:   {lab:'Crítico',       clase:'c-rojo',  color:'#d64533'},
+  sin_dato:{lab:'Sin evaluación',clase:'c-gris', color:'#9aa0a6'},
+};
+const FASE_NOMBRE = {
+  PO:'Puesta en operación', DO:'Durante la operación', FO:'Finalización', DG:'Datos generales', '—':'Sin fase'
+};
+const MES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+// Relación contrato -> proyecto y contratista (del modelo base .pbix)
+const PROYECTOS = {"CW309535":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES INTEGRAL SEDIC"},"CW309538":{"proyecto":"Compra Conjunta","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW296899":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"MAPER S.A."},"CW287632":{"proyecto":"Compra Conjunta","contratista":"AYESA INGENIERIA Y ARQUITECTURA S. A. U SUCURSAL COLOMBIA"},"CW287622":{"proyecto":"Compra Conjunta","contratista":"CONHYDRA S.A. E.S.P."},"CW287608":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO APPLUS CCC"},"CW287625":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO INTEGRAL INTERVENTORIA REDES"},"CW287629":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287648":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW287543":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287638":{"proyecto":"Compra Conjunta","contratista":"DIRAC, S.A.P.I. DE C.V., SUCURSAL COLOMBIA"},"CW363557":{"proyecto":"PTAR Palmitas","contratista":"Consorcio Redes Integral Sedic"},"CW319425":{"proyecto":"Ampliación de la capacidad del alcantarillado de Sabaneta","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW318345":{"proyecto":"Mejora Estructural de Tanques de Almacenamiento en Concreto Etapa II","contratista":"CONSORCIO REDES INTEGRAL SEDIC"},"CW279853":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"CDM SMITH INC"},"CW289560":{"proyecto":"Ampliación Tanques La Ye, Las Flores y Piñuela - Etapa 1","contratista":"HMV Ingenieros LTDA"},"CW287549":{"proyecto":"Expansión circuito Yulimar - Tercera salida Manantiales","contratista":"CONSORCIO REDES"},"CW328217":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW287515":{"proyecto":"Compra Conjunta","contratista":"INGENIERIA TECNOLOGIA E INSTRUMENTACION S.A."},"CW287795":{"proyecto":"Compra Conjunta","contratista":"HMV Ingenieros LTDA"},"CW287520":{"proyecto":"Compra Conjunta","contratista":"INTEGRAL S A"},"CW287522":{"proyecto":"Compra Conjunta","contratista":"IDOM CONSULTING, ENGINEERING, ARCHITECTURE S.A.U."},"CW287184":{"proyecto":"Expansión circuito Yulimar - Tercera salida Manantiales","contratista":"CONSORCIO CIRCUITO YULIMAR 2023"},"CW302331":{"proyecto":"Mejora estructural de tanques de almacenamiento en concreto","contratista":"INGEOMEGA S.A.S."},"CW313583":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES AMVA 2024"},"CW313588":{"proyecto":"Compra Conjunta","contratista":"SANEAR S.A."},"CW313592":{"proyecto":"Compra Conjunta","contratista":"PAECIA S.A.S"},"CW313598":{"proyecto":"Compra Conjunta","contratista":"CONSORCIO REDES SYEMA"},"CT-001-2019":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"TICSA"},"CW164633":{"proyecto":"Modernización Planta Manantiales","contratista":"CONSORCIO MANANTIALES"},"CW316106":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"AYESA INGENIERIA Y ARQUITECTURA S. A. U SUCURSAL COLOMBIA"},"CW187131":{"proyecto":"Modernización Planta Manantiales","contratista":"NIPPON KOEI CO., LTD. SUCURSAL COLOMBIA"},"CW268428":{"proyecto":"Modernización y reposición redes circuitos Castilla, Castilla - Bello y Potrerito","contratista":"CONHYDRA S.A. E.S.P."},"CW154899":{"proyecto":"Compra Conjunta","contratista":"NIPPON KOEI CO., LTD. SUCURSAL COLOMBIA"},"CW137408":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"IDOM CONSULTING, ENGINEERING, ARCHITECTURE S.A.U."},"OC2910178":{"proyecto":"Ampliación y modernización PTAR Tranvía","contratista":"Giovanna Spera"},"CW279601":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"CONHYDRA S.A. E.S.P."},"CW266882":{"proyecto":"Modernización y reposición redes circuitos Castilla, Castilla - Bello y Potrerito","contratista":"UNION TEMPORAL CASTILLA SYEMA"},"CW317749":{"proyecto":"Nuevo sistema de captación Barbosa","contratista":"COMERCIALIZADORA S.Y E. Y CIA S.A."},"CW316154":{"proyecto":"Modernización Planta de Producción de Agua Potable La Ayurá","contratista":"ESPINA Y DELFIN SL"},"CW283635":{"proyecto":"Compra Conjunta","contratista":"SHANNON & WILSON, INC."},"CW322377":{"proyecto":"Ampliación Tanques La Ye, Las Flores y Piñuela - Etapa 1","contratista":"CONSORCIO AMT24"},"CW323402":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"Consorcio Infraestructura de Aguas 2024"},"CW328205":{"proyecto":"Renovación Colectores Etapa 2","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW323849":{"proyecto":"Renovación Colectores Etapa 2","contratista":"CONSORCIO REDES AMVA 2024"},"CW322015":{"proyecto":"Nuevo sistema de captación Barbosa","contratista":"CONSORCIO APPLUS CCC"},"CW323671":{"proyecto":"Interceptor Copacabana","contratista":"Consorcio Redes Integral Sedic"},"CW328120":{"proyecto":"ESTRUCTURAS DE DESVÍO","contratista":"SANEAR S.A."},"CW345497":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"EWE SOLUTION SAS"},"CW348086":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"MAPER S.A."},"CW304879":{"proyecto":"Eliminación descargas PSMV","contratista":"ACUEDUCTOS Y ALCANTARILLADOS SOSTENIBLES A.A.S. S.A. E.S.P."},"CW345820":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"MAPER S.A."},"CW345831":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"EWE SOLUTION SAS"},"CW354244":{"proyecto":"Sistema Bombeo Orfelinato - Villa Hermosa","contratista":"MAPER"},"CW353548":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO SYEMA"},"CW353551":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO REDES AMVA 2024"},"CW355772":{"proyecto":"Interceptor Sur","contratista":"CONSORCIO REDES NIPPON KOEI - AIM"},"CW353556":{"proyecto":"Eliminación descargas PSMV","contratista":"SANEAR S.A"},"CW354529":{"proyecto":"Eliminación descargas PSMV","contratista":"CONSORCIO SANEAMIENTO MJ"},"CW348929":{"proyecto":"Ampliación de la capacidad de la distribución primaria en el sector occidental de Medellín - Cadena de Occidente","contratista":"CALCULO Y CONSTRUCCIONES SAS"},"CW352217":{"proyecto":"Rehabilitación Interceptor Oriental y obras complementarias","contratista":"MEXICHEM COLOMBIA S A S"},"CW374202":{"proyecto":"Rehabilitación Interceptor Oriental y obras complementarias","contratista":"CONSORCIO REDES AMVA 2024"}};
+function infoContrato(c){ return PROYECTOS[c] || {proyecto:'', contratista:''}; }
+
+// Lista COMPLETA de criterios evaluados por lista (orden por peso), para el desempeño por ítem
+const CRITERIOS_RUT = ['Canalización y cierre','Señalización vertical','Auxiliares de tránsito','Vía limpia','Pavimento/platinas','Dispositivos luminosos','Sendero peatonal','Estado de señales','PMT en sitio','Rotura en sitio'];
+const CRITERIOS_IMP = ['Ancho de carril','Longitud de transición','Longitud de seguridad','Auxiliares - cantidad','Horario de inicio','Reposición señales hurtadas','Flashers','Canalización según planos','Espaciamiento de señales','Tamaño de señales','PMT impreso','Señalización según planos','Canalización sentido flujo','Canalización lastrada','Canalización reflectividad','Área de acopio','Auxiliares - bastón luminoso'];
+
+let LISTA = 'rut';           // pestaña activa
+let DATOS = {rut:[], imp:[]}; // fuentes cargadas
+let charts = {};
+
+/* ===========================================================
+   MOTOR DE VALORACIÓN OFICIAL  — extraído del reporte Power BI
+   (ReporteSeguimientoPMTs-rutinarios_v3.pbix). Puntaje ponderado
+   por criterio; "No aplica" cuenta como cumple (1); "Estado de
+   señales": Bueno=1, Regular=0.6, Malo=0. Umbrales del medidor:
+   verde ≥ 0.80, amarillo 0.70–0.80, rojo ≤ 0.70.
+   Los PESOS suman 1.00 en cada lista y reproducen el reporte con
+   exactitud. Cambia un peso o un umbral aquí si el modelo se ajusta.
+   =========================================================== */
+const UMBRAL_VERDE = 80;   // >= 80  -> Cumple (verde)
+const UMBRAL_ROJO  = 70;   // <= 70  -> Crítico (rojo) ; entre 70 y 80 -> Por mejorar
+
+function semaforoDe(pct){
+  if(pct===null||pct===undefined) return 'sin_dato';
+  if(pct>=UMBRAL_VERDE) return 'verde';
+  if(pct<=UMBRAL_ROJO)  return 'rojo';
+  return 'amarillo';
+}
+function normContrato(c){
+  if(!c) return '';
+  c=(''+c).trim().toUpperCase().replace(/\s+/g,'');
+  const m=c.match(/^CW?\.?(\d{4,6})$/);
+  return m? 'CW'+m[1] : c;
+}
+function normFecha(f){
+  if(!f) return null;
+  const m=(''+f).trim().match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if(m){ const[,d,mo,y]=m; return `${y}-${String(+mo).padStart(2,'0')}-${String(+d).padStart(2,'0')}`; }
+  const m2=(''+f).trim().match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m2? m2[0] : null;
+}
+// valor de un criterio Sí/No: Si=1, No=0, "No aplica"=1 ; vacío/otro => null (no cuenta)
+function valBool(v){
+  const lo=(v==null?'':(''+v)).trim().toLowerCase();
+  if(lo==='si'||lo==='sí') return 1;
+  if(lo==='no') return 0;
+  if(lo==='no aplica') return 1;
+  return null;
+}
+// valor de calidad (Estado de señales)
+function valCal(v){
+  const lo=(v==null?'':(''+v)).trim().toLowerCase();
+  if(lo==='bueno') return 1; if(lo==='regular') return 0.6; if(lo==='malo') return 0;
+  return null;
+}
+/* PESOS OFICIALES (columna del CSV de SharePoint -> peso). 'cal' marca el ítem de calidad. */
+const PESOS_RUT = {
+  '¿Plan de Manejo de Tránsito?':0.02,
+  '¿Permiso de Rotura?':0.02,
+  '¿Señalización Vertical - Según planos?':0.15,
+  '¿Estado y limpieza de señales?':['cal',0.05],
+  '¿Canalización y cierre - Según Planos?':0.22,
+  '¿Dispositivos luminosos adecuados?':0.10,
+  '¿Auxiliares de tránsito - Cantidad/Requisitos/Indumentaria?':0.12,
+  '¿Vía limpia y en condiciones de operación?':0.12,
+  '¿Pavimento de impacto o Platinas antideslizantes en intervenciones previas?':0.12,
+  '¿Se habilitó en condiciones seguras el desplazamiento peatonal?':0.08,
+};
+const PESOS_PO = {
+  'Plan de Manejo de Tránsito':0.03,
+  'Inicio en hora autorizada':0.08,
+  'Reposición de señales':0.08,
+  'Señalización Vertical - Coherente con planos':0.03,
+  'Señalización vertical - Espaciamiento adecuado':0.04,
+  'Señalización vertical - Tamaño y pertinencia':0.04,
+  'Canalización - En sentido del flujo':0.03,
+  'Canalización - Ubicación y espaciamiento / Planos':0.07,
+  'Canalización - Correctamente lastrados':0.03,
+  'Canalización - Elementos reflectivos':0.03,
+  'Gestión cierre vial - Anchos libre de carril':0.10,
+  'Gestión cierre vial - Longitud transición':0.10,
+  'Gestión cierre vial - Longitud seguridad':0.10,
+  'Gestión cierre vial - Área de acopio':0.03,
+  'Gestión cierre vial - Flashers (nocturno)':0.08,
+  'Gestión auxiliates de tránsito - Cantidad/Planos':0.10,
+  'Gestión auxiliares de tránsito - Bastón luminoso':0.03,
+};
+// nombre "amable" de cada criterio para mostrar en fallas
+const NOMBRE = {
+  '¿Señalización Vertical - Según planos?':'Señalización vertical',
+  '¿Canalización y cierre - Según Planos?':'Canalización y cierre',
+  '¿Dispositivos luminosos adecuados?':'Dispositivos luminosos',
+  '¿Auxiliares de tránsito - Cantidad/Requisitos/Indumentaria?':'Auxiliares de tránsito',
+  '¿Vía limpia y en condiciones de operación?':'Vía limpia',
+  '¿Pavimento de impacto o Platinas antideslizantes en intervenciones previas?':'Pavimento/platinas',
+  '¿Se habilitó en condiciones seguras el desplazamiento peatonal?':'Sendero peatonal',
+  '¿Estado y limpieza de señales?':'Estado de señales',
+  '¿Plan de Manejo de Tránsito?':'PMT en sitio','¿Permiso de Rotura?':'Rotura en sitio',
+  'Plan de Manejo de Tránsito':'PMT impreso','Inicio en hora autorizada':'Horario de inicio',
+  'Reposición de señales':'Reposición señales hurtadas','Señalización Vertical - Coherente con planos':'Señalización según planos',
+  'Señalización vertical - Espaciamiento adecuado':'Espaciamiento de señales','Señalización vertical - Tamaño y pertinencia':'Tamaño de señales',
+  'Canalización - En sentido del flujo':'Canalización sentido flujo','Canalización - Ubicación y espaciamiento / Planos':'Canalización según planos',
+  'Canalización - Correctamente lastrados':'Canalización lastrada','Canalización - Elementos reflectivos':'Canalización reflectividad',
+  'Gestión cierre vial - Anchos libre de carril':'Ancho de carril','Gestión cierre vial - Longitud transición':'Longitud de transición',
+  'Gestión cierre vial - Longitud seguridad':'Longitud de seguridad','Gestión cierre vial - Área de acopio':'Área de acopio',
+  'Gestión cierre vial - Flashers (nocturno)':'Flashers','Gestión auxiliates de tránsito - Cantidad/Planos':'Auxiliares - cantidad',
+  'Gestión auxiliares de tránsito - Bastón luminoso':'Auxiliares - bastón luminoso',
+};
+// evalúa una fila con una tabla de pesos -> [pct 0..100 | null, n_items, fallas[]]
+function evaluarPonderado(row, pesos){
+  let p=0, n=0; const fallas=[]; const items={};
+  for(const col in pesos){
+    const def=pesos[col];
+    const esCal=Array.isArray(def);
+    const w=esCal?def[1]:def;
+    const v=esCal?valCal(row[col]):valBool(row[col]);
+    if(v===null) continue;
+    n++; p+=v*w; const nom=NOMBRE[col]||col; items[nom]=v;
+    if(v<1) fallas.push(nom);
+  }
+  return [ n? Math.round(p*1000)/10 : null, n, fallas, items ];  // 1 decimal
+}
+function mapearRutinarios(filas){
+  const out=[];
+  for(const r of filas){
+    const [pct,n,fallas,items]=evaluarPonderado(r, PESOS_RUT);
+    if(pct===null) continue;
+    const co=normContrato(r['Contrato']); const inf=infoContrato(co);
+    out.push({ fecha:normFecha(r['Fecha']), frente:(r['Frentes']||'').trim(),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
+      inspector:(r['Diligenciado por (N° Registro)']||'').trim(),
+      direccion:(r['Dirección']||'').trim(), tipo_cierre:(r['Tipo de cierre']||'').trim(),
+      obs:(r['Observaciones generales']||'').trim(),
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+function mapearImplementacion(filas){
+  const out=[];
+  for(const r of filas){
+    // solo cuentan las inspecciones con checklist de Puesta en Operación (PO)
+    const [pct,n,fallas,items]=evaluarPonderado(r, PESOS_PO);
+    if(pct===null) continue;
+    const co=normContrato(r['Contrato (PO)']||r['Contrato (DG)']); const inf=infoContrato(co);
+    out.push({ fecha:normFecha(r['Fecha (PO)']||r['Fecha (DG)']),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
+      frente:(r['Frente (PO)']||r['Frente (DG)']||'').trim(),
+      jornada:(r['Jornada']||'').trim(), inspector:(r['Diligenciado por']||'').trim(),
+      direccion:(r['Dirección']||'').trim(), tipo_cierre:(r['Tipo de cierre']||'').trim(),
+      obs:(r['Observaciones generales (PO)']||'').trim(),
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+
+/* ===========================================================
+   MAPEO DE DATOS AUTOMÁTICOS (crudo_*.json de Power Automate)
+   Los datos vienen con los NOMBRES INTERNOS de SharePoint y los
+   valores de opción como objeto { Value: "Si" }. Aquí se traducen
+   al modelo oficial. Los pesos son los mismos del reporte Power BI.
+   =========================================================== */
+function spVal(v){ return (v && typeof v==='object') ? v.Value : v; }
+function valBoolSP(v){
+  const lo=(spVal(v)==null?'':(''+spVal(v))).trim().toLowerCase();
+  if(lo==='si'||lo==='sí') return 1; if(lo==='no') return 0; if(lo==='no aplica') return 1; return null;
+}
+function valCalSP(v){
+  const lo=(spVal(v)==null?'':(''+spVal(v))).trim().toLowerCase();
+  if(lo==='bueno') return 1; if(lo==='regular') return 0.6; if(lo==='malo') return 0; return null;
+}
+// interno -> [peso, nombreAmable]  ('cal' marca el ítem de calidad)
+const CRUDO_RUT = {
+  'PlandeManejodeTr_x00e1_nsito':[0.02,'PMT en sitio'],
+  'PermisodeRotura':[0.02,'Rotura en sitio'],
+  'Se_x00f1_alizaci_x00f3_nVertical':[0.15,'Señalización vertical'],
+  'Estadodese_x00f1_ales':['cal',0.05,'Estado de señales'],
+  'Canalizaci_x00f3_n_x002d_Ensenti':[0.22,'Canalización y cierre'],
+  'Gesti_x00f3_ncierrevial_x002d_Fl':[0.10,'Dispositivos luminosos'],
+  'Gesti_x00f3_nauxiliatesdetr_x00e':[0.12,'Auxiliares de tránsito'],
+  'V_x00ed_alimpiayencondicionesdeo':[0.12,'Vía limpia'],
+  'Platinas_x003a_pernadas_x002c_an':[0.12,'Pavimento/platinas'],
+  'V_x00ed_adespejada':[0.08,'Sendero peatonal'],
+};
+const CRUDO_PO = {
+  'PlandeManejodeTr_x00e1_nsito':[0.03,'PMT impreso'],
+  'Inicioenhoraautorizada':[0.08,'Horario de inicio'],
+  'Reposici_x00f3_ndese_x00f1_ales':[0.08,'Reposición señales hurtadas'],
+  'Se_x00f1_alizaci_x00f3_nVertical':[0.03,'Señalización según planos'],
+  'Se_x00f1_alizaci_x00f3_nvertical0':[0.04,'Espaciamiento de señales'],
+  'Se_x00f1_alizaci_x00f3_nvertical1':[0.04,'Tamaño de señales'],
+  'Canalizaci_x00f3_n_x002d_Ensenti':[0.03,'Canalización sentido flujo'],
+  'Canalizaci_x00f3_n_x002d_Ubicaci':[0.07,'Canalización según planos'],
+  'Hola':[0.03,'Canalización lastrada'],
+  'Canalizaci_x00f3_n_x002d_Element':[0.03,'Canalización reflectividad'],
+  'Gesti_x00f3_ncierrevial_x002d_An':[0.10,'Ancho de carril'],
+  'Gesti_x00f3_ncierrevial_x002d_Lo':[0.10,'Longitud de transición'],
+  'Gesti_x00f3_ncierrevial_x002d_Lo0':[0.10,'Longitud de seguridad'],
+  'Gesti_x00f3_ncierrevial_x002d__x':[0.03,'Área de acopio'],
+  'Gesti_x00f3_ncierrevial_x002d_Fl':[0.08,'Flashers'],
+  'Gesti_x00f3_nauxiliatesdetr_x00e':[0.10,'Auxiliares - cantidad'],
+  'Gesti_x00f3_nauxiliaresdetr_x00e1':[0.03,'Auxiliares - bastón luminoso'],
+};
+function evaluarCrudo(row, pesos){
+  let p=0,n=0; const fallas=[]; const items={};
+  for(const k in pesos){
+    const def=pesos[k]; const esCal=def[0]==='cal';
+    const w=esCal?def[1]:def[0]; const nom=esCal?def[2]:def[1];
+    const v=esCal?valCalSP(row[k]):valBoolSP(row[k]);
+    if(v===null) continue;
+    n++; p+=v*w; items[nom]=v; if(v<1) fallas.push(nom);
+  }
+  return [ n? Math.round(p*1000)/10 : null, n, fallas, items ];
+}
+function mapearCrudoRutinarios(filas){
+  const out=[];
+  for(const r of filas){
+    const [pct,n,fallas,items]=evaluarCrudo(r, CRUDO_RUT);
+    if(pct===null) continue;
+    const co=normContrato(spVal(r['Contrato'])); const inf=infoContrato(co);
+    out.push({ fecha:normFecha(spVal(r['Fecha'])), contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
+      frente:(''+(spVal(r['Seguimiento'])||'')).trim(), inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
+      direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
+      obs:(''+(spVal(r['Observacionesgenerales_x0028_FO_'])||'')).trim(),
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+function mapearCrudoImplementacion(filas){
+  const out=[];
+  for(const r of filas){
+    const [pct,n,fallas,items]=evaluarCrudo(r, CRUDO_PO);
+    if(pct===null) continue;  // solo inspecciones con checklist de PO
+    const co=normContrato(spVal(r['Contrato_x0028_PO_x0029_'])||spVal(r['Contrato_x0028_DO_x0029_'])||spVal(r['Contrato'])); const inf=infoContrato(co);
+    out.push({ fecha:normFecha(spVal(r['Fecha_x0028_PO_x0029_'])||spVal(r['Fecha'])),
+      contrato:co, proyecto:inf.proyecto, contratista:inf.contratista,
+      frente:(''+(spVal(r['Seguimiento_x0028_PO_x0029_'])||spVal(r['Seguimiento'])||'')).trim(),
+      inspector:(''+(spVal(r['Diligenciadopor'])||'')).trim(),
+      direccion:(''+(spVal(r['Direcci_x00f3_n'])||'')).trim(), tipo_cierre:(''+(spVal(r['Tipodecierre'])||'')).trim(),
+      obs:(''+(spVal(r['Observacionesgenerales'])||'')).trim(),
+      cumplimiento:pct, n_items:n, fallas, items, semaforo:semaforoDe(pct) });
+  }
+  return out;
+}
+
+function leerCSV(file, cb){
+  const rd=new FileReader();
+  rd.onload=e=>{
+    let txt=e.target.result;
+    if(txt.charCodeAt(0)===0xFEFF) txt=txt.slice(1); // quitar BOM
+    const res=Papa.parse(txt, {header:true, skipEmptyLines:true});
+    cb(res.data);
+  };
+  rd.readAsText(file,'utf-8');
+}
+function conectarCargaCSV(){
+  const cR=document.getElementById('csvRut'), cI=document.getElementById('csvImp');
+  if(cR) cR.addEventListener('change', ev=>{
+    const f=ev.target.files[0]; if(!f) return;
+    leerCSV(f, filas=>{ DATOS.rut=mapearRutinarios(filas);
+      document.getElementById('okRut').textContent='✓ '+DATOS.rut.length+' registros cargados';
+      document.getElementById('nRut').textContent=DATOS.rut.length;
+      marcarLocal(); if(LISTA==='rut'){ poblarFiltros(); render(); } });
+  });
+  if(cI) cI.addEventListener('change', ev=>{
+    const f=ev.target.files[0]; if(!f) return;
+    leerCSV(f, filas=>{ DATOS.imp=mapearImplementacion(filas);
+      document.getElementById('okImp').textContent='✓ '+DATOS.imp.length+' registros cargados';
+      document.getElementById('nImp').textContent=DATOS.imp.length;
+      marcarLocal(); if(LISTA==='imp'){ poblarFiltros(); render(); } });
+  });
+}
+function marcarLocal(){
+  const b=document.getElementById('fuenteBadge');
+  b.className='badge-fuente fuente-viva'; b.textContent='● Datos actualizados (local)';
+}
+function descargarJSON(cual){
+  const datos = cual==='rut'?DATOS.rut:DATOS.imp;
+  const nombre = cual==='rut'?'datos_rutinarios.json':'datos_implementacion.json';
+  const blob=new Blob([JSON.stringify(datos)], {type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=nombre; a.click();
+}
+
+// ---------- Carga de datos ----------
+// Orden de preferencia:
+//  1) crudo_*.json  -> datos crudos que deja la automatización (Power Automate); el tablero los puntúa aquí.
+//  2) datos_*.json  -> datos ya puntuados (publicados a mano con "Descargar JSON").
+//  3) muestra       -> ejemplo incluido.
+async function cargarUrl(url){
+  try{ const r = await fetch(url, {cache:'no-store'}); return r.ok ? await r.json() : null; }
+  catch(e){ return null; }
+}
+async function cargar(){
+  let rut = MUESTRA_RUTINARIOS, imp = MUESTRA_IMPLEMENTACION;
+  let fuente = 'muestra';
+
+  // 1) datos crudos de la automatización
+  const [crRut, crImp] = await Promise.all([
+    cargarUrl('crudo_rutinarios.json'), cargarUrl('crudo_implementacion.json')
+  ]);
+  if(Array.isArray(crRut) && Array.isArray(crImp)){
+    rut = mapearCrudoRutinarios(crRut); imp = mapearCrudoImplementacion(crImp); fuente = 'auto';
+  } else {
+    // 2) datos ya puntuados
+    const [r1, r2] = await Promise.all([
+      cargarUrl('datos_rutinarios.json'), cargarUrl('datos_implementacion.json')
+    ]);
+    if(Array.isArray(r1) && Array.isArray(r2)){ rut = r1; imp = r2; fuente = 'viva'; }
+  }
+  DATOS.rut = rut; DATOS.imp = imp;
+
+  const badge = document.getElementById('fuenteBadge');
+  if(fuente==='auto'){ badge.className='badge-fuente fuente-viva'; badge.textContent='● Datos en vivo (automático)'; }
+  else if(fuente==='viva'){ badge.className='badge-fuente fuente-viva'; badge.textContent='● Datos en vivo'; }
+  else{ badge.className='badge-fuente fuente-muestra'; badge.textContent='● Datos de muestra'; }
+
+  document.getElementById('nRut').textContent = DATOS.rut.length;
+  document.getElementById('nImp').textContent = DATOS.imp.length;
+  poblarFiltros();
+  render();
+}
+
+function cambiarLista(l){
+  LISTA = l;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.lista===l));
+  document.getElementById('wrapFase').style.display = 'none';
+  limpiar(false);
+  poblarFiltros();
+  render();
+}
+
+function base(){ return DATOS[LISTA]; }
+
+const FILTROS = ['fContratista','fProyecto','fContrato','fFrente','fCierre','fSem','fDesde','fHasta'];
+// devuelve registros que pasan todos los filtros EXCEPTO el indicado (para poblar opciones cruzadas)
+function pasaExcepto(x, omitir){
+  const g=id=>document.getElementById(id).value;
+  if(omitir!=='fContratista' && g('fContratista') && x.contratista!==g('fContratista')) return false;
+  if(omitir!=='fProyecto'   && g('fProyecto')   && x.proyecto!==g('fProyecto'))       return false;
+  if(omitir!=='fContrato'   && g('fContrato')   && x.contrato!==g('fContrato'))       return false;
+  if(omitir!=='fFrente'     && g('fFrente')     && (''+(x.frente||''))!==g('fFrente'))return false;
+  if(omitir!=='fCierre'     && g('fCierre')     && (x.tipo_cierre||'')!==g('fCierre'))return false;
+  if(omitir!=='fSem'        && g('fSem')        && x.semaforo!==g('fSem'))            return false;
+  if(omitir!=='fDesde'      && g('fDesde')      && (!x.fecha || x.fecha<g('fDesde'))) return false;
+  if(omitir!=='fHasta'      && g('fHasta')      && (!x.fecha || x.fecha>g('fHasta'))) return false;
+  return true;
+}
+function opciones(campo, omitir, orden){
+  const d=base();
+  let vals=[...new Set(d.filter(x=>pasaExcepto(x,omitir)).map(campo).filter(v=>v!==''&&v!=null))];
+  vals.sort(orden||((a,b)=>(''+a).localeCompare(''+b,'es',{numeric:true})));
+  return vals;
+}
+function llenarSelect(id, vals){
+  const sel=document.getElementById(id); const actual=sel.value;
+  sel.innerHTML='<option value="">Todos</option>'+vals.map(v=>`<option>${v}</option>`).join('');
+  if(vals.includes(actual)) sel.value=actual; else sel.value='';
+}
+function poblarFiltros(){
+  llenarSelect('fContratista', opciones(x=>x.contratista,'fContratista'));
+  llenarSelect('fProyecto',    opciones(x=>x.proyecto,'fProyecto'));
+  llenarSelect('fContrato',    opciones(x=>x.contrato,'fContrato'));
+  llenarSelect('fFrente',      opciones(x=>(''+(x.frente||'')),'fFrente'));
+  llenarSelect('fCierre',      opciones(x=>x.tipo_cierre,'fCierre'));
+}
+
+function limpiar(rerender=true){
+  ['fContratista','fProyecto','fContrato','fFrente','fCierre','fFase','fSem','fDesde','fHasta']
+    .forEach(id=>{const e=document.getElementById(id); if(e) e.value='';});
+  poblarFiltros();
+  if(rerender) render();
+}
+
+function filtrar(){
+  const g=id=>document.getElementById(id).value;
+  return base().filter(x=>{
+    if(g('fContratista') && x.contratista!==g('fContratista')) return false;
+    if(g('fProyecto')   && x.proyecto!==g('fProyecto'))       return false;
+    if(g('fContrato')   && x.contrato!==g('fContrato'))       return false;
+    if(g('fFrente')     && (''+(x.frente||''))!==g('fFrente'))return false;
+    if(g('fCierre')     && (x.tipo_cierre||'')!==g('fCierre'))return false;
+    if(g('fSem')        && x.semaforo!==g('fSem'))            return false;
+    if(g('fDesde')      && (!x.fecha || x.fecha<g('fDesde'))) return false;
+    if(g('fHasta')      && (!x.fecha || x.fecha>g('fHasta'))) return false;
+    return true;
+  });
+}
+
+// ---------- Medidor SVG (elemento distintivo) ----------
+function dibujarGauge(pct){
+  const svg = document.getElementById('gaugeSvg');
+  const cx=100, cy=90, r=78;
+  const pol = (ang)=>{ const a=(180-ang)*Math.PI/180; return [cx+r*Math.cos(a), cy-r*Math.sin(a)]; };
+  const arco = (a1,a2,color)=>{
+    const [x1,y1]=pol(a1), [x2,y2]=pol(a2);
+    const large = (a2-a1)>180?1:0;
+    return `<path d="M ${x1.toFixed(1)} ${y1.toFixed(1)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(1)} ${y2.toFixed(1)}"
+             fill="none" stroke="${color}" stroke-width="16" stroke-linecap="round"/>`;
+  };
+  // bandas: 0-70 rojo, 70-80 amarillo, 80-100 verde (mapeadas a 0-180°)
+  let s = `${arco(0, 126, '#f0d2cd')}${arco(126, 144, '#f5e6b8')}${arco(144, 180, '#c9e8d1')}`;
+  if(pct!==null && pct!==undefined){
+    const ang = Math.max(0, Math.min(180, pct*1.8));
+    const col = pct>=80?SEM.verde.color : pct>70?SEM.amarillo.color : SEM.rojo.color;
+    s += arco(0, Math.max(1,ang), col);
+    const [nx,ny]=pol(ang);
+    s += `<circle cx="${nx.toFixed(1)}" cy="${ny.toFixed(1)}" r="8" fill="#fff" stroke="${col}" stroke-width="3"/>`;
+  }
+  svg.innerHTML = s;
+}
+
+// ---------- Render principal ----------
+function render(){
+  const f = filtrar();
+  const evalua = f.filter(x=>x.cumplimiento!==null && x.cumplimiento!==undefined);
+  const prom = evalua.length ? Math.round(evalua.reduce((a,b)=>a+b.cumplimiento,0)/evalua.length) : null;
+
+  // Medidor + KPIs
+  dibujarGauge(prom);
+  document.getElementById('gaugeVal').textContent = prom===null?'—':prom+'%';
+  const cnt = {verde:0,amarillo:0,rojo:0,sin_dato:0};
+  f.forEach(x=>cnt[x.semaforo]++);
+  const total=f.length, base2=evalua.length||1;
+  document.getElementById('kTotal').textContent = total;
+  document.getElementById('kEval').textContent = evalua.length+' evaluadas';
+  document.getElementById('kVerde').textContent = cnt.verde;
+  document.getElementById('kVerdePct').textContent = Math.round(100*cnt.verde/base2)+'% de evaluadas';
+  document.getElementById('kAmar').textContent = cnt.amarillo;
+  document.getElementById('kAmarPct').textContent = Math.round(100*cnt.amarillo/base2)+'% de evaluadas';
+  document.getElementById('kRojo').textContent = cnt.rojo;
+  document.getElementById('kRojoPct').textContent = Math.round(100*cnt.rojo/base2)+'% de evaluadas';
+
+  try{
+    if(typeof Chart !== 'undefined') graficos(f, evalua);
+  }catch(e){ console.warn('No se pudieron dibujar los gráficos:', e); }
+  tabla(f);
+}
+
+// ---------- Gráficos ----------
+function nuevo(id, cfg){ if(charts[id]) charts[id].destroy(); charts[id]=new Chart(document.getElementById(id), cfg); }
+const NOANIM = {duration:400};
+
+function graficos(f, evalua){
+  const cnt = {verde:0,amarillo:0,rojo:0,sin_dato:0}; f.forEach(x=>cnt[x.semaforo]++);
+  // 1) Donut de semáforo
+  nuevo('chSem', {
+    type:'doughnut',
+    data:{ labels:['Cumple','Por mejorar','Crítico','Sin evaluación'],
+      datasets:[{ data:[cnt.verde,cnt.amarillo,cnt.rojo,cnt.sin_dato],
+        backgroundColor:[SEM.verde.color,SEM.amarillo.color,SEM.rojo.color,SEM.sin_dato.color], borderWidth:2, borderColor:'#fff' }]},
+    options:{ animation:NOANIM, maintainAspectRatio:false, cutout:'62%',
+      plugins:{ legend:{position:'bottom', labels:{boxWidth:12,font:{size:11}}} } }
+  });
+
+  // 2) Cumplimiento por contrato
+  const porC = {};
+  evalua.forEach(x=>{ (porC[x.contrato]=porC[x.contrato]||[]).push(x.cumplimiento); });
+  const contratos = Object.keys(porC).sort();
+  const proms = contratos.map(c=>Math.round(porC[c].reduce((a,b)=>a+b,0)/porC[c].length));
+  nuevo('chContrato', {
+    type:'bar',
+    data:{ labels:contratos, datasets:[{ data:proms,
+      backgroundColor:proms.map(p=>p>=90?SEM.verde.color:p>=70?SEM.amarillo.color:SEM.rojo.color),
+      borderRadius:6, barThickness:'flex', maxBarThickness:46 }]},
+    options:{ animation:NOANIM, maintainAspectRatio:false, indexAxis:'y',
+      scales:{ x:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#eef1ee'}}, y:{grid:{display:false}} },
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{
+        title:c=>{const co=c[0].label; const i=infoContrato(co); return i.proyecto? co+' · '+i.proyecto : co;},
+        label:c=>' '+c.parsed.x+'% de cumplimiento',
+        afterLabel:c=>{const i=infoContrato(c.label); return i.contratista? 'Contratista: '+i.contratista : '';} }} } }
+  });
+
+  // 3) Desempeño por ítem (TODOS los ítems evaluados)
+  const criterios = LISTA==='imp' ? CRITERIOS_IMP : CRITERIOS_RUT;
+  const acum = {}; criterios.forEach(c=>acum[c]={suma:0,n:0});
+  f.forEach(x=>{ const it=x.items||{}; for(const c in it){ if(acum[c]){ acum[c].suma+=it[c]; acum[c].n++; } } });
+  const filas = criterios.map(c=>({ nombre:c, n:acum[c].n,
+      pct: acum[c].n ? Math.round(1000*acum[c].suma/acum[c].n)/10 : null }))
+    .filter(r=>r.n>0)
+    .sort((a,b)=>a.pct-b.pct);   // del más débil al más fuerte
+  nuevo('chItems', {
+    type:'bar',
+    data:{ labels:filas.map(r=>r.nombre),
+      datasets:[{ label:'% de cumplimiento del ítem', data:filas.map(r=>r.pct),
+        backgroundColor:filas.map(r=>r.pct>=80?SEM.verde.color:r.pct>=70?SEM.amarillo.color:SEM.rojo.color),
+        borderRadius:6, maxBarThickness:26 }]},
+    options:{ animation:NOANIM, maintainAspectRatio:false, indexAxis:'y',
+      scales:{ x:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#eef1ee'}},
+               y:{grid:{display:false},ticks:{font:{size:11},autoSkip:false}} },
+      plugins:{ legend:{display:false},
+        tooltip:{callbacks:{label:c=>{const r=filas[c.dataIndex]; return ` ${r.pct}% cumplimiento · ${r.n} inspección(es)`;}}} } }
+  });
+
+  // 4) Evolución mensual
+  const porM = {};
+  evalua.forEach(x=>{ if(!x.fecha) return; const k=x.fecha.slice(0,7); (porM[k]=porM[k]||[]).push(x.cumplimiento); });
+  const meses = Object.keys(porM).sort();
+  const val = meses.map(m=>Math.round(porM[m].reduce((a,b)=>a+b,0)/porM[m].length));
+  nuevo('chTiempo', {
+    type:'line',
+    data:{ labels:meses.map(m=>{const[a,b]=m.split('-');return MES[+b-1]+' '+a.slice(2);}),
+      datasets:[{ data:val, borderColor:SEM.verde.color, backgroundColor:'rgba(0,147,0,.10)',
+        fill:true, tension:.32, pointBackgroundColor:SEM.verde.color, pointRadius:4, borderWidth:2.5 }]},
+    options:{ animation:NOANIM, maintainAspectRatio:false,
+      scales:{ y:{min:0,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#eef1ee'}}, x:{grid:{display:false}} },
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+c.parsed.y+'% promedio'}} } }
+  });
+}
+
+// ---------- Tabla ----------
+function tabla(f){
+  document.getElementById('tablaCnt').textContent = `${f.length} registro(s)`;
+  const cols = ['Fecha','Contrato','Proyecto','Contratista','Frente','Tipo cierre','Dirección','Cumpl.','Semáforo','Incumplimientos'];
+  document.getElementById('tablaHead').innerHTML = '<tr>'+cols.map(c=>`<th>${c}</th>`).join('')+'</tr>';
+
+  const orden = f.slice().sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||''));
+  const cel=(t)=>`<td class="trunc" title="${(t||'').replace(/"/g,'&quot;')}">${t||'—'}</td>`;
+  document.getElementById('tablaBody').innerHTML = orden.map(x=>{
+    const s = SEM[x.semaforo];
+    const chip = `<span class="chip ${s.clase}">${s.lab}</span>`;
+    const pct = x.cumplimiento===null?'—':`<b>${x.cumplimiento}%</b>`;
+    const fallas = (x.fallas&&x.fallas.length)
+      ? `<span class="fallas-list">${x.fallas.map(k=>k.replace(/^¿|\?$/g,'')).join(' · ')}</span>`
+      : (x.semaforo==='sin_dato' ? '<span style="color:#9aa0a6">Registro sin ítems de evaluación</span>' : '<span class="fallas-ok">Sin incumplimientos ✓</span>');
+    return `<tr><td>${x.fecha||'—'}</td><td>${x.contrato||'—'}</td>${cel(x.proyecto)}${cel(x.contratista)}`+
+      `<td>${x.frente||'—'}</td><td>${x.tipo_cierre||'—'}</td>${cel(x.direccion)}`+
+      `<td class="pct-cell">${pct}</td><td>${chip}</td><td>${fallas}</td></tr>`;
+  }).join('');
+}
+
+// eventos: al cambiar un filtro, se recalculan las opciones cruzadas y se redibuja
+function alCambiarFiltro(){ poblarFiltros(); render(); }
+['fContratista','fProyecto','fContrato','fFrente','fCierre','fSem','fDesde','fHasta'].forEach(id=>{
+  const e=document.getElementById(id); if(e) e.addEventListener('change', alCambiarFiltro);
+});
+document.getElementById('wrapFase').style.display='none';
+conectarCargaCSV();
+cargar();
+</script>
+</body>
+</html>

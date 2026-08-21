@@ -1,466 +1,463 @@
 CATEGORIA,CONTRATO,CONTRATISTA,MUNICIPIO,FRENTE,DIRECCION,ESTADO_CIERRE,HORARIO,FECHA_INICIO,FECHA_FIN,DURACION_DIAS
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-2,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,TOTAL,Diurno,2026-09-01,2026-09-14,13
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2025-10-23,2026-08-13,294
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,INGRESO Y SALIDA,Diurno,2025-02-24,2026-10-31,614
-Trazado Normal,CW322377,Consorcio AMT24,No definido,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2025-02-03,2026-08-13,556
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2026-01-01,2026-03-31,89
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_07,Carrera 57 entre calles 61 y 59 calzada occidental,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_07,Carrera 57 entre calles 61 y 59 calzada occidental,TOTAL,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2025-12-22,2026-03-31,99
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2025-05-05,2025-12-31,240
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-03-31,89
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2025-05-05,2025-12-31,240
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-03-31,89
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-04-01,2026-05-31,60
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_16,Carrera 57 con calle 60 calzada oriental,PARCIAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_16,Carrera 57 con calle 60 calzada oriental,PARCIAL,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_17,Calle 60 entre carrera 57 y 56A,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_18,Carrera 56A con calle 60,PARCIAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_19,Calle 60 entre carrera 56 y 56A,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_20,Carrera 56 con calle 60,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2025-05-05,2025-08-31,118
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2025-09-01,2025-12-31,121
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2026-01-01,2026-03-31,89
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_22,Calle 60 entre carrera 39 y 40,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_23,Calle 59 con carrera 41,PARCIAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_23,Calle 59 con carrera 41,PARCIAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_24,Calle 59 entre carrera 41 y 42,TOTAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_25,Calle 59 con carrera 42,PARCIAL,Nocturno,2025-05-05,2025-12-21,230
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_01_25,Calle 59 con carrera 42,PARCIAL,Nocturno,2026-06-01,2026-10-31,152
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_03_01,Carrera 51D entre calles 46D y 49 ambos costados,PARCIAL,Nocturno,2025-07-07,2025-12-31,177
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_03_01,Carrera 51D entre calles 46D y 49 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_03_02,Carrera 51D entre calles 46D y 49,INGRESO Y SALIDA,Nocturno,2025-07-07,2025-12-31,177
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_03_02,Carrera 51D entre calles 46D y 49,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2026-07-01,2026-10-31,122
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2026-07-01,2026-10-31,122
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2026-07-01,2026-10-31,122
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_04,Calle 65 con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_04,Calle 65 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_05,Calle 65AA con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_05,Calle 65AA con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_06,Carrera 37 con calle 66C,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_06,Carrera 37 con calle 66C,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_07,Carrera 36 entre calles 66 y 66D,TOTAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_07,Carrera 36 entre calles 66 y 66D,TOTAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_08,Carrera 36A entre calles 66 y 66C,TOTAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_08,Carrera 36A entre calles 66 y 66C,TOTAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_09,Calle 64 con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_09,Calle 64 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_10,Carrera 39 con calle 66C,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_10,Carrera 39 con calle 66C,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_11,Calle 63 con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_11,Calle 63 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_12,Calle 66 con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_12,Calle 66 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_13,Calle 66C con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_13,Calle 66C con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_14,Calle 65BB con carrera 39,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_14,Calle 65BB con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_15,Carrera 39 con calle 62 ambos costados,PARCIAL,Nocturno,2025-09-15,2025-12-31,107
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_04_15,Carrera 39 con calle 62 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-06-30,180
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_01,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_02,Carrera 45 calzada oriente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_03,Carrera 45D con calle 59,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_04,Calle 59 entre carreras 45D y 47,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_05,Carrera 47 calzada oriente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_06,Calle 59 entre carreras 47 y 48,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_07,Calle 59 entre carreras 48 y 49,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_08,Carrera 49 entre calles 58 y 59,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_09,Carrera 45 calzada ocidente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_10,Calle 59 entre carreras 45 y 45D,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_11,Calle 59 entre carreras 49 y 50,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_12,Carrera 50 entre calles 60 y 59 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_13,Calle 59 entre carreras 50A y 50C,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_14,Carrera 50A entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_15,Calle 59 entre carreras 50C y 51,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_16,Calle 59 entre carreras 50 y 50A,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_05_17,Carrera 51 calzada occidente entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_01,Calle 59 entre carreras 50A y 50C,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_02,Calle 59 entre carreras 50C y 51,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_03,Carrera 51 calzada occidente entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_04,Calle 60 entre carreras 51D y 52,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_05,Calle 60 entre carreras 52 y 53,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_06,Calle 60 entre carreras 51 y 51D,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_07,Carrera 51D calzada oriente entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_08,Carrera 51D calzada occidente entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_09,Carrera 51D calzada occidente entre calles 61 y 60,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_10,Carrera 53 entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_11,Calle 60 entre carreras 53 y 54,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_12,Carrera 54 entre calles 61 y 60,PARCIAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,No definido,PMT_06_13,Calle 60 entre carreras 54 y 55,TOTAL,Nocturno,2026-01-01,2026-10-31,303
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 1,Carrera 29C entre calle 18AA Sur y carrera 26,TOTAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 2,Carrera 26 entre carrera 29C y calle 20 Sur,TOTAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 3,Calle 18AA Sur entre carreras 34 y 29C,TOTAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 4,Carrera 34 entre Carrera 34 No. 16A Sur – 37 y Carrera 34 No. 16A Sur – 150 costado oriente,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 5,Carrera 32B con calle 17 Sur,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 6,Calle 17 Sur No. 31 - 55,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 7,Carrera 31 No. 17 Sur – 61,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 8,Carrera 30A No. 17 Sur – 36,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 9,Carrera 30 No. 17 Sur – 45,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 10,Carrera 29C con calle 18AA Sur,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 11,Conexión norte-oriente carrera 34 con calle 18AA Sur,TOTAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 12,Calle 18AA Sur entre Calle 18AA Sur No. 29C-340 y carrera 34 carril norte,PARCIAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET2 4 13,Calle 18AA Sur entre Calle 18AA Sur No. 29C-340 y carrera 34 andén costado norte,TOTAL,Nocturno,2026-05-06,2026-12-31,239
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 1,No definido,PARCIAL,Diurno,2026-06-13,2026-09-30,109
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 2,No definido,PARCIAL,Diurno,2026-06-13,2026-09-30,109
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 3,No definido,PARCIAL,Diurno,2026-06-13,2026-09-30,109
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 4,No definido,TOTAL,Nocturno,2026-06-13,2026-09-30,109
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 5,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 6,No definido,TOTAL,Diurno,2026-06-13,2026-09-30,109
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 7,No definido,PARCIAL,Diurno,2026-07-06,2026-12-31,178
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 8,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 9,No definido,PARCIAL,Diurno,2026-07-06,2026-12-31,178
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPA ET3 9 10,No definido,TOTAL,Nocturno,2026-06-13,2026-12-31,201
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_1,"Calle 31B con carrera 100, ambos costados no simultaneos",PARCIAL,Nocturno,2026-08-18,2026-09-24,37
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_2,"Calle 31B entre carrera 106 y calle 31B No. 104-39, costado sur",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_3,"Calle 31B entre calle 31B No. 104-39 y carrera 102A, costado norte",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_4,"Calle 31B entre carreras 102A y 102, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_5,"Calle 31B entre carreras 102 y 102A, ocupación total del andén, costado norte",TOTAL,Nocturno,2026-08-18,2026-08-24,6
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_6,"Carrera 100 entre calles 31B y 31F, costado oriente",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_7,"Calle 31C entre carreras 89A y 89D, costado sur",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_8,"Carrera 89B entre calles 31B y 31C,  indirecto ambos costados",TOTAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_9,"Carrera 89C entre calles 31B y 31C,  indirecto ambos costados",TOTAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_10,"Carrera 89D con calle 31C, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_11,"Calle 31B entre carreras 89D y 89E, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_12,"Carrera 89E entre calles 31B y 31BB, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET1_10_13,Calle 31B entre carreras 89E y 100 costado sur,PARCIAL,Nocturno,2026-08-18,2026-08-29,11
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_1,No definido,TOTAL,Diurno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_2,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_3,No definido,INGRESO Y SALIDA,Diurno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_4,No definido,PARCIAL,Diurno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_5,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_6,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_7,No definido,PARCIAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_8,No definido,PARCIAL,Diurno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_9,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_10,No definido,PARCIAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_11,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,No definido,CLPIC_ET2_3_12,No definido,TOTAL,Nocturno,2026-07-01,2026-09-30,91
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09,carrera 52 entre el puente de la Quebrada Altavista y la carrera 52 #31-83,PARCIAL,Diurno,2026-08-18,2026-12-15,119
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-2,Carril occidental de la Autopista sur entre la carrera 54 puente Avenida Guayabal y el lazo de salida al occidente de la Autopista sur a la calle 30,PARCIAL,Nocturno,2026-08-18,2026-12-15,119
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T09-COC-CI09-3,Zona verde separador entre la Autopista sur y la carrera 52 al costado sur del puente de la Quebrada Altavista,TOTAL,Nocturno,2026-08-18,2026-12-15,119
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-CI01-2,No definido,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-CI01-1,carrera 49 entre calles 61B Sur y 67 Sur,TOTAL,Nocturno,2026-09-28,2026-12-20,83
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC02,No definido,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-3,carrera 42 #79-39 Motel Ibiza,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-2,carrera 42 #79-39 Motel Ibiza,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-4,carrera 42 #79-19 Empresa Icoltrans,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-AC07-1,carrera 42 #79-51 Punto de venta Crem Helado,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T03-SOC-CI03,Vía de acceso Estación de servicio TEXACO No.3 en carrera 42 Autopista Sur,TOTAL,Nocturno,2026-09-14,2026-12-04,81
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AO18-1,calle 51 con carrera 40,PARCIAL,Diurno,2026-05-18,2026-07-19,62
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC05-1,carrera 49 #52 sur - 225,PARCIAL,Diurno,2026-05-11,2026-11-07,180
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T23-CON-001-1,carrera 43F entre calles 11 y 10,TOTAL,Nocturno,2026-06-16,2026-10-13,119
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T23-CON-001-2,carrera 43F entre calles 11 y 10,TOTAL,Nocturno,2026-06-16,2026-10-13,119
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AC04-1,Calle 26 #41 - 140,INGRESO Y SALIDA,Diurno,2026-02-02,2026-04-30,87
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC06-5,"Carril oriental de la carrera 49 vía de servicio, desde la carrera 49 #52 sur-130 en la empresa CRYOGAS S.A. hasta 40m al sur de la carrera 49 #52 sur -170 en la empresa CRYSTAL S.A.S",PARCIAL,Diurno,2026-08-03,2026-10-31,89
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC06-4,"Carril oriental de la carrera 49 vía de servicio, desde 16m al sur de la calle 52
-sur hasta la carrera 49 #52 sur-170 en la empresa CRYSTAL S.A.S.",PARCIAL,Diurno,2026-08-03,2026-10-31,89
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC06-3,Carril occidental de la carrera 49 vía de servicio a la altura de la calle 52 sur,PARCIAL,Diurno,2026-08-03,2026-10-31,89
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC06-2,"Zona verde del separador ubicado entre la Avenida Regional y la carrera 49 vía
-de servicio a la altura de la calle 52 sur",PARCIAL,Diurno,2026-08-03,2026-10-31,89
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC06-1,Zona dura del separador ubicado entre la Avenida Regional y la carrera 49 vía de servicio a la altura de la calle 52 sur para campamento,PARCIAL,Nocturno,2026-08-03,2026-10-31,89
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-1,carrera 40 a 20m de la calle 51,PARCIAL,Diurno,2026-01-29,2026-05-13,104
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-1,carrera 40 a 20m de la calle 51,PARCIAL,Diurno,2026-05-14,2026-06-15,32
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-2,carrera 40 a 50m de la calle 51 y una longitud de 40m,TOTAL,Nocturno,2026-01-29,2026-05-13,104
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-2,carrera 40 a 50m de la calle 51 y una longitud de 40m,TOTAL,Nocturno,2026-05-14,2026-06-15,32
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-3,Bahia costado oriental de la carrera 40 por ocupación de 3 celdas de parqueaderos,PARCIAL,Nocturno,2026-01-29,2026-05-13,104
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-CI02-3,Bahia costado oriental de la carrera 40 por ocupación de 3 celdas de parqueaderos,PARCIAL,Nocturno,2026-05-14,2026-06-15,32
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AC03-1,carrera 42 #24-98,PARCIAL,Diurno,2025-09-17,2025-12-17,91
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AC03-2,carrera 42 #24-98,PARCIAL,Diurno,2025-09-17,2025-12-17,91
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOC-AC03-3,carrera 42 #24-98,PARCIAL,Nocturno,2025-09-17,2025-12-17,91
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,IO-05-1,carrera 48 con calle 15 sur,PARCIAL,Nocturno,2025-11-07,2025-12-16,39
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,IO-05-1,carrera 48 con calle 15 sur,PARCIAL,Nocturno,2025-12-17,2026-02-28,73
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,IO-05-2,calle 15 sur entre carreras 48 y 48A costado sur,PARCIAL,Diurno,2025-11-07,2025-12-16,39
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,IO-05-2,calle 15 sur entre carreras 48 y 48A costado sur,PARCIAL,Diurno,2025-12-17,2026-02-28,73
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC05-2,carrera 49 #52 sur - 225,PARCIAL,Diurno,2026-05-11,2026-11-07,180
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-1,carrera 42 entre el carril sur de la calle 66A y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-2,carrera 42 entre la calle 66A y la carrera 42 #66A-09,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-3,carrera 42 entre la carrera 42#66-30 y el carril norte de la calle 66,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-4,carrera 42 entre el carril norte de la calle 66 y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-5,carrera 42 entre el carril sur de la calle 66 y la carrera 42 # 64A-95,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T02-SOC-AC10-6,zona verde Carrera 42 entre calle calles 66A y 66,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
-Trazado Normal,CW328120,SANEAR S.A.S,No definido,T01-SOR-AC01,Carrera 49 entre calles 61B Sur y 67 Sur - Vía de servicio,TOTAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW352217,MEXICHEM,No definido,CAMPAMENTO,TRANSVERSAL 49D ENTRE VÍA DE SERVICIO Y LAZO HACIA CALLE 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 1A,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 1B,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 2A,Carrera 62 entre calle 48 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 2B,Carrera 62 entre calle 48 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 3A,Carrera 62 entre calle 50 y 52,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 3B,Carrera 62 entre calle 50 y 52,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 4,Carrera 62 entre calle 52 y 54,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 5,Carrera 62 entre calle 54 y 58,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 6,Carrera 62 entre calle 58 y 61A,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 6B,Carrera 62 entre calle 61A y 67,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 7,Carrera 62 entre calle 67 y VS UDEA,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,VS UDEA,Via Servicio UDEA,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 8,Carrera 62 entre VS UDEA y VS Parque Norte,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,VS Parque Norte,VS Parque Norte,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 9,Carrera 62 entre VS Parque Norte y calle 77,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 9A,Carrera 62 entre VS Parque Norte y calle 77,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 10,Carrera 62 entre calle 77 y 80C,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Etapa 11,Carrera 62 entre calle 80C y 88,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW352217,MEXICHEM,No definido,Calle 92 Bajos Puente Madre Laura,Calle 92 Bajos Puente Madre Laura,INGRESO Y SALIDA,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-08-18,2026-09-14,27
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2025-11-10,2025-11-24,14
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-03-29,2026-04-27,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-05-19,2026-06-17,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2025-11-10,2025-12-15,35
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2025-11-10,2025-12-15,35
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-03-16,2026-04-17,32
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-03-16,2026-04-17,32
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-05-06,2026-06-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-05-06,2026-06-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-17_1,Callejón Calle 36C entre carrera 116 y carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-17_2,Callejón Calle 34CC entre la calle 34C y la carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2025-12-09,2026-02-07,60
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2025-12-09,2026-02-07,60
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2026-02-08,2026-04-08,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2026-02-08,2026-04-08,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-07-01,2026-08-30,60
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-07-01,2026-08-30,60
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2025-12-09,2025-12-29,20
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-03-06,2026-04-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-04-05,2026-05-05,30
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-02-04,2026-02-29,0
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-03-01,2026-03-30,29
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2025-12-26,2026-02-07,43
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2025-12-26,2026-02-07,43
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-04-01,2026-05-07,36
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-04-01,2026-05-07,36
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE_RC_21_1,Carrera 105 con calle 39B,PARCIAL,Diurno,2026-07-29,2026-09-14,47
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE_RC_21_2,calle 39B y calle 39A entre carrera 106 y carrera 106A y Cierre total Anden sur de la calle 39B entre carrera 106 y carrera 106A,TOTAL,Diurno,2026-07-29,2026-09-14,47
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-04-15,2026-05-15,30
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_1,Carrera 15D entre la calle 46D y la calle 47 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_2,"Carrera 15D entre la calle 46D y la calle 47 – Andén, costado sur",TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_3,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_4,Calle 47 entre la carrera 15D y la carrera 16AA carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_5,Carrera 16AA entre la calle 46D y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_6,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_7,Calle 49 entre la carrera 15D y la carrera 15 carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_8,Calle 49 entre la carrera 17 y la carrera 15 carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_9,Calle 49 entra la carrera 16AA y la carrera 15D carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_10,Carrera 16AA entre la calle 49 y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_11,Calle 49 entre la carrera 16AA y carrera 17B carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_12,Carrera 17B entre la calle 48 y 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_13,Andén occidental Calle 49 entre carrera 16AA y la carrera 17B,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_14,Carrera 17 entre la calle 50 y 50A carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_15,Calle 50 entre carreras 16A y 17 carril norte,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_16,Carrera 17 entre la calle 49B y la calle 50 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_17,Calle 50 entre carreras 16A y 17 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,DIRN-RC-2,Vía y Andén Calle 44 entre la Carrera 66 y Carrera 65 carril sur,PARCIAL,Nocturno,2026-04-27,2026-05-27,30
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_1,Andén Norte Calle 53 entre carreras 52 y 52A,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_2,Calle 54 y carrera 52A entre calle 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_3,Carrera 53 entre calle 53 y 54. carril oriental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_4,Calzada Norte Calle 53 entre carrera 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_5,Carrera 54 entre calle 53 y 54 carril occidental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Nocturno,2026-05-04,2026-06-04,31
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Nocturno,2026-06-05,2026-07-15,40
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-05-25,2026-07-16,52
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-07-17,2026-08-31,45
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-1_1,Carrera 65 entre la calle 31 y 32 carril oriental,PARCIAL,Diurno,2026-06-30,2026-07-30,30
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-1_2,Anden oriental Carrera 65 entre la calle 31 y 32,TOTAL,Diurno,2026-06-30,2026-07-30,30
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_1,Carrera 81 entre calles 26 y Calle 21 carril occidental,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_2,Calle 21 entre la carrera 81 y carrera 82 carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_3,Calle 21 entre la carrera 81 y carrera 81B carril occidental,PARCIAL,Diurno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_4,Calle 21 con carrera 81B carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-14_1,Carrera 33 entre calles 43 y 44 carril occidental,PARCIAL,Nocturno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-14_2,Carrera 33 entre calles 44 y 45 carril occidental,PARCIAL,Nocturno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-14_3,calle 45 entre carrera 33 y 33A,PARCIAL,Nocturno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-14_4,calle 45 entre carrera 33 y 33A,TOTAL,Nocturno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-14_5,Carrera 33 entre calles 43 y 44 carril occidenta Campamento,PARCIAL,Nocturno,2026-08-01,2026-09-14,44
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-08-24,2026-09-06,13
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-08-24,2026-09-06,13
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-07-16,2026-08-09,24
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-07-16,2026-08-09,24
-Trazado Normal,CW366713,PAECIA,No definido,BER_RC_3 _1,"Calle 83 entre carreras 50A y 50B Carril, andén y zona verde norte",PARCIAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_3 _2,"Carrera 50A entre calles 83 y 84 Carril, andén y zona dura occidental",PARCIAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_3 _3,"Carrera 50A entre calles 83 y 84 Calzada, andén y zona dura occidental",TOTAL,Nocturno,2026-08-10,2026-11-09,91
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-07-01,2026-08-31,61
-Trazado Normal,CW366713,PAECIA,No definido,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-06-19,2026-12-31,195
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_3,Carrera 48 entre calles 92 y 90 Carril occidental,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_2,Calle 90 entre carreras 48 y 49 Carril norte,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_5_1,Calle 90 entre carreras 49 y 49A Carril norte,PARCIAL,Nocturno,2026-06-15,2026-12-31,199
-Trazado Normal,CW366713,PAECIA,No definido,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-02-16,2026-06-18,122
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_1,Calle 92 entre carreras 49 y 46A costado sur,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM-RC_4_2,Calle 92 entre carreras 49 y 48 costado norte,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_3,Carrera 47 entre calles 90 y 92 costado occidental,PARCIAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_4,Carrera 46A entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_4_5,Carrera 47 entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2026-12-31,234
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-05-16,2026-07-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-05-16,2026-07-15,60
-Trazado Normal,CW366713,PAECIA,No definido,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-06-01,2026-06-30,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-06-01,2026-06-30,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_5_1,Calle 92C entre carreras 67 y 68B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_5_2,Carrera 68B entre calles 92C y 92CC,TOTAL,Nocturno,2026-04-13,2026-05-31,48
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-03-09,2026-04-21,43
-Trazado Normal,CW366713,PAECIA,No definido,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-04-22,2026-05-21,29
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-22,27
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2025-12-15,2026-01-31,47
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-02-01,2026-03-06,33
-Trazado Normal,CW366713,PAECIA,No definido,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-03-07,2026-03-20,13
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_1,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_2,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_3,No definido,PARCIAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_4,No definido,PARCIAL,Nocturno,2026-06-23,2026-07-23,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_5,No definido,PARCIAL,Nocturno,2026-06-23,2026-07-23,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO:IO53_54_1_6,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_1_7,No definido,PARCIAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_1,No definido,PARCIAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_2,No definido,TOTAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_3,No definido,TOTAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_4,No definido,TOTAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_5,No definido,TOTAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO28_29_2_6,No definido,TOTAL,Nocturno,2026-06-15,2026-09-05,82
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO39_4_1,No definido,PARCIAL,Nocturno,2026-07-01,2026-07-31,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO39_4_2,No definido,TOTAL,Nocturno,2026-07-01,2026-07-31,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO50_5_1,No definido,INGRESO Y SALIDA,Nocturno,2026-05-21,2026-10-21,153
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO50_5_2,No definido,TOTAL,Nocturno,2026-05-21,2026-10-21,153
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO43_6_1,No definido,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-02,60
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO43_6_2,No definido,PARCIAL,Nocturno,2026-08-03,2026-10-02,60
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO43_6_3,No definido,PARCIAL,Nocturno,2026-08-03,2026-10-02,60
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO39_7_1_P1,No definido,PARCIAL,Nocturno,2026-07-01,2026-07-31,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO39_7_2_P1,No definido,TOTAL,Nocturno,2026-07-01,2026-07-31,30
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_1,No definido,PARCIAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_2,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_3,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_4,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_5,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_6,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_7,No definido,PARCIAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_8,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_9,No definido,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_10,No definido,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO36_37_38_8_11,No definido,TOTAL,Nocturno,2026-08-03,2026-10-04,62
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO24_9_1,No definido,PARCIAL,Nocturno,2026-08-10,2026-11-10,92
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO24_9_2,No definido,TOTAL,Nocturno,2026-08-10,2026-11-10,92
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO_24_9_3,No definido,TOTAL,Nocturno,2026-08-10,2026-11-10,92
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO_24_9_4,No definido,PARCIAL,Nocturno,2026-08-10,2026-11-10,92
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO_24_9_5,No definido,TOTAL,Nocturno,2026-08-10,2026-11-10,92
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_10_1_M1,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_10_2_M1,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_10_3_M1,No definido,PARCIAL,Nocturno,2026-05-11,2026-08-23,104
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_10_4_M1,No definido,PARCIAL,Nocturno,2026-07-24,2026-08-31,38
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO_IO53_54_10_5_M1,No definido,PARCIAL,Nocturno,2026-07-24,2026-08-31,38
-Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,No definido,OCRIO:IO53_54_10_6_M1,No definido,TOTAL,Nocturno,2026-05-11,2026-08-23,104
+Trazado Normal,CW322377,Consorcio AMT24,Envigado,LAS FLORES-2,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,TOTAL,Diurno,2026-09-01,2026-09-14,13
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2026-08-14,2026-10-01,48
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2026-08-14,2026-09-30,47
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-2,Carrera 48 entre calle 85 y No 84-16 costado Ambos,TOTAL,Nocturno,2025-10-23,2026-08-14,295
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-3,Calle 85 entre carreras 48 y 48A costado Ambos,TOTAL,Nocturno,2025-05-22,2026-08-14,449
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-4,Calle 85 con carrera 48 costado Sur,PARCIAL,Nocturno,2025-05-22,2026-08-14,449
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-5,Carrera 48A entre calles 84 y 86 costado Ambos No Simultáneos,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA PIÑUELA-6,Calle 85 entre carreras 48A y 48B costado norte,PARCIAL,Nocturno,2025-05-22,2026-08-13,448
+Trazado Normal,CW322377,Consorcio AMT24,Envigado,LAS FLORES-1,Calle 49D Sur entre el tanque Las Flores de EPM y la Calle 48F Sur,INGRESO Y SALIDA,Diurno,2025-02-24,2026-10-31,614
+Trazado Normal,CW322377,Consorcio AMT24,Medellín,LA YE-1,Calle 16A Sur entre carreras 9F y 10,INGRESO Y SALIDA,Diurno,2025-02-03,2026-08-13,556
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-05-05,2025-09-01,119
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2025-09-01,2026-01-01,122
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_01,Zona verde costado oriental de la carrera 58 Avenida Regional entre calle 58 y 62,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2025-05-05,2025-09-01,119
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2025-09-01,2026-01-01,122
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_02,Carrera 57 con calle 61A,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2025-05-05,2025-09-01,119
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2025-09-01,2026-01-01,122
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2026-01-01,2026-04-01,90
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_03,Calle 60 entre carrera 56 y 55,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_04,Carrera 39 entre calles 60 y 62 costado occidental,PARCIAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_05,Carrera 40 entre calles 60 y 59,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_06,Carrera 40 entre calles 59 y 58A,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_07,Carrera 57 entre calles 61 y 59 calzada occidental,TOTAL,Nocturno,2025-05-05,2025-09-01,119
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_07,Carrera 57 entre calles 61 y 59 calzada occidental,TOTAL,Nocturno,2025-09-01,2026-01-01,122
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_08,Calle 59 entre carrera 40 y 41,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_09,Carrera 40A entre calles 60 y 59,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_10,Carrera 40 con calle 59 costado occidental,PARCIAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_11,Calle 59 entre carreras 42 y 43,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_12,Carrera 43 con calle 59,PARCIAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2025-12-22,2026-04-01,100
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_13,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2025-05-05,2026-01-01,241
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-04-01,90
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_14,Carrera 39 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2025-05-05,2026-01-01,241
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-04-01,90
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-04-01,2026-06-01,61
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_15,Carrera 40 entre calles 60 y 62,INGRESO Y SALIDA,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_16,Carrera 57 con calle 60 calzada oriental,PARCIAL,Nocturno,2025-05-05,2025-08-31,118
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_16,Carrera 57 con calle 60 calzada oriental,PARCIAL,Nocturno,2025-09-01,2025-12-31,121
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_17,Calle 60 entre carrera 57 y 56A,TOTAL,Nocturno,2025-05-05,2025-08-31,118
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_18,Carrera 56A con calle 60,PARCIAL,Nocturno,2025-05-05,2025-08-31,118
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_19,Calle 60 entre carrera 56 y 56A,TOTAL,Nocturno,2025-05-05,2025-08-31,118
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_20,Carrera 56 con calle 60,TOTAL,Nocturno,2025-05-05,2025-08-31,118
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2025-05-05,2025-09-01,119
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2025-09-01,2026-01-01,122
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_21,Calle 60 entre carrera 54 y 55,TOTAL,Nocturno,2026-01-01,2026-04-01,90
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_22,Calle 60 entre carrera 39 y 40,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_23,Calle 59 con carrera 41,PARCIAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_23,Calle 59 con carrera 41,PARCIAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_24,Calle 59 entre carrera 41 y 42,TOTAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_25,Calle 59 con carrera 42,PARCIAL,Nocturno,2025-05-05,2025-12-22,231
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_01_25,Calle 59 con carrera 42,PARCIAL,Nocturno,2026-06-01,2026-11-01,153
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_03_01,Carrera 51D entre calles 46D y 49 ambos costados,PARCIAL,Nocturno,2025-07-07,2026-01-01,178
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_03_01,Carrera 51D entre calles 46D y 49 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_03_02,Carrera 51D entre calles 46D y 49,INGRESO Y SALIDA,Nocturno,2025-07-07,2026-01-01,178
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_03_02,Carrera 51D entre calles 46D y 49,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_01,Carrera 36 con calle 66E costado oriental,INGRESO Y SALIDA,Nocturno,2026-07-01,2026-11-01,123
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_02,Carrera 39 entre calles 60 y 66C,TOTAL,Nocturno,2026-07-01,2026-11-01,123
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_03,Calle 66C entre carreras 36 y 39,TOTAL,Nocturno,2026-07-01,2026-11-01,123
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_04,Calle 65 con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_04,Calle 65 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_05,Calle 65AA con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_05,Calle 65AA con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_06,Carrera 37 con calle 66C,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_06,Carrera 37 con calle 66C,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_07,Carrera 36 entre calles 66 y 66D,TOTAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_07,Carrera 36 entre calles 66 y 66D,TOTAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_08,Carrera 36A entre calles 66 y 66C,TOTAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_08,Carrera 36A entre calles 66 y 66C,TOTAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_09,Calle 64 con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_09,Calle 64 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_10,Carrera 39 con calle 66C,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_10,Carrera 39 con calle 66C,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_11,Calle 63 con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_11,Calle 63 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_12,Calle 66 con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_12,Calle 66 con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_13,Calle 66C con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_13,Calle 66C con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_14,Calle 65BB con carrera 39,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_14,Calle 65BB con carrera 39,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_15,Carrera 39 con calle 62 ambos costados,PARCIAL,Nocturno,2025-09-15,2026-01-01,108
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_04_15,Carrera 39 con calle 62 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-07-01,181
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_01,Calle 59 entre carreras 43 y 45,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_02,Carrera 45 calzada oriente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_03,Carrera 45D con calle 59,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_04,Calle 59 entre carreras 45D y 47,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_05,Carrera 47 calzada oriente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_06,Calle 59 entre carreras 47 y 48,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_07,Calle 59 entre carreras 48 y 49,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_08,Carrera 49 entre calles 58 y 59,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_09,Carrera 45 calzada ocidente entre calles 58 y 59,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_10,Calle 59 entre carreras 45 y 45D,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_11,Calle 59 entre carreras 49 y 50,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_12,Carrera 50 entre calles 60 y 59 ambos costados,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_13,Calle 59 entre carreras 50A y 50C,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_14,Carrera 50A entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_15,Calle 59 entre carreras 50C y 51,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_16,Calle 59 entre carreras 50 y 50A,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_05_17,Carrera 51 calzada occidente entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_01,Calle 59 entre carreras 50A y 50C,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_02,Calle 59 entre carreras 50C y 51,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_03,Carrera 51 calzada occidente entre calles 60 y 59,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_04,Calle 60 entre carreras 51D y 52,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_05,Calle 60 entre carreras 52 y 53,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_06,Calle 60 entre carreras 51 y 51D,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_07,Carrera 51D calzada oriente entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_08,Carrera 51D calzada occidente entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_09,Carrera 51D calzada occidente entre calles 61 y 60,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_10,Carrera 53 entre calles 59 y 60,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_11,Calle 60 entre carreras 53 y 54,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_12,Carrera 54 entre calles 61 y 60,PARCIAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323402,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024,Medellín,PMT_06_13,Calle 60 entre carreras 54 y 55,TOTAL,Nocturno,2026-01-01,2026-11-01,304
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 1,Carrera 29C entre calle 18AA Sur y carrera 26,TOTAL,Nocturno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 2,Carrera 26 entre carrera 29C y calle 20 Sur,TOTAL,Nocturno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 3,Calle 18AA Sur entre carreras 34 y 29C,TOTAL,Nocturno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 4,Carrera 34 entre Carrera 34 No. 16A Sur – 37 y Carrera 34 No. 16A Sur – 150 costado oriente,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 5,Carrera 32B con calle 17 Sur,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 6,Calle 17 Sur No. 31 - 55,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 7,Carrera 31 No. 17 Sur – 61,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 8,Carrera 30A No. 17 Sur – 36,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 9,Carrera 30 No. 17 Sur – 45,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 10,Carrera 29C con calle 18AA Sur,INGRESO Y SALIDA,Diurno,2026-05-06,2026-12-31,239
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 11,Conexión norte-oriente carrera 34 con calle 18AA Sur,TOTAL,Nocturno,2026-05-06,2027-01-01,240
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 12,Calle 18AA Sur entre Calle 18AA Sur No. 29C-340 y carrera 34 carril norte,PARCIAL,Nocturno,2026-05-06,2027-01-01,240
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET2 4 13,Calle 18AA Sur entre Calle 18AA Sur No. 29C-340 y carrera 34 andén costado norte,TOTAL,Nocturno,2026-05-06,2027-01-01,240
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 1,,PARCIAL,Diurno,2026-06-13,2026-09-30,109
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 2,,PARCIAL,Diurno,2026-06-13,2026-09-30,109
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 3,,PARCIAL,Diurno,2026-06-13,2026-09-30,109
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 4,,TOTAL,Nocturno,2026-06-13,2026-10-01,110
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 5,,TOTAL,Nocturno,2026-06-13,2027-01-01,202
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 6,,TOTAL,Diurno,2026-06-13,2026-09-30,109
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 7,,PARCIAL,Diurno,2026-07-06,2026-12-31,178
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 8,,TOTAL,Nocturno,2026-06-13,2027-01-01,202
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 9,,PARCIAL,Diurno,2026-07-06,2026-12-31,178
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPA ET3 9 10,,TOTAL,Nocturno,2026-06-13,2027-01-01,202
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_1,"Calle 31B con carrera 100, ambos costados no simultaneos",PARCIAL,Nocturno,2026-08-18,2026-09-24,37
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_2,"Calle 31B entre carrera 106 y calle 31B No. 104-39, costado sur",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_3,"Calle 31B entre calle 31B No. 104-39 y carrera 102A, costado norte",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_4,"Calle 31B entre carreras 102A y 102, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-24,6
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_5,"Calle 31B entre carreras 102 y 102A, ocupación total del andén, costado norte",TOTAL,Nocturno,2026-08-18,2026-08-24,6
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_6,"Carrera 100 entre calles 31B y 31F, costado oriente",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_7,"Calle 31C entre carreras 89A y 89D, costado sur",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_8,"Carrera 89B entre calles 31B y 31C,  indirecto ambos costados",TOTAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_9,"Carrera 89C entre calles 31B y 31C,  indirecto ambos costados",TOTAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_10,"Carrera 89D con calle 31C, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_11,"Calle 31B entre carreras 89D y 89E, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_12,"Carrera 89E entre calles 31B y 31BB, ambos costados no simultáneos",PARCIAL,Nocturno,2026-08-18,2026-08-29,11
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET1_10_13,Calle 31B entre carreras 89E y 100 costado sur,PARCIAL,Nocturno,2026-08-18,2026-08-30,12
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_1,,TOTAL,Diurno,2026-07-01,2026-09-30,91
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_2,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_3,,INGRESO Y SALIDA,Diurno,2026-07-01,2026-09-30,91
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_4,,PARCIAL,Diurno,2026-07-01,2026-09-30,91
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_5,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_6,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_7,,PARCIAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_8,,PARCIAL,Diurno,2026-07-01,2026-09-30,91
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_9,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_10,,PARCIAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_11,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW323849,CONSORCIO REDES AMVA 2024,Medellín,CLPIC_ET2_3_12,,TOTAL,Nocturno,2026-07-01,2026-10-01,92
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,T09-COC-CI09,carrera 52 entre el puente de la Quebrada Altavista y la carrera 52 #31-83,PARCIAL,Diurno,2026-08-18,2026-12-15,119
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,T09-COC-CI09-2,Carril occidental de la Autopista sur entre la carrera 54 puente Avenida Guayabal y el lazo de salida al occidente de la Autopista sur a la calle 30,PARCIAL,Nocturno,2026-08-18,2026-12-15,119
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,T09-COC-CI09-3,Zona verde separador entre la Autopista sur y la carrera 52 al costado sur del puente de la Quebrada Altavista,TOTAL,Nocturno,2026-08-18,2026-12-15,119
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-CI01-2,CR 49 ENTRE CL 67 SUR Y CL 61 SUR,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-CI01-1,CR 49 ENTRE CL 67 SUR Y CL 61 SUR,TOTAL,Nocturno,2026-09-28,2026-12-20,83
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC02,Cra. 49 #61 Sur-68,PARCIAL,Nocturno,2026-09-28,2026-12-20,83
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-AC07-3,carrera 42 #79-39 Motel Ibiza,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-AC07-2,carrera 42 #79-39 Motel Ibiza,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-AC07-4,carrera 42 #79-19 Empresa Icoltrans,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-AC07-1,carrera 42 #79-51 Punto de venta Crem Helado,PARCIAL,Nocturno,2026-06-01,2026-07-30,59
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOC-AO18-1,calle 51 con carrera 40,PARCIAL,Diurno,2026-05-18,2026-07-19,62
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOR-AC05-1,carrera 49 #52 sur - 225,PARCIAL,Diurno,2026-05-11,2026-11-07,180
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,T23-CON-001-1,carrera 43F entre calles 11 y 10,TOTAL,Nocturno,2026-06-16,2026-10-13,119
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,T23-CON-001-2,carrera 43F entre calles 11 y 10,TOTAL,Nocturno,2026-06-16,2026-10-13,119
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOC-AC04-1,Calle 26 #41 - 140,INGRESO Y SALIDA,Diurno,2026-02-02,2026-04-30,87
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC06-5,"Carril oriental de la carrera 49 vía de servicio, desde la carrera 49 #52 sur-130 en la empresa CRYOGAS S.A. hasta 40m al sur de la carrera 49 #52 sur -170 en la empresa CRYSTAL S.A.S",PARCIAL,Diurno,2026-08-03,2026-10-31,89
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC06-4,"Carril oriental de la carrera 49 vía de servicio, desde 16m al sur de la calle 52sur hasta la carrera 49 #52 sur-170 en la empresa CRYSTAL S.A.S.",PARCIAL,Diurno,2026-08-03,2026-10-31,89
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC06-3,Carril occidental de la carrera 49 vía de servicio a la altura de la calle 52 sur,PARCIAL,Diurno,2026-08-03,2026-10-31,89
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC06-2,Zona verde del separador ubicado entre la Avenida Regional y la carrera 49 víade servicio a la altura de la calle 52 sur,PARCIAL,Diurno,2026-08-03,2026-10-31,89
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-CI02-1,carrera 40 a 20m de la calle 51,PARCIAL,Diurno,2026-01-29,2026-05-13,104
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-CI02-1,carrera 40 a 20m de la calle 51,PARCIAL,Diurno,2026-05-14,2026-06-15,32
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOC-AC03-1,carrera 42 #24-98,PARCIAL,Diurno,2025-09-17,2025-12-17,91
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOC-AC03-2,carrera 42 #24-98,PARCIAL,Diurno,2025-09-17,2025-12-17,91
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T01-SOC-AC03-3,carrera 42 #24-98,PARCIAL,Nocturno,2025-09-17,2025-12-17,91
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,IO-05-1,carrera 48 con calle 15 sur,PARCIAL,Nocturno,2025-11-07,2025-12-16,39
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,IO-05-1,carrera 48 con calle 15 sur,PARCIAL,Nocturno,2025-12-17,2026-02-28,73
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,IO-05-2,calle 15 sur entre carreras 48 y 48A costado sur,PARCIAL,Diurno,2025-11-07,2025-12-16,39
+Trazado Normal,CW328120,SANEAR S.A.S,Medellín,IO-05-2,calle 15 sur entre carreras 48 y 48A costado sur,PARCIAL,Diurno,2025-12-17,2026-02-28,73
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC05-2,carrera 49 #52 sur - 225,PARCIAL,Diurno,2026-05-11,2026-11-07,180
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-1,carrera 42 entre el carril sur de la calle 66A y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-2,carrera 42 entre la calle 66A y la carrera 42 #66A-09,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-3,carrera 42 entre la carrera 42#66-30 y el carril norte de la calle 66,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-4,carrera 42 entre el carril norte de la calle 66 y la carrera 42 #66-17,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T02-SOC-AC10-5,carrera 42 entre el carril sur de la calle 66 y la carrera 42 # 64A-95,PARCIAL,Nocturno,2026-06-30,2026-09-28,90
+Trazado Normal,CW328120,SANEAR S.A.S,Sabaneta,T01-SOR-AC01,Carrera 49 entre calles 61B Sur y 67 Sur - Vía de servicio,TOTAL,Nocturno,2026-07-01,2026-08-31,61
+Trazado Normal,CW328120,SANEAR S.A.S,Itagüí,T03-SOC-CI03,Vía de acceso Estación de servicio TEXACO No.3 en carrera 42 Autopista Sur,TOTAL,Nocturno,2026-09-14,2026-12-04,81
+Trazado Normal,CW352217,MEXICHEM,Medellín,CAMPAMENTO,TRANSVERSAL 49D ENTRE VÍA DE SERVICIO Y LAZO HACIA CALLE 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 1A,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 1B,Carrera 62 entre calle 46 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 2A,Carrera 62 entre calle 48 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 2B,Carrera 62 entre calle 48 y 50,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 3A,Carrera 62 entre calle 50 y 52,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 3B,Carrera 62 entre calle 50 y 52,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 4,Carrera 62 entre calle 52 y 54,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 5,Carrera 62 entre calle 54 y 58,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 6,Carrera 62 entre calle 58 y 61A,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 6B,Carrera 62 entre calle 61A y 67,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 7,Carrera 62 entre calle 67 y VS UDEA,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,VS UDEA,Via Servicio UDEA,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 8,Carrera 62 entre VS UDEA y VS Parque Norte,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,VS Parque Norte,VS Parque Norte,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 9,Carrera 62 entre VS Parque Norte y calle 77,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 9A,Carrera 62 entre VS Parque Norte y calle 77,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 10,Carrera 62 entre calle 77 y 80C,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 11,Carrera 62 entre calle 80C y 88,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW352217,MEXICHEM,Medellín,Calle 92 Bajos Puente Madre Laura,Calle 92 Bajos Puente Madre Laura,INGRESO Y SALIDA,Nocturno,2026-05-15,2026-05-31,16
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-08-18,2026-09-14,27
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2025-11-10,2025-11-24,14
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-03-29,2026-04-27,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-05-19,2026-06-17,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2025-11-10,2025-12-15,35
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2025-11-10,2025-12-15,35
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-03-16,2026-04-17,32
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-03-16,2026-04-17,32
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-05-06,2026-06-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-05-06,2026-06-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-17_1,Callejón Calle 36C entre carrera 116 y carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-17_2,Callejón Calle 34CC entre la calle 34C y la carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2025-12-09,2026-02-07,60
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2025-12-09,2026-02-07,60
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2026-02-08,2026-04-08,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2026-02-08,2026-04-08,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-07-01,2026-08-30,60
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-07-01,2026-08-30,60
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2025-12-09,2025-12-29,20
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-03-06,2026-04-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-04-05,2026-05-05,30
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-02-04,2026-02-29,0
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-03-01,2026-03-30,29
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2025-12-26,2026-02-07,43
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2025-12-26,2026-02-07,43
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-04-01,2026-05-07,36
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-04-01,2026-05-07,36
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE_RC_21_1,Carrera 105 con calle 39B,PARCIAL,Diurno,2026-07-29,2026-09-14,47
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE_RC_21_2,calle 39B y calle 39A entre carrera 106 y carrera 106A y Cierre total Anden sur de la calle 39B entre carrera 106 y carrera 106A,TOTAL,Diurno,2026-07-29,2026-09-14,47
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-04-15,2026-05-15,30
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_1,Carrera 15D entre la calle 46D y la calle 47 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_2,"Carrera 15D entre la calle 46D y la calle 47 – Andén, costado sur",TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_3,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_4,Calle 47 entre la carrera 15D y la carrera 16AA carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_5,Carrera 16AA entre la calle 46D y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_6,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_7,Calle 49 entre la carrera 15D y la carrera 15 carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_8,Calle 49 entre la carrera 17 y la carrera 15 carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_9,Calle 49 entra la carrera 16AA y la carrera 15D carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_10,Carrera 16AA entre la calle 49 y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_11,Calle 49 entre la carrera 16AA y carrera 17B carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_12,Carrera 17B entre la calle 48 y 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_13,Andén occidental Calle 49 entre carrera 16AA y la carrera 17B,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_14,Carrera 17 entre la calle 50 y 50A carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_15,Calle 50 entre carreras 16A y 17 carril norte,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_16,Carrera 17 entre la calle 49B y la calle 50 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_17,Calle 50 entre carreras 16A y 17 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,DIRN-RC-2,Vía y Andén Calle 44 entre la Carrera 66 y Carrera 65 carril sur,PARCIAL,Nocturno,2026-04-27,2026-05-27,30
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_1,Andén Norte Calle 53 entre carreras 52 y 52A,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_2,Calle 54 y carrera 52A entre calle 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_3,Carrera 53 entre calle 53 y 54. carril oriental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_4,Calzada Norte Calle 53 entre carrera 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_5,Carrera 54 entre calle 53 y 54 carril occidental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Diurno,2026-05-04,2026-06-04,31
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Diurno,2026-06-05,2026-07-15,40
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-05-25,2026-07-16,52
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-07-17,2026-08-31,45
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-1_1,Carrera 65 entre la calle 31 y 32 carril oriental,PARCIAL,Diurno,2026-06-30,2026-07-30,30
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-1_2,Anden oriental Carrera 65 entre la calle 31 y 32,TOTAL,Diurno,2026-06-30,2026-07-30,30
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_1,Carrera 81 entre calles 26 y Calle 21 carril occidental,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_2,Calle 21 entre la carrera 81 y carrera 82 carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_3,Calle 21 entre la carrera 81 y carrera 81B carril occidental,PARCIAL,Diurno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_4,Calle 21 con carrera 81B carril norte,PARCIAL,Diurno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_1,Carrera 33 entre calles 43 y 44 carril occidental,PARCIAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_2,Carrera 33 entre calles 44 y 45 carril occidental,PARCIAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_3,calle 45 entre carrera 33 y 33A,PARCIAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_4,calle 45 entre carrera 33 y 33A,TOTAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_5,Carrera 33 entre calles 43 y 44 carril occidenta Campamento,PARCIAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-09-01,2026-10-01,30
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-09-01,2026-09-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-08-24,2026-09-06,13
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-08-24,2026-09-06,13
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-07-16,2026-08-10,25
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-07-16,2026-08-10,25
+Trazado Normal,CW366713,PAECIA,Medellín,BER_RC_3 _1,"Calle 83 entre carreras 50A y 50B Carril, andén y zona verde norte",PARCIAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_3 _2,"Carrera 50A entre calles 83 y 84 Carril, andén y zona dura occidental",PARCIAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_3 _3,"Carrera 50A entre calles 83 y 84 Calzada, andén y zona dura occidental",TOTAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_5,Carrera 72B entre calles 98 y 99 Carril oriental y occidental (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_4,Carrera 73 entre calles 97 y 99 Carril oriental,PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-07-01,2026-09-01,62
+Trazado Normal,CW366713,PAECIA,Medellín,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-06-19,2027-01-01,196
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_3,Carrera 48 entre calles 92 y 90 Carril occidental,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_2,Calle 90 entre carreras 48 y 49 Carril norte,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_5_1,Calle 90 entre carreras 49 y 49A Carril norte,PARCIAL,Nocturno,2026-06-15,2027-01-01,200
+Trazado Normal,CW366713,PAECIA,Medellín,CAMPAMENTO,Carrera 65 entre calles 80A y 84 costado oriental,INGRESO Y SALIDA,Nocturno,2026-02-16,2026-06-19,123
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_1,Calle 92 entre carreras 49 y 46A costado sur,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM-RC_4_2,Calle 92 entre carreras 49 y 48 costado norte,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_3,Carrera 47 entre calles 90 y 92 costado occidental,PARCIAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_4,Carrera 46A entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_4_5,Carrera 47 entre calles 90 y 92,TOTAL,Nocturno,2026-05-11,2027-01-01,235
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,TOTAL,Nocturno,2026-05-16,2026-07-16,61
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_1,Calle 83 entre carreras 50B y 50BB,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-05-16,2026-07-16,61
+Trazado Normal,CW366713,PAECIA,Medellín,BERM_RC_2_2,Carrea 50B entre calles 83 y 84 costado occidental,PARCIAL,Nocturno,2026-03-16,2026-05-15,60
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_1,Carrera 67 entre calles 92C y 92A costado oriental,PARCIAL,Nocturno,2026-06-01,2026-06-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_1_2,Calle 92A entre carreras 66 y 67,TOTAL,Nocturno,2026-06-01,2026-06-30,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_1,Carrera 72 entre calles 92 y 92B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_5_1,Calle 92C entre carreras 67 y 68B,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_2_2,Calle 92B entre carreras 70 y 72,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_5_2,Carrera 68B entre calles 92C y 92CC,TOTAL,Nocturno,2026-04-13,2026-05-31,48
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-03-09,2026-04-21,43
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_1,Calle 80 entre carreras 88 y 90A costado norte,PARCIAL,Diurno,2026-04-22,2026-05-21,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-03-09,2026-04-21,43
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_2,Carrera 88A entre calles 80 y 80C ambos costados,PARCIAL,Diurno,2026-04-22,2026-05-21,29
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-03-09,2026-04-22,44
+Trazado Normal,CW366713,PAECIA,Medellín,QUIN_RC_3_3,Calle 80 entre carreras 88A y 88 zona verde sur,TOTAL,Nocturno,2026-04-22,2026-05-22,30
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_1,Carrera 96B entre carreras 95AA y 94BD,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_2,Carrera 94BD entre carreras 96B y calle 79C,TOTAL,Diurno,2026-02-23,2026-03-22,27
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-23,28
+Trazado Normal,CW366713,PAECIA,Medellín,MALP_RC_4_3,Carrera 94BD entre carreras 96B y calle 79C zona verde,TOTAL,Nocturno,2026-02-23,2026-03-23,28
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_1,Calle 80 entre carreras 49 y 50 costado norte,PARCIAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_2,Calle 80 entre carreras 49A y 50,TOTAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_3,Carrera 49A entre calles 80 y 81 ambos costados,PARCIAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2025-12-15,2026-01-31,47
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-02-01,2026-03-06,33
+Trazado Normal,CW366713,PAECIA,Medellín,MOL_RC_8_4,Carrera 49A entre calles 80 y 81 anden,TOTAL,Diurno,2026-03-07,2026-03-20,13
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_1,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_2,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_3,,PARCIAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_4,,PARCIAL,Nocturno,2026-06-23,2026-07-24,31
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_5,,PARCIAL,Nocturno,2026-06-23,2026-07-24,31
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO:IO53_54_1_6,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_1_7,,PARCIAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_1,,PARCIAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_2,,TOTAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_3,,TOTAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_4,,TOTAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_5,,TOTAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO28_29_2_6,,TOTAL,Nocturno,2026-06-15,2026-09-05,82
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO39_4_1,,PARCIAL,Nocturno,2026-07-01,2026-07-31,30
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO39_4_2,,TOTAL,Nocturno,2026-07-01,2026-08-01,31
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO50_5_1,,INGRESO Y SALIDA,Nocturno,2026-05-21,2026-10-21,153
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO50_5_2,,TOTAL,Nocturno,2026-05-21,2026-10-22,154
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO43_6_1,,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-02,60
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO43_6_2,,PARCIAL,Nocturno,2026-08-03,2026-10-03,61
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO43_6_3,,PARCIAL,Nocturno,2026-08-03,2026-10-02,60
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO39_7_1_P1,,PARCIAL,Nocturno,2026-07-01,2026-07-31,30
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO39_7_2_P1,,TOTAL,Nocturno,2026-07-01,2026-08-01,31
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_1,,PARCIAL,Nocturno,2026-08-03,2026-10-04,62
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_2,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_3,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_4,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_5,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_6,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_7,,PARCIAL,Nocturno,2026-08-03,2026-10-04,62
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_8,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_9,,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-04,62
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_10,,INGRESO Y SALIDA,Nocturno,2026-08-03,2026-10-04,62
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO36_37_38_8_11,,TOTAL,Nocturno,2026-08-03,2026-10-05,63
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO24_9_1,,PARCIAL,Nocturno,2026-08-10,2026-11-10,92
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO24_9_2,,TOTAL,Nocturno,2026-08-10,2026-11-11,93
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO_24_9_3,,TOTAL,Nocturno,2026-08-10,2026-11-11,93
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO_24_9_4,,PARCIAL,Nocturno,2026-08-10,2026-11-11,93
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO_24_9_5,,TOTAL,Nocturno,2026-08-10,2026-11-11,93
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_10_1_M1,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_10_2_M1,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_10_3_M1,,PARCIAL,Nocturno,2026-05-11,2026-08-24,105
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_10_4_M1,,PARCIAL,Nocturno,2026-07-24,2026-08-31,38
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO_IO53_54_10_5_M1,,PARCIAL,Nocturno,2026-07-24,2026-08-31,38
+Trazado Normal,CW374202,CONSORCIO REDES AMVA 2024,Medellín,OCRIO:IO53_54_10_6_M1,,TOTAL,Nocturno,2026-05-11,2026-08-24,105
 Cercanía,CW323402 vs CW352217,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024 vs MEXICHEM,Varios,PMT_01_01 / Etapa 4,Ver Mapa,CERCANÍA ESPACIAL,Varios,N/A,N/A,0
 Cercanía,CW323402 vs CW352217,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024 vs MEXICHEM,Varios,PMT_01_01 / Etapa 5,Ver Mapa,CERCANÍA ESPACIAL,Varios,N/A,N/A,0
 Cercanía,CW323402 vs CW352217,CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024 vs MEXICHEM,Varios,PMT_01_01 / Etapa 6,Ver Mapa,CERCANÍA ESPACIAL,Varios,N/A,N/A,0

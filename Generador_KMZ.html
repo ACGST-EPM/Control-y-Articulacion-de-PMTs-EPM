@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador de KMZ Estandarizado — PMTs EPM</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<style>
+  :root{ --epm-verde:#009300; --epm-lima:#b7c200; --epm-naranja:#d56b00; }
+  body{ background:#f8f9fa; font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; }
+  .epm-header{ background:#fff; border-bottom:4px solid var(--epm-verde); box-shadow:0 2px 8px rgba(0,0,0,.1); padding:10px 20px; }
+  .epm-title{ color:var(--epm-verde); font-weight:bold; font-size:19px; margin-left:12px; vertical-align:middle; }
+  .card-head{ background:var(--epm-verde); color:#fff; font-weight:bold; padding:8px 14px; font-size:.95rem; border-radius:6px 6px 0 0; display:flex; justify-content:space-between; align-items:center;}
+  .card-box{ background:#fff; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.08); margin-bottom:16px; overflow:hidden; }
+  .card-body2{ padding:14px 16px; }
+  .epm-btn{ background:var(--epm-lima); color:#000; font-weight:bold; border:none; }
+  .epm-btn:hover{ background:#99a800; }
+  .epm-btn-green{ background:var(--epm-verde); color:#fff; font-weight:bold; border:none;}
+  .epm-btn-green:hover{ background:#007a00; color:#fff;}
+  .epm-btn-orange{ background:var(--epm-naranja); color:#fff; font-weight:bold; border:none;}
+  #map{ height:380px; border:3px solid var(--epm-verde); border-radius:8px; }
+  .badge-ok{ background:var(--epm-verde);} .badge-warn{ background:var(--epm-naranja);} .badge-bad{ background:#dc3545;}
+  table td, table th{ font-size:.82rem; vertical-align:middle;}
+  .req-label{ font-weight:600; font-size:.8rem; color:#333;}
+  .mini{ font-size:.72rem; color:#6c757d;}
+  .step-num{ display:inline-block; width:24px; height:24px; line-height:24px; text-align:center; border-radius:50%; background:var(--epm-verde); color:#fff; font-weight:bold; font-size:.8rem; margin-right:6px;}
+  .auto-field{ background:#eef7ee !important; }
+  .drawing-hint{ position:absolute; z-index:500; top:8px; left:50px; background:rgba(0,0,0,.7); color:#fff; padding:4px 10px; border-radius:6px; font-size:.78rem; display:none;}
+</style>
+</head>
+<body>
+
+<div class="epm-header d-flex align-items-center">
+  <span style="font-size:26px">🛠️</span>
+  <span class="epm-title">GENERADOR DE KMZ ESTANDARIZADO — PMTs</span>
+  <span class="ms-auto mini">Grupo EPM · Centro de Gestión Servicios Técnicos</span>
+</div>
+
+<div class="container-fluid p-3">
+  <div class="alert alert-light border mb-3" style="border-left:5px solid var(--epm-lima)!important">
+    <b>¿Qué hace esta herramienta?</b> Elimina la escritura manual del campo <i>Descripción</i> del KMZ.
+    El usuario dibuja o importa la geometría y elige los datos en menús validados; la herramienta arma el texto
+    con el formato exacto que exige el motor de análisis y descarga un <b>.kmz listo para la carpeta de entrada</b>.
+  </div>
+
+  <div class="row">
+    <!-- ================= COLUMNA IZQUIERDA ================= -->
+    <div class="col-lg-7">
+
+      <!-- PASO 1: BASE DE DATOS MAESTRA -->
+      <div class="card-box">
+        <div class="card-head"><span><span class="step-num">1</span>Base de datos maestra (la administra el gestor de la plataforma)</span>
+          <div>
+            <button id="btnLock" class="btn btn-sm btn-warning fw-bold" onclick="toggleLock()">🔒 Desbloquear edición</button>
+            <button id="btnImportDB" class="btn btn-sm btn-light" onclick="importarDB()" disabled>📥 Importar JSON</button>
+            <button class="btn btn-sm btn-light" onclick="exportarDB()">💾 Exportar JSON</button>
+          </div>
+        </div>
+        <div class="card-body2">
+          <p class="mini mb-2">Aquí se registran una sola vez los valores que <b>deben repetirse idénticos</b>: contrato → contratista y proyecto.
+          Un contrato puede tener <b>varios municipios</b> (sepáralos con <code>;</code>): al crear cada trazado se elige el municipio de un menú. El usuario nunca los escribe: los selecciona.
+          <b>🔒 La edición está protegida con clave de administrador EPM</b> para mantener uniformidad (p. ej. un mismo contratista en varios contratos debe escribirse igual). Guarda el JSON exportado como <code>contratos_db.json</code> en el repositorio para conservarlo.</p>
+          <div class="table-responsive" style="max-height:200px; overflow:auto">
+            <table class="table table-sm table-striped mb-2">
+              <thead class="table-dark"><tr><th>Contrato</th><th>Contratista</th><th>Proyecto</th><th>Municipio</th><th></th></tr></thead>
+              <tbody id="dbBody"></tbody>
+            </table>
+          </div>
+          <div class="row g-1">
+            <div class="col"><input id="nCon" class="form-control form-control-sm" placeholder="Contrato (ej: CW323402)"></div>
+            <div class="col"><input id="nContr" class="form-control form-control-sm" placeholder="Contratista"></div>
+            <div class="col"><input id="nProy" class="form-control form-control-sm" placeholder="Proyecto"></div>
+            <div class="col"><input id="nMun" class="form-control form-control-sm" placeholder="Municipio(s) — separa con ;"></div>
+            <div class="col-auto"><button id="btnAddDB" class="btn btn-sm epm-btn-green" onclick="addDB()" disabled>+ Agregar</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 2: GEOMETRIA -->
+      <div class="card-box">
+        <div class="card-head"><span><span class="step-num">2</span>Geometría del trazado</span></div>
+        <div class="card-body2">
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <label class="btn btn-sm epm-btn mb-0">📂 Importar KMZ/KML de Google Earth
+              <input type="file" accept=".kmz,.kml" onchange="importarGeom(this.files[0])" hidden></label>
+            <button class="btn btn-sm epm-btn-green" onclick="modoDibujo('linea')">✏️ Dibujar línea</button>
+            <button class="btn btn-sm epm-btn-green" onclick="modoDibujo('punto')">📍 Colocar punto</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="cancelarDibujo()">✖ Cancelar dibujo</button>
+          </div>
+          <div style="position:relative">
+            <div id="hint" class="drawing-hint"></div>
+            <div id="map"></div>
+          </div>
+          <p class="mini mt-2">Al <b>importar</b>, si el KMZ ya trae datos en la descripción, la herramienta los lee y precarga el formulario para que solo revises y corrijas. Al <b>dibujar</b>: clic para agregar vértices y doble-clic para terminar la línea.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= COLUMNA DERECHA ================= -->
+    <div class="col-lg-5">
+
+      <!-- PASO 3: FORMULARIO VALIDADO -->
+      <div class="card-box">
+        <div class="card-head"><span><span class="step-num">3</span>Datos del trazado (menús validados)</span></div>
+        <div class="card-body2">
+          <div class="mb-2">
+            <label class="req-label">Nombre del frente *</label>
+            <div class="input-group input-group-sm">
+              <input id="fNombre" class="form-control form-control-sm" placeholder="Ej: PMT_01_01">
+              <button class="btn epm-btn" onclick="sugerirNombre()" title="Sugerir siguiente consecutivo">↻</button>
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="req-label">Contrato *</label>
+            <select id="fContrato" class="form-select form-select-sm" onchange="autoLlenar()"></select>
+          </div>
+          <div class="row g-1 mb-2">
+            <div class="col"><label class="req-label">Contratista</label><input id="fContratista" class="form-control form-control-sm auto-field" readonly></div>
+          </div>
+          <div class="row g-1 mb-2">
+            <div class="col"><label class="req-label">Proyecto</label><input id="fProyecto" class="form-control form-control-sm auto-field" readonly></div>
+            <div class="col"><label class="req-label">Municipio *</label><select id="fMunicipio" class="form-select form-select-sm"></select></div>
+          </div>
+          <div class="mb-2">
+            <label class="req-label">Tipo de cierre *</label>
+            <select id="fTipoCierre" class="form-select form-select-sm"></select>
+            <span class="mini">Lista cerrada (total, parcial, ingreso y salida). En el mapa: <b>total</b> rojo y <b>parcial</b> amarillo; <b>ingreso y salida</b> se clasifica como "Otros".</span>
+          </div>
+          <div class="row g-1 mb-2">
+            <div class="col"><label class="req-label">Fecha y hora inicio *</label><input id="fInicio" type="datetime-local" class="form-control form-control-sm"></div>
+            <div class="col"><label class="req-label">Fecha y hora fin *</label><input id="fFin" type="datetime-local" class="form-control form-control-sm"></div>
+          </div>
+          <div class="mb-2">
+            <label class="req-label">Dirección *</label>
+            <input id="fDireccion" class="form-control form-control-sm" placeholder="Texto libre (no usar el carácter | )">
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm epm-btn-green flex-grow-1" onclick="guardarTrazado()">💾 Guardar / Actualizar trazado</button>
+            <button class="btn btn-sm epm-btn" onclick="limpiarForm()">Nuevo</button>
+          </div>
+          <div id="editHint" class="mini mt-1 text-danger"></div>
+        </div>
+      </div>
+
+      <!-- PASO 5: EXPORTAR -->
+      <div class="card-box">
+        <div class="card-head"><span><span class="step-num">5</span>Validar y exportar</span></div>
+        <div class="card-body2">
+          <div id="validBox" class="mini mb-2">Aún no hay trazados cargados.</div>
+          <button class="btn epm-btn-green w-100 fw-bold" onclick="exportarKMZ()">⬇️ Generar y descargar KMZ estandarizado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 4: LISTA DE TRAZADOS -->
+  <div class="card-box">
+    <div class="card-head"><span><span class="step-num">4</span>Trazados en este KMZ</span>
+      <span class="mini text-white">Total: <span id="cnt">0</span></span></div>
+    <div class="card-body2">
+      <div class="table-responsive">
+        <table class="table table-sm table-hover">
+          <thead class="table-dark"><tr>
+            <th>#</th><th>Frente</th><th>Tipo geom.</th><th>Contrato</th><th>Cierre</th><th>Inicio</th><th>Fin</th><th>Estado</th><th>Acciones</th>
+          </tr></thead>
+          <tbody id="listaBody"><tr><td colspan="9" class="text-center mini py-3">Sin trazados todavía.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   GENERADOR DE KMZ ESTANDARIZADO — PMTs EPM
+   Autocontenido. Depende de Leaflet (mapa) y JSZip (empaquetado).
+   ============================================================ */
+
+/* ---------- Estado global ---------- */
+let DB = [];                 // base maestra: {contrato, contratista, proyecto, municipio}
+let TIPOS_CIERRE = ['total','parcial','ingreso y salida'];   // lista cerrada configurable
+let trazados = [];           // {id, nombre, geomType, coords:[[lat,lng],...], contrato, contratista, proyecto, municipio, tipo, inicio, fin, direccion}
+let editandoId = null;
+let idSeq = 1;
+
+/* ---------- Control de acceso a la Base maestra (solo personal EPM) ---------- */
+let dbUnlocked = false;
+// SHA-256 de la clave. Clave por defecto: EPM-PMT-2026  (ver instrucciones para cambiarla)
+const CLAVE_HASH = "144887dea6c6f4df6d7341dd219576dce28dd3a0adb5398fd1a1c2bc577cd200";
+async function sha256(txt){
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function toggleLock(){
+  if(dbUnlocked){ dbUnlocked=false; aplicarLock(); return; }
+  const k = prompt('Clave de administrador EPM para editar la base de datos:');
+  if(k===null) return;
+  try{
+    const h = await sha256(k);
+    if(h===CLAVE_HASH){ dbUnlocked=true; aplicarLock(); }
+    else alert('Clave incorrecta.');
+  }catch(e){ alert('Este navegador no permite validar la clave (requiere HTTPS/GitHub Pages).'); }
+}
+function aplicarLock(){
+  const btn=document.getElementById('btnLock');
+  btn.textContent = dbUnlocked? '🔓 Bloquear edición' : '🔒 Desbloquear edición';
+  btn.className   = 'btn btn-sm fw-bold '+(dbUnlocked?'btn-success':'btn-warning');
+  ['btnImportDB','btnAddDB','nCon','nContr','nProy','nMun'].forEach(id=>{ const el=document.getElementById(id); if(el) el.disabled=!dbUnlocked; });
+  renderDB(); // re-dibuja para mostrar/ocultar botones de borrar
+}
+
+/* ---------- Semilla de base maestra (ejemplos reales del contexto) ---------- */
+const DB_SEED = [
+  {contrato:'CW323402', contratista:'CONSORCIO_INFRAESTRUCTURA_DE_AGUAS_2024', proyecto:'ORFELINATO', municipios:['Medellín']},
+  {contrato:'CW328120', contratista:'SANEAR S.A.S', proyecto:'EDIE1', municipios:['Medellín']}
+];
+/* Normaliza la base: garantiza que cada contrato tenga una LISTA de municipios
+   (convierte el formato antiguo {municipio:'X'} a {municipios:['X']}) */
+function normalizeDB(db){
+  return (db||[]).map(r=>{
+    let muns = r.municipios;
+    if(!Array.isArray(muns)) muns = r.municipio ? [r.municipio] : [];
+    muns = muns.map(x=>String(x).trim()).filter(Boolean);
+    return {contrato:r.contrato, contratista:r.contratista, proyecto:r.proyecto, municipios:muns};
+  });
+}
+function splitMunicipios(txt){ return String(txt||'').split(/[;,]/).map(s=>s.trim()).filter(Boolean); }
+function municipiosDe(contrato){ const r=DB.find(x=>x.contrato===contrato); return r? (r.municipios||[]) : []; }
+
+/* ---------- Persistencia suave (localStorage con try/catch) ----------
+   Solo se persiste la base de contratos (pmt_db). La lista de tipos de cierre
+   es un valor canónico del código y NO se cachea, para que siempre gane la
+   versión del archivo (evita que una lista antigua guardada la sobrescriba). */
+function guardarLocal(){ try{ localStorage.setItem('pmt_db', JSON.stringify(DB)); }catch(e){} }
+function cargarLocal(){
+  try{
+    const d = localStorage.getItem('pmt_db'); if(d) DB = JSON.parse(d);
+    localStorage.removeItem('pmt_tipos'); // limpia cualquier lista antigua cacheada
+  }catch(e){}
+}
+
+/* ---------- Arranque ---------- */
+async function init(){
+  cargarLocal();
+  if(!DB.length){
+    // Intento cargar contratos_db.json si el archivo está publicado junto al HTML
+    try{
+      const r = await fetch('contratos_db.json',{cache:'no-store'});
+      if(r.ok){ DB = await r.json(); }
+    }catch(e){}
+  }
+  if(!DB.length) DB = JSON.parse(JSON.stringify(DB_SEED));
+  DB = normalizeDB(DB);
+  renderDB(); renderTiposCierre(); renderContratoSelect(); renderLista(); validar();
+  aplicarLock();  // arranca con la base bloqueada
+  initMapa();
+}
+
+/* ===========================================================
+   BASE DE DATOS MAESTRA
+   =========================================================== */
+function renderDB(){
+  const b = document.getElementById('dbBody'); b.innerHTML='';
+  DB.forEach((r,i)=>{
+    b.innerHTML += `<tr>
+      <td>${esc(r.contrato)}</td><td>${esc(r.contratista)}</td><td>${esc(r.proyecto)}</td><td>${esc((r.municipios||[]).join('; '))}</td>
+      <td>${dbUnlocked ? `<button class="btn btn-sm btn-outline-danger py-0" onclick="delDB(${i})">🗑</button>` : '<span class="mini">🔒</span>'}</td></tr>`;
+  });
+  guardarLocal();
+}
+function addDB(){
+  if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave de administrador EPM.'); return; }
+  const c=val('nCon').trim().toUpperCase(), ct=val('nContr').trim(), p=val('nProy').trim();
+  const muns=splitMunicipios(val('nMun'));
+  if(!c || !ct || !p){ alert('Contrato, contratista y proyecto son obligatorios en la base.'); return; }
+  const ex = DB.find(x=>x.contrato===c);
+  if(ex){
+    // Mismo contrato: NO se duplica la fila; se agregan los municipios nuevos a su lista.
+    let nuevos=0; muns.forEach(mn=>{ if(mn && !ex.municipios.includes(mn)){ ex.municipios.push(mn); nuevos++; } });
+    alert('El contrato '+c+' ya existía. Se añadieron '+nuevos+' municipio(s) a su lista.');
+  } else {
+    DB.push({contrato:c, contratista:ct, proyecto:p, municipios:muns});
+  }
+  ['nCon','nContr','nProy','nMun'].forEach(id=>document.getElementById(id).value='');
+  renderDB(); renderContratoSelect();
+}
+function delDB(i){ if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave.'); return; } if(confirm('¿Eliminar '+DB[i].contrato+' de la base?')){ DB.splice(i,1); renderDB(); renderContratoSelect(); } }
+function exportarDB(){ descargar(JSON.stringify(DB,null,2), 'contratos_db.json', 'application/json'); }
+function importarDB(){
+  if(!dbUnlocked){ alert('Debes desbloquear la edición con la clave.'); return; }
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='.json';
+  inp.onchange=e=>{ const f=e.target.files[0]; const rd=new FileReader();
+    rd.onload=()=>{ try{ DB=normalizeDB(JSON.parse(rd.result)); renderDB(); renderContratoSelect(); alert('Base cargada: '+DB.length+' contratos.'); }catch(err){ alert('JSON inválido.'); } };
+    rd.readAsText(f); };
+  inp.click();
+}
+
+/* ===========================================================
+   SELECTS VALIDADOS
+   =========================================================== */
+function renderContratoSelect(){
+  const s=document.getElementById('fContrato'); const prev=s.value;
+  s.innerHTML='<option value="">— Seleccione contrato —</option>';
+  DB.forEach(r=> s.innerHTML+=`<option value="${esc(r.contrato)}">${esc(r.contrato)}</option>`);
+  if(prev) s.value=prev; autoLlenar();
+}
+function renderTiposCierre(){
+  const s=document.getElementById('fTipoCierre');
+  s.innerHTML='<option value="">— Seleccione —</option>';
+  TIPOS_CIERRE.forEach(t=> s.innerHTML+=`<option value="${esc(t)}">${esc(t)}</option>`);
+}
+function autoLlenar(municipioSel){
+  const c=val('fContrato'); const r=DB.find(x=>x.contrato===c);
+  document.getElementById('fContratista').value = r? r.contratista : '';
+  document.getElementById('fProyecto').value    = r? r.proyecto    : '';
+  llenarMunicipios(r? r.municipios : [], municipioSel);
+}
+/* Construye el menú de municipios del contrato elegido.
+   - 1 municipio  -> se selecciona solo.
+   - varios       -> muestra "Seleccione" para forzar elección consciente.
+   - 'sel' conserva un municipio importado aunque no esté en la base. */
+function llenarMunicipios(lista, sel){
+  const s=document.getElementById('fMunicipio');
+  const arr=(lista||[]).slice();
+  if(sel && !arr.includes(sel)) arr.push(sel);
+  let html='';
+  if(arr.length!==1) html+='<option value="">— Seleccione municipio —</option>';
+  arr.forEach(m=> html+=`<option value="${esc(m)}">${esc(m)}</option>`);
+  s.innerHTML=html;
+  if(sel) s.value=sel; else if(arr.length===1) s.value=arr[0];
+}
+
+/* ===========================================================
+   MAPA (Leaflet) + DIBUJO
+   =========================================================== */
+let map, capaTrazados, dibujoModo=null, dibujoTemp=[], dibujoLayer=null;
+function initMapa(){
+  map = L.map('map').setView([6.2612, -75.5722], 15); // centrado en zona del ejemplo
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'© OpenStreetMap'}).addTo(map);
+  capaTrazados = L.layerGroup().addTo(map);
+  map.on('click', onMapClick);
+  map.on('dblclick', onMapDbl);
+}
+function modoDibujo(tipo){
+  dibujoModo=tipo; dibujoTemp=[];
+  if(dibujoLayer){ map.removeLayer(dibujoLayer); dibujoLayer=null; }
+  const h=document.getElementById('hint'); h.style.display='block';
+  h.textContent = tipo==='linea' ? 'Modo LÍNEA: clic para vértices, doble-clic para terminar.' : 'Modo PUNTO: clic para colocar el punto.';
+  if(tipo==='linea') map.doubleClickZoom.disable();
+}
+function cancelarDibujo(){ dibujoModo=null; dibujoTemp=[]; if(dibujoLayer){map.removeLayer(dibujoLayer);dibujoLayer=null;} document.getElementById('hint').style.display='none'; map.doubleClickZoom.enable(); }
+function onMapClick(e){
+  if(!dibujoModo) return;
+  if(dibujoModo==='punto'){
+    finalizarGeom('Point', [[e.latlng.lat, e.latlng.lng]]);
+    cancelarDibujo(); return;
+  }
+  dibujoTemp.push([e.latlng.lat, e.latlng.lng]);
+  if(dibujoLayer) map.removeLayer(dibujoLayer);
+  dibujoLayer = L.polyline(dibujoTemp,{color:'#d56b00',weight:5}).addTo(map);
+}
+function onMapDbl(e){
+  if(dibujoModo!=='linea') return;
+  if(dibujoTemp.length>=2){ finalizarGeom('LineString', dibujoTemp.slice()); }
+  cancelarDibujo();
+}
+function finalizarGeom(tipo, coords){
+  // Crea un trazado nuevo con la geometría; los datos se completan en el formulario
+  const t = nuevoTrazadoVacio(); t.geomType=tipo; t.coords=coords;
+  trazados.push(t); editandoId=t.id; cargarEnForm(t);
+  renderLista(); dibujarTodo(); validar();
+  document.getElementById('editHint').textContent='Geometría dibujada. Completa los datos y presiona "Guardar / Actualizar".';
+}
+
+/* ===========================================================
+   IMPORTAR KMZ / KML  (lee geometría y precarga descripción)
+   =========================================================== */
+async function importarGeom(file){
+  if(!file) return;
+  let kmlText='';
+  try{
+    if(file.name.toLowerCase().endsWith('.kmz')){
+      const zip = await JSZip.loadAsync(file);
+      const kmlName = Object.keys(zip.files).find(n=>n.toLowerCase().endsWith('.kml'));
+      if(!kmlName){ alert('El KMZ no contiene un .kml'); return; }
+      kmlText = await zip.files[kmlName].async('string');
+    }else{
+      kmlText = await file.text();
+    }
+  }catch(e){ alert('No se pudo leer el archivo: '+e.message); return; }
+
+  const dom = new DOMParser().parseFromString(kmlText, 'text/xml');
+  const placemarks = getByLocal(dom, 'Placemark');
+  if(!placemarks.length){ alert('No se encontraron trazados (Placemark) en el archivo.'); return; }
+
+  let importados=0;
+  placemarks.forEach(pm=>{
+    const nombre = textLocal(pm,'name') || 'SIN_NOMBRE';
+    const desc   = textLocal(pm,'description') || '';
+    const meta   = parseDescripcion(desc);   // intenta leer el formato existente
+
+    // Geometría
+    let geomType=null, coords=[];
+    const ls = getByLocal(pm,'LineString')[0];
+    const pt = getByLocal(pm,'Point')[0];
+    if(ls){ geomType='LineString'; coords = parseCoords(textLocal(ls,'coordinates')); }
+    else if(pt){ geomType='Point'; coords = parseCoords(textLocal(pt,'coordinates')); }
+    else return; // ignora polígonos u otros por ahora
+
+    // Empareja contrato con la base para auto-completar (si existe)
+    const enBase = DB.find(x=>x.contrato===(meta.contrato||'').toUpperCase());
+    const t = nuevoTrazadoVacio();
+    t.nombre = nombre; t.geomType=geomType; t.coords=coords;
+    t.contrato   = (meta.contrato||'').toUpperCase();
+    t.contratista= enBase? enBase.contratista : (meta.contratista||'');
+    t.proyecto   = enBase? enBase.proyecto    : (meta.proyecto||'');
+    // municipio: prioriza el del KMZ; si no viene y el contrato tiene un único municipio, lo asume
+    t.municipio  = (meta.municipio||'').trim() || (enBase && (enBase.municipios||[]).length===1 ? enBase.municipios[0] : '');
+    t.tipo       = normalizarTipo(meta.tipo_cierre||'');
+    t.inicio     = normalizarFechaEntrada(meta.fecha_inicio||'');
+    t.fin        = normalizarFechaEntrada(meta.fecha_fin||'');
+    t.direccion  = (meta.direccion||'').replace(/\|/g,'/');
+    trazados.push(t); importados++;
+  });
+  renderLista(); dibujarTodo(); validar(); ajustarVista();
+  alert(importados+' trazado(s) importado(s). Revisa cada uno en la tabla y corrige lo que falte (aparecen marcados si tienen datos incompletos).');
+}
+
+/* ===========================================================
+   FORMULARIO ↔ TRAZADO
+   =========================================================== */
+function nuevoTrazadoVacio(){
+  return {id:idSeq++, nombre:'', geomType:null, coords:[], contrato:'', contratista:'', proyecto:'', municipio:'', tipo:'', inicio:'', fin:'', direccion:''};
+}
+function cargarEnForm(t){
+  editandoId=t.id;
+  set('fNombre',t.nombre); set('fContrato',t.contrato);
+  autoLlenar(t.municipio);   // arma el menú de municipios y selecciona el del trazado
+  // si el contrato no estaba en la base, respeta contratista/proyecto importados
+  if(!DB.find(x=>x.contrato===t.contrato)){ set('fContratista',t.contratista); set('fProyecto',t.proyecto); }
+  set('fTipoCierre',t.tipo); set('fInicio',aInputDateTime(t.inicio)); set('fFin',aInputDateTime(t.fin)); set('fDireccion',t.direccion);
+  document.getElementById('editHint').textContent='Editando: '+(t.nombre||'(sin nombre)');
+}
+function guardarTrazado(){
+  let t = trazados.find(x=>x.id===editandoId);
+  if(!t){ t=nuevoTrazadoVacio(); trazados.push(t); editandoId=t.id; }
+  t.nombre    = val('fNombre').trim();
+  t.contrato  = val('fContrato');
+  t.contratista = val('fContratista').trim();
+  t.proyecto  = val('fProyecto').trim();
+  t.municipio = val('fMunicipio').trim();
+  t.tipo      = val('fTipoCierre');
+  t.inicio    = deInputDateTime(val('fInicio'));
+  t.fin       = deInputDateTime(val('fFin'));
+  t.direccion = val('fDireccion').trim().replace(/\|/g,'/');  // protege el separador
+  // Si hay un dibujo en curso SIN finalizar (no se hizo doble-clic), se toma como geometría.
+  // El doble-clic sigue funcionando igual; esto solo añade una vía alterna para no perder el trazo.
+  if(!t.geomType && dibujoTemp.length){
+    if(dibujoModo==='linea' && dibujoTemp.length>=2){ t.geomType='LineString'; t.coords=dibujoTemp.slice(); cancelarDibujo(); }
+    else if(dibujoModo==='punto'){ t.geomType='Point'; t.coords=[dibujoTemp[0]]; cancelarDibujo(); }
+  }
+  if(!t.geomType){ alert('Este trazado no tiene geometría. Dibuja la línea (un clic por vértice) o importa primero.'); return; }
+  renderLista(); dibujarTodo(); validar();
+  document.getElementById('editHint').textContent='Guardado ✔';
+}
+function limpiarForm(){
+  editandoId=null;
+  ['fNombre','fContratista','fProyecto','fMunicipio','fInicio','fFin','fDireccion'].forEach(id=>set(id,''));
+  set('fContrato',''); set('fTipoCierre','');
+  autoLlenar();  // limpia el menú de municipios
+  document.getElementById('editHint').textContent='';
+}
+function sugerirNombre(){
+  // Sugere PMT_01_XX incrementando el mayor consecutivo existente
+  let max=0;
+  trazados.forEach(t=>{ const m=(t.nombre||'').match(/(\d+)\s*$/); if(m) max=Math.max(max, parseInt(m[1])); });
+  const n=String(max+1).padStart(2,'0');
+  set('fNombre','PMT_01_'+n);
+}
+
+/* ===========================================================
+   DUPLICAR PARA NUEVA VIGENCIA
+   =========================================================== */
+function duplicarVigencia(id){
+  const o = trazados.find(x=>x.id===id); if(!o) return;
+  const c = JSON.parse(JSON.stringify(o)); c.id=idSeq++;
+  c.inicio=''; c.fin='';           // solo cambian las fechas
+  trazados.push(c); cargarEnForm(c);
+  renderLista(); validar();
+  document.getElementById('editHint').textContent='Copia creada para nueva vigencia: cambia solo las fechas y guarda.';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function editar(id){ const t=trazados.find(x=>x.id===id); if(t){ cargarEnForm(t); window.scrollTo({top:0,behavior:'smooth'}); } }
+function borrar(id){ trazados=trazados.filter(x=>x.id!==id); if(editandoId===id) limpiarForm(); renderLista(); dibujarTodo(); validar(); }
+
+/* ===========================================================
+   LISTA + VALIDACIÓN
+   =========================================================== */
+function faltantes(t){
+  const f=[];
+  if(!t.nombre) f.push('nombre'); if(!t.contrato) f.push('contrato');
+  if(!t.tipo) f.push('tipo_cierre'); if(!t.inicio) f.push('fecha_inicio');
+  if(!t.fin) f.push('fecha_fin'); if(!t.direccion) f.push('direccion');
+  if(!t.geomType) f.push('geometría');
+  if(t.inicio && t.fin && t.fin < t.inicio) f.push('fin<inicio');
+  const rc=DB.find(x=>x.contrato===t.contrato);
+  if(rc && (rc.municipios||[]).length && !t.municipio) f.push('municipio');
+  return f;
+}
+function renderLista(){
+  const b=document.getElementById('listaBody'); document.getElementById('cnt').textContent=trazados.length;
+  if(!trazados.length){ b.innerHTML='<tr><td colspan="9" class="text-center mini py-3">Sin trazados todavía.</td></tr>'; return; }
+  b.innerHTML='';
+  trazados.forEach((t,i)=>{
+    const f=faltantes(t);
+    const estado = f.length ? `<span class="badge badge-bad">Falta: ${f.join(', ')}</span>` : `<span class="badge badge-ok">Completo</span>`;
+    b.innerHTML += `<tr>
+      <td>${i+1}</td><td>${esc(t.nombre)||'<i class="mini">—</i>'}</td><td>${t.geomType==='Point'?'Punto':'Línea'}</td>
+      <td>${esc(t.contrato)}</td><td>${esc(t.tipo)}</td><td>${esc(t.inicio)}</td><td>${esc(t.fin)}</td><td>${estado}</td>
+      <td style="white-space:nowrap">
+        <button class="btn btn-sm epm-btn py-0" onclick="editar(${t.id})" title="Editar">✏️</button>
+        <button class="btn btn-sm epm-btn-orange py-0" onclick="duplicarVigencia(${t.id})" title="Duplicar para nueva vigencia">🗓️+</button>
+        <button class="btn btn-sm btn-outline-danger py-0" onclick="borrar(${t.id})" title="Eliminar">🗑</button>
+      </td></tr>`;
+  });
+}
+function validar(){
+  const box=document.getElementById('validBox');
+  if(!trazados.length){ box.innerHTML='Aún no hay trazados cargados.'; return; }
+  const malos=trazados.filter(t=>faltantes(t).length);
+  if(malos.length){ box.innerHTML=`<span class="badge badge-bad">${malos.length}</span> trazado(s) con datos incompletos. Corrígelos antes de exportar.`; }
+  else{ box.innerHTML=`<span class="badge badge-ok">OK</span> ${trazados.length} trazado(s) completos y válidos. Listo para exportar.`; }
+}
+
+/* ===========================================================
+   DIBUJAR EN MAPA
+   =========================================================== */
+function dibujarTodo(){
+  if(!capaTrazados) return; capaTrazados.clearLayers();
+  trazados.forEach(t=>{
+    if(!t.coords||!t.coords.length) return;
+    let lyr;
+    if(t.geomType==='Point') lyr=L.circleMarker(t.coords[0],{radius:6,color:'#009300',fillColor:'#b7c200',fillOpacity:.9});
+    else lyr=L.polyline(t.coords,{color: t.tipo==='total'?'#e31a1c':(t.tipo==='parcial'?'#e6a800':(t.tipo==='ingreso y salida'?'#1f78b4':'#969696')), weight:5});
+    lyr.bindTooltip((t.nombre||'(sin nombre)')+' · '+(t.tipo||'sin tipo'));
+    lyr.on('click',()=>editar(t.id));
+    capaTrazados.addLayer(lyr);
+  });
+}
+function ajustarVista(){
+  const pts=[]; trazados.forEach(t=>t.coords.forEach(c=>pts.push(c)));
+  if(pts.length) map.fitBounds(L.latLngBounds(pts).pad(0.2));
+}
+
+/* ===========================================================
+   EXPORTAR KMZ
+   =========================================================== */
+async function exportarKMZ(){
+  if(!trazados.length){ alert('No hay trazados para exportar.'); return; }
+  const malos=trazados.filter(t=>faltantes(t).length);
+  if(malos.length && !confirm(malos.length+' trazado(s) tienen datos incompletos. ¿Exportar de todos modos?')) return;
+
+  const contrato = (trazados.find(t=>t.contrato)||{}).contrato || 'CONTRATO';
+  const proyecto = (trazados.find(t=>t.proyecto)||{}).proyecto || 'PROYECTO';
+  const nombreArchivo = `${contrato}_${proyecto}`.replace(/[^A-Za-z0-9_\-]/g,'_')+'.kmz';
+
+  const kml = construirKML(nombreArchivo);
+  const zip = new JSZip();
+  zip.file('doc.kml', kml);
+  const blob = await zip.generateAsync({type:'blob', mimeType:'application/vnd.google-earth.kmz'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=nombreArchivo; a.click();
+}
+function construirKML(nombreDoc){
+  let body='';
+  trazados.forEach(t=>{
+    const desc = construirDescripcion(t);
+    let geom='';
+    if(t.geomType==='Point'){
+      const c=t.coords[0]; geom=`<Point><coordinates>${c[1]},${c[0]},0</coordinates></Point>`;
+    }else{
+      const cs=t.coords.map(c=>`${c[1]},${c[0]},0`).join(' ');
+      geom=`<LineString><tessellate>1</tessellate><coordinates>${cs}</coordinates></LineString>`;
+    }
+    body += `<Placemark><name>${esc(t.nombre)}</name><description>${esc(desc)}</description>${geom}</Placemark>\n`;
+  });
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>${esc(nombreDoc)}</name>
+${body}</Document></kml>`;
+}
+/* Construye el string EXACTO que espera el motor de análisis (orden idéntico al de los KMZ actuales) */
+function construirDescripcion(t){
+  const partes = [
+    `fecha_inicio: ${t.inicio}`,
+    `fecha_fin: ${t.fin}`,
+    `tipo_cierre: ${t.tipo}`,
+    `direccion: ${t.direccion}`,
+  ];
+  if(t.municipio) partes.push(`municipio: ${t.municipio}`);
+  partes.push(`contrato: ${t.contrato}`);
+  partes.push(`contratista: ${t.contratista}`);
+  partes.push(`proyecto: ${t.proyecto}`);
+  return partes.join(' | ');
+}
+
+/* ===========================================================
+   UTILIDADES
+   =========================================================== */
+function parseDescripcion(desc){
+  const campos=['fecha_inicio','fecha_fin','tipo_cierre','direccion','municipio','contrato','contratista','proyecto'];
+  const out={};
+  campos.forEach(c=>{ const m=desc.match(new RegExp(c+'\\s*:\\s*([^|]+)','i')); if(m) out[c]=m[1].trim(); });
+  return out;
+}
+function normalizarTipo(v){
+  const s=(v||'').trim().toLowerCase();
+  if(TIPOS_CIERRE.includes(s)) return s;
+  // añade a la lista si es un valor nuevo detectado, para no perder el dato
+  if(s){ if(!TIPOS_CIERRE.includes(s)){ TIPOS_CIERRE.push(s); renderTiposCierre(); } return s; }
+  return '';
+}
+/* Corrige el clásico 24:00:00 -> 00:00:00 del día siguiente y unifica a 'YYYY-MM-DD HH:MM:SS' */
+function normalizarFechaEntrada(raw){
+  if(!raw) return '';
+  let s=raw.trim();
+  const fm=s.match(/(\d{4})-(\d{2})-(\d{2})/); if(!fm) return '';
+  let [_, Y,M,D]=fm; let hh='00',mm='00',ss='00';
+  const hm=s.match(/(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if(hm){ hh=hm[1].padStart(2,'0'); mm=hm[2]; ss=hm[3]||'00'; }
+  if(parseInt(hh)>=24){ // 24:00 -> día siguiente 00:00
+    const d=new Date(Date.UTC(+Y,+M-1,+D)); d.setUTCDate(d.getUTCDate()+1);
+    Y=d.getUTCFullYear(); M=String(d.getUTCMonth()+1).padStart(2,'0'); D=String(d.getUTCDate()).padStart(2,'0');
+    hh='00'; mm='00'; ss='00';
+  }
+  return `${Y}-${M}-${D} ${hh}:${mm}:${ss}`;
+}
+function aInputDateTime(s){ // 'YYYY-MM-DD HH:MM:SS' -> 'YYYY-MM-DDTHH:MM'
+  if(!s) return ''; const m=s.match(/(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/); return m? m[1]+'T'+m[2] : '';
+}
+function deInputDateTime(s){ // 'YYYY-MM-DDTHH:MM' -> 'YYYY-MM-DD HH:MM:SS'
+  if(!s) return ''; return s.replace('T',' ')+':00';
+}
+function parseCoords(txt){
+  if(!txt) return [];
+  return txt.trim().split(/\s+/).map(tok=>{
+    const p=tok.split(','); return [parseFloat(p[1]), parseFloat(p[0])]; // [lat,lng]
+  }).filter(c=>!isNaN(c[0])&&!isNaN(c[1]));
+}
+/* Helpers XML/DOM tolerantes a namespaces */
+function getByLocal(node,local){
+  const all = node.getElementsByTagName('*'); const out=[];
+  for(const el of all){ if(el.localName===local) out.push(el); }
+  return out;
+}
+function textLocal(node,local){
+  const els=getByLocal(node,local);
+  return els.length? (els[0].textContent||'').trim() : '';
+}
+function esc(s){ return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function val(id){ return document.getElementById(id).value; }
+function set(id,v){ document.getElementById(id).value = v==null?'':v; }
+function descargar(txt,nombre,tipo){ const b=new Blob([txt],{type:tipo}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=nombre; a.click(); }
+
+init();
+</script>
+</body>
+</html>
