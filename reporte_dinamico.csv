@@ -254,103 +254,104 @@ Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 9A,Carrera 62 entre VS Parque N
 Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 10,Carrera 62 entre calle 77 y 80C,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,Medellín,Etapa 11,Carrera 62 entre calle 80C y 88,PARCIAL,Nocturno,2026-05-15,2026-05-31,16
 Trazado Normal,CW352217,MEXICHEM,Medellín,Calle 92 Bajos Puente Madre Laura,Calle 92 Bajos Puente Madre Laura,INGRESO Y SALIDA,Nocturno,2026-05-15,2026-05-31,16
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-08-18,2026-09-14,27
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2025-11-10,2025-12-31,51
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-01-01,2026-01-15,14
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2025-11-10,2025-11-24,14
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-03-29,2026-04-27,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-05-19,2026-06-17,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2025-11-10,2025-12-15,35
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2025-11-10,2025-12-15,35
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-03-16,2026-04-17,32
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-03-16,2026-04-17,32
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-05-06,2026-06-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-05-06,2026-06-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-17_1,Callejón Calle 36C entre carrera 116 y carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-17_2,Callejón Calle 34CC entre la calle 34C y la carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2025-12-09,2026-02-07,60
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2025-12-09,2026-02-07,60
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2026-02-08,2026-04-08,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2026-02-08,2026-04-08,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2025-12-17,2026-03-18,91
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2026-03-16,2026-06-30,106
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-07-01,2026-08-30,60
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-07-01,2026-08-30,60
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2025-12-09,2025-12-29,20
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-03-06,2026-04-04,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-04-05,2026-05-05,30
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-02-04,2026-02-29,0
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-03-01,2026-03-30,29
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2025-12-26,2026-02-07,43
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2025-12-26,2026-02-07,43
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-04-01,2026-05-07,36
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-04-01,2026-05-07,36
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-05-19,2026-07-02,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE_RC_21_1,Carrera 105 con calle 39B,PARCIAL,Diurno,2026-07-29,2026-09-14,47
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,HUE_RC_21_2,calle 39B y calle 39A entre carrera 106 y carrera 106A y Cierre total Anden sur de la calle 39B entre carrera 106 y carrera 106A,TOTAL,Diurno,2026-07-29,2026-09-14,47
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-03-06,2026-05-04,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-05-05,2026-07-03,59
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-04-15,2026-05-15,30
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_1,Carrera 15D entre la calle 46D y la calle 47 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_2,"Carrera 15D entre la calle 46D y la calle 47 – Andén, costado sur",TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_3,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_4,Calle 47 entre la carrera 15D y la carrera 16AA carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_5,Carrera 16AA entre la calle 46D y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_6,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_7,Calle 49 entre la carrera 15D y la carrera 15 carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_8,Calle 49 entre la carrera 17 y la carrera 15 carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_9,Calle 49 entra la carrera 16AA y la carrera 15D carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_10,Carrera 16AA entre la calle 49 y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_11,Calle 49 entre la carrera 16AA y carrera 17B carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_12,Carrera 17B entre la calle 48 y 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_13,Andén occidental Calle 49 entre carrera 16AA y la carrera 17B,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_14,Carrera 17 entre la calle 50 y 50A carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_15,Calle 50 entre carreras 16A y 17 carril norte,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_16,Carrera 17 entre la calle 49B y la calle 50 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-10_17,Calle 50 entre carreras 16A y 17 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,DIRN-RC-2,Vía y Andén Calle 44 entre la Carrera 66 y Carrera 65 carril sur,PARCIAL,Nocturno,2026-04-27,2026-05-27,30
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_1,Andén Norte Calle 53 entre carreras 52 y 52A,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_2,Calle 54 y carrera 52A entre calle 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_3,Carrera 53 entre calle 53 y 54. carril oriental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_4,Calzada Norte Calle 53 entre carrera 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-03_5,Carrera 54 entre calle 53 y 54 carril occidental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Diurno,2026-05-04,2026-06-04,31
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Diurno,2026-06-05,2026-07-15,40
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-05-25,2026-07-16,52
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-07-17,2026-08-31,45
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-1_1,Carrera 65 entre la calle 31 y 32 carril oriental,PARCIAL,Diurno,2026-06-30,2026-07-30,30
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-1_2,Anden oriental Carrera 65 entre la calle 31 y 32,TOTAL,Diurno,2026-06-30,2026-07-30,30
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_1,Carrera 81 entre calles 26 y Calle 21 carril occidental,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_2,Calle 21 entre la carrera 81 y carrera 82 carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_3,Calle 21 entre la carrera 81 y carrera 81B carril occidental,PARCIAL,Diurno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,ALTA-RC-2_4,Calle 21 con carrera 81B carril norte,PARCIAL,Diurno,2026-06-30,2026-09-14,76
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_1,Carrera 33 entre calles 43 y 44 carril occidental,PARCIAL,Diurno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_2,Carrera 33 entre calles 44 y 45 carril occidental,PARCIAL,Diurno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_3,calle 45 entre carrera 33 y 33A,PARCIAL,Diurno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_4,calle 45 entre carrera 33 y 33A,TOTAL,Diurno,2026-08-01,2026-09-14,44
-Trazado Normal,CW353556,SANEAR S.A.S,Medellín,SELE-RC-14_5,Carrera 33 entre calles 43 y 44 carril occidenta Campamento,PARCIAL,Diurno,2026-08-01,2026-09-14,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-08-18,2026-09-14,27
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2025-11-10,2025-12-31,51
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-01-01,2026-01-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_1,Carrera 98 en la calle 33AA y calle 34 Carril occidental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_2,Carrera 94 en la calle 33B y calle 34 toda la calzada,TOTAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-1_3,Calle 34 entre la carrera 98 y carrera 94 Carril norte,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2025-11-10,2025-11-24,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-03-29,2026-04-27,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-4,Carrera 107B entre las calles 44 y 45A Carril occidental,PARCIAL,Diurno,2026-05-19,2026-06-17,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2025-11-10,2025-12-15,35
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2025-11-10,2025-12-15,35
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-03-16,2026-04-17,32
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-03-16,2026-04-17,32
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_1,Andén Carrera 86B con calle 49DD esquina suroriental,TOTAL,Diurno,2026-05-06,2026-06-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-6_2,Carrera 86B entre calles 49A y 49DD carril oriental,PARCIAL,Diurno,2026-05-06,2026-06-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-17_1,Callejón Calle 36C entre carrera 116 y carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-17_2,Callejón Calle 34CC entre la calle 34C y la carrera 115B,TOTAL,Diurno,2025-12-09,2025-12-26,17
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2025-12-09,2026-02-07,60
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2025-12-09,2026-02-07,60
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_1,Carrera 106 entre calle 34F y 35CC,PARCIAL,Diurno,2026-02-08,2026-04-08,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-18_2,Callejón de la carrera 106 entre calle 34F y la carrera 107,TOTAL,Diurno,2026-02-08,2026-04-08,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2025-12-17,2026-03-18,91
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_3,Calle 48 entre carreras 92 y 94B carril sur,PARCIAL,Diurno,2026-03-16,2026-06-30,106
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-07-01,2026-08-30,60
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-07-01,2026-08-30,60
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_1,Calle 48A y Carrera 93 entre la carrera 92 y carrera 94 toda la calzada,TOTAL,Diurno,2026-08-31,2026-09-14,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-8Y9_2,Carrera 94 entre calle 48 y calle 48D carril oriental y occidental,PARCIAL,Diurno,2026-08-31,2026-09-14,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2025-12-09,2025-12-29,20
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-03-06,2026-04-04,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-11,Carrera 80C y calle 40A entre la carrera 80B y carrera 80D,TOTAL,Diurno,2026-04-05,2026-05-05,30
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-02-04,2026-02-29,0
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-12,Andén y celdas de parqueo de la diagonal 74A entre la carrera 80 y la transversal 41A costado occidental,PARCIAL,Diurno,2026-03-01,2026-03-30,29
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2025-12-26,2026-02-07,43
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2025-12-26,2026-02-07,43
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-04-01,2026-05-07,36
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-04-01,2026-05-07,36
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_1,Calle 39C entre la calle 39D y carrera 108A costado oriental,PARCIAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,HUE-RC-20_2,Andén paralelo a la calle 39D entre la calle 39C y calle 39D #18-01,TOTAL,Diurno,2026-05-19,2026-07-02,44
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Diurno,2026-01-15,2026-03-09,53
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-03-06,2026-05-04,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_1,Calle 36 entre carreras 79 y 80 toda la calzada,TOTAL,Nocturno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_2,Calle 36 entre carrera 80 y circular 8 carril norte,PARCIAL,Diurno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-2_3,Calle 36 entre carrera 80 y 80A carril norte,PARCIAL,Nocturno,2026-05-05,2026-07-03,59
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RC-3,Calle 33 lazo de incorporación entre la calle 33 #74B-53 y la diagonal 74B  ambos costados,PARCIAL,Nocturno,2026-04-15,2026-05-15,30
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_1,Carrera 15D entre la calle 46D y la calle 47 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_2,"Carrera 15D entre la calle 46D y la calle 47 – Andén, costado sur",TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_3,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_4,Calle 47 entre la carrera 15D y la carrera 16AA carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_5,Carrera 16AA entre la calle 46D y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_6,Carrera 15D entre la calle 47 y la calle 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_7,Calle 49 entre la carrera 15D y la carrera 15 carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_8,Calle 49 entre la carrera 17 y la carrera 15 carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_9,Calle 49 entra la carrera 16AA y la carrera 15D carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_10,Carrera 16AA entre la calle 49 y la calle 47 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_11,Calle 49 entre la carrera 16AA y carrera 17B carril occidental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_12,Carrera 17B entre la calle 48 y 49 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_13,Andén occidental Calle 49 entre carrera 16AA y la carrera 17B,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_14,Carrera 17 entre la calle 50 y 50A carril oriental,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_15,Calle 50 entre carreras 16A y 17 carril norte,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_16,Carrera 17 entre la calle 49B y la calle 50 toda la calzada,TOTAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-10_17,Calle 50 entre carreras 16A y 17 carril sur,PARCIAL,Diurno,2026-04-06,2026-09-15,162
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,DIRN-RC-2,Vía y Andén Calle 44 entre la Carrera 66 y Carrera 65 carril sur,PARCIAL,Nocturno,2026-04-27,2026-05-27,30
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_1,Andén Norte Calle 53 entre carreras 52 y 52A,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_2,Calle 54 y carrera 52A entre calle 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_3,Carrera 53 entre calle 53 y 54. carril oriental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_4,Calzada Norte Calle 53 entre carrera 53 y 54,TOTAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_5,Carrera 54 entre calle 53 y 54 carril occidental,PARCIAL,Nocturno,2026-05-06,2026-09-04,121
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_1,Andén Norte Calle 53 entre carreras 52 y 52A,PARCIAL,Nocturno,2026-09-16,2026-12-30,105
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_2,Calle 54 y carrera 52A entre calle 53 y 54,TOTAL,Nocturno,2026-09-16,2026-12-30,105
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_3,Carrera 53 entre calle 53 y 54. carril oriental,PARCIAL,Nocturno,2026-09-16,2026-12-30,105
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_4,Calzada Norte Calle 53 entre carrera 53 y 54,TOTAL,Nocturno,2026-09-16,2026-12-30,105
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-03_5,Carrera 54 entre calle 53 y 54 carril occidental,PARCIAL,Nocturno,2026-09-16,2026-12-30,105
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Nocturno,2026-05-04,2026-06-04,31
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,PIC-RD-1,Carrera 87A entre calle 31D y carrera 87A #31C- 46 carril oriental,PARCIAL,Nocturno,2026-06-05,2026-07-15,40
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-05-25,2026-07-16,52
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-07-17,2026-08-31,45
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,SELE-RC-09,Calle 49 entre la carrera 28 y carrera 29 carril sur,PARCIAL,Diurno,2026-09-01,2026-09-15,14
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-1_1,Carrera 65 entre la calle 31 y 32 carril oriental,PARCIAL,Diurno,2026-06-30,2026-07-30,30
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-1_2,Anden oriental Carrera 65 entre la calle 31 y 32,TOTAL,Diurno,2026-06-30,2026-07-30,30
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_1,Carrera 81 entre calles 26 y Calle 21 carril occidental,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_2,Calle 21 entre la carrera 81 y carrera 82 carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_3,Calle 21 entre la carrera 81 y carrera 81B carril occidental,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
+Trazado Normal,CW353556,SANEAR S.A.S,No definido,ALTA-RC-2_4,Calle 21 con carrera 81B carril norte,PARCIAL,Nocturno,2026-06-30,2026-09-14,76
 Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_1,Carrera 73 entre calles 97 y 98 Calzada y zona dura oriental,TOTAL,Nocturno,2026-09-01,2026-10-01,30
 Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_2,Calle 98 entre carreras 73A y 72A Carril sur y norte (No Simultáneos),PARCIAL,Nocturno,2026-09-01,2026-09-30,29
 Trazado Normal,CW366713,PAECIA,Medellín,MINI_RC_1_3,Calle 98 entre carreras 73 y 72B Calzada,TOTAL,Nocturno,2026-09-01,2026-09-30,29
